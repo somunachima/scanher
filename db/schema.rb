@@ -10,9 +10,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_174006) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_29_112658) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.bigint "clinic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_chatrooms_on_clinic_id"
+  end
+
+  create_table "clinics", force: :cascade do |t|
+    t.string "exam_type"
+    t.string "body_part"
+    t.text "address"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_clinics_on_user_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.text "reason"
+    t.boolean "previous_exams"
+    t.text "gp_details"
+    t.text "allergies"
+    t.date "date"
+    t.time "time"
+    t.boolean "confirmed"
+    t.text "additional_information"
+    t.bigint "user_id", null: false
+    t.bigint "clinic_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["clinic_id"], name: "index_exams_on_clinic_id"
+    t.index ["user_id"], name: "index_exams_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.text "details"
+    t.date "date"
+    t.bigint "exam_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_results_on_exam_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +80,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_174006) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chatrooms", "clinics"
+  add_foreign_key "clinics", "users"
+  add_foreign_key "exams", "clinics"
+  add_foreign_key "exams", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+  add_foreign_key "results", "exams"
 end
