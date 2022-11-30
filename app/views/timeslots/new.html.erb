@@ -1,0 +1,8 @@
+
+
+<h1>New Timeslot</h1>
+<%= simple_form_for [@exam, @timeslot] do |f| %>
+  <%= f.date :date %>
+  <%= f.time :time %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>

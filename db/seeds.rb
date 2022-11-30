@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Clinic.destroy_all
-Service.destroy_all
+Booking.destroy_all
 BodyPart.destroy_all
+Service.destroy_all
 ServicePart.destroy_all
 Exam.destroy_all
+Clinic.destroy_all
+Timeslot.destroy_all
 
 
 # !CLINIC SEED FILES
@@ -83,7 +85,14 @@ securiscan_mri_bhip = Exam.create(clinic: securiscan, service_part: mri_bhip, pr
 securiscan_uss_head = Exam.create(clinic: securiscan, service_part: uss_head, price: 450)
 
 # !TIMESLOTS
-Timeslot.create(exam: hoxton_mri_head, date: Date.new(2022, 12, 14), time: Time.new(13, 00, 00))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 9, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 10, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 11, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 12, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 14, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 15, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 16, 0, 0))
+Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 17, 0, 0))
 
 
 # !PLACEHOLDER LIST FOR BODY PARTS

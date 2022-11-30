@@ -37,6 +37,6 @@ class TimeslotsController < ApplicationController
   private
 
   def timeslot_params
-    params.require(:timeslot).permit(:date, :time, :exam_id)
+    params.require(:timeslot).permit(:date, :exam_id)
   end
 end
