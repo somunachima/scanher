@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  
+
   def index
     @clinics = Clinic.all
   end
@@ -12,11 +12,12 @@ class ClinicsController < ApplicationController
   end
 
   def create
-    @clinic = Clinic.find(clinic_params)
+    @clinic = Clinic.new(clinic_params)
+    @user = User.new
     @clinic.save
   end
 
   def clinic_params
-    params.require(:clinic).permit(:exam_type, :body_part, :address, :price)
+    params.require(:clinic).permit(:exam_type, :body_part, :address, :price, :user_id)
   end
 end

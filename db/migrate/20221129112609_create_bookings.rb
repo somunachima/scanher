@@ -1,13 +1,11 @@
-class CreateExams < ActiveRecord::Migration[7.0]
+class CreateBookings < ActiveRecord::Migration[7.0]
   def change
-    create_table :exams do |t|
+    create_table :bookings do |t|
       t.text :reason
-      t.boolean :previous_exams
+      t.boolean :previous_scans
       t.text :gp_details
       t.text :allergies
-      t.date :date
-      t.time :time
-      t.boolean :confirmed
+      t.boolean :confirmed, default: false, null: false
       t.text :additional_information
       t.references :user, null: false, foreign_key: true
       t.references :clinic, null: false, foreign_key: true
