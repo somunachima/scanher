@@ -14,7 +14,6 @@ Exam.destroy_all
 Clinic.destroy_all
 Timeslot.destroy_all
 
-
 # !CLINIC SEED FILES
 hoxton = Clinic.create(name: "The Hoxton Clinic", address: "100 Hoxton Street")
 lewagon = Clinic.create(name: "LeWagon Clinic", address: "148 Kingsland Road")

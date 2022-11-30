@@ -18,7 +18,7 @@ class TimeslotsController < ApplicationController
     @timeslot = Timeslot.new(timeslot_params)
     @timeslot.exam = @exam
     if @timeslot.save
-      redirect_to exam_path(@exam)
+      redirect_to dashboard_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
