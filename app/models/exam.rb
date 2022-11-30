@@ -1,5 +1,4 @@
 class Exam < ApplicationRecord
-  belongs_to :user
   belongs_to :clinic
-  has_many :results
+  belongs_to :service
 end

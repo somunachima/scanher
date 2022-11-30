@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_112550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,35 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
 
   create_table "bookings", force: :cascade do |t|
     t.text "reason"
-    t.boolean "previous_scans"
+    t.boolean "previous_exams"
     t.text "gp_details"
     t.text "allergies"
-    t.boolean "confirmed", default: false, null: false
+    t.boolean "confirmed"
     t.text "additional_information"
+    t.bigint "timeslot_id", null: false
     t.bigint "user_id", null: false
-    t.bigint "clinic_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_bookings_on_clinic_id"
+    t.index ["timeslot_id"], name: "index_bookings_on_timeslot_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "chatrooms", force: :cascade do |t|
-    t.string "name"
-    t.bigint "clinic_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_chatrooms_on_clinic_id"
-  end
-
-  create_table "clinic_services", force: :cascade do |t|
-    t.integer "price"
-    t.bigint "clinic_id", null: false
-    t.bigint "service_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_clinic_services_on_clinic_id"
-    t.index ["service_id"], name: "index_clinic_services_on_service_id"
   end
 
   create_table "clinics", force: :cascade do |t|
@@ -62,14 +44,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.bigint "chatroom_id", null: false
+  create_table "exams", force: :cascade do |t|
+    t.integer "price"
+    t.bigint "clinic_id", null: false
+    t.bigint "service_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["clinic_id"], name: "index_exams_on_clinic_id"
+    t.index ["service_id"], name: "index_exams_on_service_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -81,15 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
     t.index ["booking_id"], name: "index_results_on_booking_id"
   end
 
-  create_table "scan_dates", force: :cascade do |t|
-    t.bigint "timeslot_id", null: false
-    t.bigint "clinic_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["clinic_id"], name: "index_scan_dates_on_clinic_id"
-    t.index ["timeslot_id"], name: "index_scan_dates_on_timeslot_id"
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -98,8 +71,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
 
   create_table "timeslots", force: :cascade do |t|
     t.date "date"
+    t.time "time"
+    t.bigint "exam_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_timeslots_on_exam_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -115,14 +91,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_105400) do
   end
 
   add_foreign_key "body_parts", "services"
-  add_foreign_key "bookings", "clinics"
+  add_foreign_key "bookings", "timeslots"
   add_foreign_key "bookings", "users"
-  add_foreign_key "chatrooms", "clinics"
-  add_foreign_key "clinic_services", "clinics"
-  add_foreign_key "clinic_services", "services"
-  add_foreign_key "messages", "chatrooms"
-  add_foreign_key "messages", "users"
+  add_foreign_key "exams", "clinics"
+  add_foreign_key "exams", "services"
   add_foreign_key "results", "bookings"
-  add_foreign_key "scan_dates", "clinics"
-  add_foreign_key "scan_dates", "timeslots"
+  add_foreign_key "timeslots", "exams"
 end
