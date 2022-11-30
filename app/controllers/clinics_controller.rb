@@ -18,6 +18,6 @@ class ClinicsController < ApplicationController
   end
 
   def clinic_params
-    params.require(:clinic).permit(:exam_type, :body_part, :address, :price, :user_id)
+    params.require(:clinic).permit(:name, :address)
   end
 end

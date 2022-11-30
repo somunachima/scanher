@@ -23,7 +23,6 @@ class ResultsController < ApplicationController
     end
   end
 
-
   private
 
   def result_params
