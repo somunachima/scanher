@@ -13,11 +13,10 @@ class ClinicsController < ApplicationController
 
   def create
     @clinic = Clinic.new(clinic_params)
-    @user = User.new
     @clinic.save
   end
 
   def clinic_params
-    params.require(:clinic).permit(:exam_type, :body_part, :address, :price, :user_id)
+    params.require(:clinic).permit(:name, :address)
   end
 end

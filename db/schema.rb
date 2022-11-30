@@ -16,10 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_112550) do
 
   create_table "body_parts", force: :cascade do |t|
     t.string "name"
-    t.bigint "service_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["service_id"], name: "index_body_parts_on_service_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -47,11 +45,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_112550) do
   create_table "exams", force: :cascade do |t|
     t.integer "price"
     t.bigint "clinic_id", null: false
-    t.bigint "service_id", null: false
+    t.bigint "service_part_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["clinic_id"], name: "index_exams_on_clinic_id"
-    t.index ["service_id"], name: "index_exams_on_service_id"
+    t.index ["service_part_id"], name: "index_exams_on_service_part_id"
   end
 
   create_table "results", force: :cascade do |t|
@@ -61,6 +59,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_112550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["booking_id"], name: "index_results_on_booking_id"
+  end
+
+  create_table "service_parts", force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "body_part_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["body_part_id"], name: "index_service_parts_on_body_part_id"
+    t.index ["service_id"], name: "index_service_parts_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -90,11 +97,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_112550) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "body_parts", "services"
   add_foreign_key "bookings", "timeslots"
   add_foreign_key "bookings", "users"
   add_foreign_key "exams", "clinics"
-  add_foreign_key "exams", "services"
+  add_foreign_key "exams", "service_parts"
   add_foreign_key "results", "bookings"
+  add_foreign_key "service_parts", "body_parts"
+  add_foreign_key "service_parts", "services"
   add_foreign_key "timeslots", "exams"
 end
