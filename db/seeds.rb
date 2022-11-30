@@ -83,7 +83,7 @@ securiscan_mri_bhip = Exam.create(clinic: securiscan, service_part: mri_bhip, pr
 securiscan_uss_head = Exam.create(clinic: securiscan, service_part: uss_head, price: 450)
 
 # !TIMESLOTS
-# Timeslot.create(exam: hoxton_mri_head, date: Date.new(2022, 12, 14), time: Time.new(13, 15))
+Timeslot.create(exam: hoxton_mri_head, date: Date.new(2022, 12, 14), time: Time.new(13, 00, 00))
 
 
 # !PLACEHOLDER LIST FOR BODY PARTS
