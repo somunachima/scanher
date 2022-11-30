@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "pages#home"
 
+  devise_for :users
 
-  resources :clinics, only: [:index, :new, :create ] do
-    resources :exams
+
+  resources :clinics, only: [ :index, :new, :create ] do
+    resources :exams, only: [ :new, :create ]
   end
+
+  resources :exams, only: [ ] do
+    resources :timeslots, only: [ :new, :create, :edit, :update ]
+  end
+
+
+  resources :bookings, except: [ :edit, :update ] do
+    resources :results, only: [ :create ]
+  end
+
+  get "dashboard", to: "users#dashboard", as: "dashboard"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")
   # root "articles#index"

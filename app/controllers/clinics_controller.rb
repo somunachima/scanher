@@ -16,6 +16,8 @@ class ClinicsController < ApplicationController
     @clinic.save
   end
 
+  private
+
   def clinic_params
     params.require(:clinic).permit(:name, :address)
   end
