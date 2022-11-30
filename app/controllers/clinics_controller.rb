@@ -3,6 +3,7 @@ class ClinicsController < ApplicationController
 
   def index
     @clinics = Clinic.all
+    @exams = Exam.all
   end
 
   private
