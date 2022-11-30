@@ -1,0 +1,8 @@
+<p><strong>Payment details</strong></p>
+<ul>
+  <% @booking.each do |booking| %>
+    <li><%= link_to dashboard_path(current_user) %></li>
+    <li><%= booking.last %></li>
+  <% end %>
+</ul>
+<br>

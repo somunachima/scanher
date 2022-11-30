@@ -1,1 +1,47 @@
 // Specific CSS for your home-page
+:root {
+  /* fonts */
+  --font-syne: Syne;
+  --font-roboto: Roboto;
+  --font-kanit: Kanit;
+  --font-grotley: Grotley;
+
+  --color-white: #fff;
+/* Colors */
+  --color-gray-100: #fbfbfb;
+  --color-gray-200: #ececec;
+  --color-gray-300: #888;
+  --color-beige: #faf1e3;
+  --color-black: #000;
+  --color-brown-100: #ec656e;
+  --color-brown-200: #ff554d;
+  --color-indigo: #7339dd;
+
+  /* font sizes */
+  $font-size-base: 14px;
+  $font-size-lg: 18px;
+  $font-size-xl: 21px;
+  $font-size-2xl: 22px;
+  $font-size-3xl: 23px;
+  $font-size-4xl: 25px;
+  $font-size-5xl: 64px;
+  $font-size-6xl: 79px;
+  $font-size-7xl: 1500px;
+
+  /* Gaps */
+  --gap-sm: 5px;
+  --gap-md: 14px;
+
+  /* Paddings */
+  --padding-sm: 16px;
+  --padding-md: 28px;
+
+  /* border radiuses */
+  --br-sm: 9px;
+  --br-md: 10px;
+}
+
+#logo-home {
+  font-size: 70px;
+  font-family: var(--font-syne);
+}

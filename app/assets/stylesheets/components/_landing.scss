@@ -1,0 +1,562 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+.frame-icon {
+  width: 1512px;
+}
+.piece-back-icon {
+  position: relative;
+  width: 1512px;
+  height: 1976.91px;
+}
+.frame-icon {
+  position: absolute;
+  top: 1933px;
+  left: 0;
+  height: 1977px;
+  overflow: hidden;
+}
+.subtract-icon {
+  position: relative;
+  width: 1948.82px;
+  height: 1508.87px;
+}
+.h-i,
+.h-i1 {
+  position: absolute;
+  top: 690px;
+  left: -257px;
+  font-size: var(--font-size-7xl);
+  display: inline-block;
+  font-weight: 800;
+  color: var(--color-brown-100);
+  text-align: center;
+}
+.h-i1 {
+  top: 1697px;
+  left: 504px;
+  color: var(--color-indigo);
+}
+.ellipse-icon {
+  position: absolute;
+  top: 630px;
+  left: 582px;
+  width: 707px;
+  height: 572px;
+  object-fit: cover;
+}
+.rectangle-div,
+.rectangle-div1 {
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-200);
+}
+.rectangle-div {
+  position: absolute;
+  top: 353px;
+  left: 865px;
+  width: 542px;
+  height: 49px;
+}
+.rectangle-div1 {
+  top: 424px;
+}
+.rectangle-div1,
+.rectangle-div2,
+.rectangle-icon {
+  position: absolute;
+  left: 865px;
+  width: 542px;
+  height: 49px;
+}
+.rectangle-div2 {
+  top: 495px;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-200);
+}
+.rectangle-icon {
+  top: 563.5px;
+  border-radius: 30px;
+}
+.blank-line-p,
+.where-women-can-get-answers-in1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.blank-line-p {
+  font-size: var(--font-size-4xl);
+  color: var(--color-brown-200);
+}
+.blank-line-p1,
+.blank-line-p2,
+.p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.p {
+  font-size: var(--font-size-2xl);
+}
+.blank-line-p1 {
+  font-size: var(--font-size-3xl);
+}
+.blank-line-p2 {
+  font-size: var(--font-size-4xl);
+}
+.blank-line-p3 {
+  margin: 0;
+}
+.where-women-can-get-answers-in {
+  position: absolute;
+  top: 89px;
+  left: 113px;
+  font-family: var(--font-syne);
+  display: inline-block;
+  width: 706px;
+  height: 514px;
+  font-size: var(--font-size-8xl);
+  color: var(--color-brown-100);
+}
+.how-it-works,
+.scanning-services-b {
+  position: absolute;
+  display: inline-block;
+  font-family: var(--font-syne);
+  color: var(--color-white);
+  text-align: center;
+}
+.how-it-works {
+  top: 700px;
+  left: 514px;
+  font-size: 55px;
+  width: 485px;
+  height: 117px;
+}
+.three-appointments-wrapped-up {
+  position: absolute;
+  top: 777px;
+  left: 514px;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-syne);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  width: 499px;
+  height: 49px;
+}
+
+.all-top-cards{
+  top: 800px;
+}
+.regular-card-top-centre-icon {
+  position: absolute;
+  top: 850px;
+  left: 466px;
+  border-radius: var(--br-sm);
+  background-color: var(--color-beige);
+  width: 239px;
+  height: 252px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm) var(--padding-md);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  text-align: center;
+}
+.regular-card-top-centre-icon1 {
+  top: 850px;
+  height: 252px;
+}
+.regular-card-top-centre-icon1,
+.regular-card-top-centre-icon2 {
+  position: absolute;
+  border-radius: var(--br-sm);
+  background-color: var(--color-beige);
+  width: 239px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm) var(--padding-md);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  text-align: center;
+}
+.regular-card-top-centre-icon1 {
+  left: 113px;
+}
+.regular-card-top-centre-icon2 {
+  top: 850px;
+  left: 819px;
+  height: 251px;
+}
+
+
+
+.regular-card-top-centre-icon3 {
+  position: absolute;
+  top: 850px;
+  left: 1165px;
+  border-radius: var(--br-sm);
+  background-color: var(--color-beige);
+  width: 239px;
+  height: 251px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm) var(--padding-md);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-sm);
+  text-align: center;
+}
+
+.scanning-services-b {
+  top: 1333px;
+  left: 329px;
+  font-size: 55px;
+  width: 839px;
+  height: 137px;
+}
+.line-icon,
+.reviews-b {
+  position: absolute;
+  top: 1788px;
+  left: 91px;
+  width: 1291px;
+  height: 4px;
+}
+.reviews-b {
+  top: 1991px;
+  left: 319px;
+  font-size: 55px;
+  display: inline-block;
+  font-family: var(--font-syne);
+  color: var(--color-white);
+  text-align: center;
+  width: 839px;
+  height: 137px;
+}
+.line-icon1 {
+  position: absolute;
+  top: 2546px;
+  left: 81px;
+  width: 1291px;
+  height: 4px;
+}
+.biheart-pulse-icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.lorem-ipsum-dolor-sit-amet-co,
+.personal-info-div {
+  align-self: stretch;
+  position: relative;
+  display: inline-block;
+}
+.personal-info-div {
+  font-weight: 500;
+}
+.lorem-ipsum-dolor-sit-amet-co {
+  border: 0;
+  background-color: transparent;
+  font-size: var(--font-size-base);
+  line-height: 155.19%;
+  font-family: var(--font-roboto);
+  color: var(--color-black);
+  text-align: left;
+  height: 111px;
+  flex-shrink: 0;
+}
+
+.clinic-banner-textarea {
+  border: 0;
+  background-color: #d9d9d9;
+  position: relative;
+  width: 261px;
+  height: 165px;
+  flex-shrink: 0;
+}
+.lorem-ipsum-dolor-sit-amet-co3,
+.scan-div {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.scan-div {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  width: 215px;
+  height: 31px;
+}
+.lorem-ipsum-dolor-sit-amet-co3 {
+  line-height: 155.19%;
+  width: 212px;
+  height: 151px;
+}
+.price-span {
+  font-weight: 500;
+}
+.starting-from-price {
+  position: relative;
+  display: inline-block;
+  width: 213px;
+  height: 25px;
+  flex-shrink: 0;
+}
+.clinic-card-div,
+.frame-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.frame-div {
+  align-self: stretch;
+  height: 416px;
+  flex-shrink: 0;
+  gap: var(--gap-md);
+}
+.clinic-card-div {
+  position: absolute;
+  top: 1472px;
+  left: 108px;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  width: 261px;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+.clinic-banner-icon {
+  position: relative;
+  width: 261px;
+  height: 165px;
+  flex-shrink: 0;
+}
+.clinic-card-div1 {
+  top: 1472px;
+  left: 431px;
+}
+.clinic-card-div1,
+.clinic-card-div2,
+.clinic-card-div3 {
+  position: absolute;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  width: 261px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+.clinic-card-div2 {
+  top: 1472px;
+  left: 764px;
+}
+.clinic-card-div3 {
+  top: 1472px;
+  left: 1102px;
+}
+.icon-park-outlineid-card-h {
+  position: absolute;
+  top: 18px;
+  left: 21px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+}
+.personal-info-div3 {
+  position: absolute;
+  top: 84px;
+  left: 21px;
+  font-weight: 500;
+  display: inline-block;
+  width: 136px;
+}
+.lorem-ipsum-dolor-sit-amet-co7 {
+  position: absolute;
+  top: 118px;
+  left: 25px;
+  font-size: var(--font-size-base);
+  line-height: 155.19%;
+  display: inline-block;
+  width: 342px;
+  height: 63px;
+}
+
+.h-i2 {
+  font-family: var(--font-grotley);
+}
+.her-span {
+  color: var(--color-brown-100);
+}
+.scanher-div {
+  position: absolute;
+  top: 71px;
+  left: 113px;
+  font-size: 78px;
+  display: inline-block;
+  width: 330px;
+  height: 79px;
+  color: var(--color-indigo);
+  font-family: var(--font-grotley);
+}
+
+.shine-a-light-on-your-reproduc1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--color-brown-100);
+}
+.blank-line-p4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 7px;
+  font-family: var(--font-syne);
+}
+.search-for-mri-ct-ultrasound {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 20px;
+
+}
+.blank-line-p5 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: var(--font-size-3xl);
+  font-family: var(--font-kanit);
+}
+.shine-a-light-on-your-reproduc {
+  position: absolute;
+  top: 200px;
+  left: 866px;
+  text-align: center;
+  display: inline-block;
+  width: 539px;
+  height: 136px;
+  font-size: 24px;
+  color: var(--color-beige);
+  font-family: var(--font-grotley);
+}
+
+.body-parts-div {
+  left: 883px;
+  color: var(--color-brown-100);
+}
+.body-parts-div,
+.book,
+.postcode-city-or-town,
+.scan-type-div {
+  position: absolute;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-syne);
+  display: flex;
+  align-items: center;
+}
+.postcode-city-or-town,
+.scan-type-div {
+  left: 883px;
+  color: var(--color-brown-100);
+}
+.scan-type-div {
+  top: 367px;
+  width: 516px;
+}
+.body-parts-div,
+.book,
+.postcode-city-or-town {
+  width: 539px;
+}
+.body-parts-div {
+  top: 430px;
+  height: 37px;
+}
+.postcode-city-or-town {
+  top: 509px;
+}
+.book {
+  top: 579px;
+  left: 871px;
+  color: var(--color-beige);
+  text-align: center;
+  justify-content: center;
+}
+.ellipse-icon1 {
+  position: absolute;
+  top: 994px;
+  left: 1052px;
+  width: 460px;
+  height: 374px;
+  object-fit: cover;
+}
+.lorem-ipsum-dolor-sit-amet-co10 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-base);
+  line-height: 155.19%;
+  text-align: left;
+  display: inline-block;
+  height: 111px;
+  flex-shrink: 0;
+}
+
+.symptoms-or-no-symptoms-book {
+  position: absolute;
+  top: 250px;
+  left: 113px;
+  font-size: 20px;
+  font-family: var(--font-syne);
+  color: var(--color-black-300);
+  display: inline-block;
+  width: 611px;
+  height: 102px;
+}
+.homepage-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  box-shadow: 2px 1px 1px rgba(37, 37, 37, 0.15);
+  width: 1512px;
+  height: 3000px;
+  overflow-y: auto;
+}
+.mask-group-div {
+  position: relative;
+  width: 100%;
+  height: 3000px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-roboto);
+}
+.regular-card-icon-top-left {
+  left: 137px;
+}
+.regular-card-icon-top-left,
+.regular-card-icon-top-left1,
+.regular-card-icon-top-left2 {
+  position: absolute;
+  top: 2191px;
+  border-radius: var(--br-sm);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  width: 365px;
+  height: 207px;
+  overflow: hidden;
+}
+.regular-card-icon-top-left1 {
+  left: 542px;
+}
+.regular-card-icon-top-left2 {
+  left: 947px;
+}
