@@ -1,3 +1,3 @@
 class Clinic < ApplicationRecord
-  has_many :exams
+  has_many :exams, dependent: :destroy
 end
