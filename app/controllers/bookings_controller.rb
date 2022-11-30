@@ -4,16 +4,16 @@ require 'time'
 class BookingsController < ApplicationController
   def new
     set_booking
-    @timeslot = Timeslot.find(params[:timeslot_id])
+    # @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new
   end
 
   def create
     set_booking
-    @timeslot = Timeslot.find(params[:timeslot_id])
+    # @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @timeslot = Timeslot.new
+    # @timeslot = Timeslot.new
     if @booking.save
       redirect_to dashboard_path(current_user), notice: "Your booking has been successful!"
     else
@@ -50,7 +50,7 @@ class BookingsController < ApplicationController
   private
 
   def set_booking
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 
   def booking_params
