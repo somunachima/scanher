@@ -8,16 +8,16 @@ class TimeslotsController < ApplicationController
   end
 
   def new
-    @booking = Booking.find(params[:booking_id])
+    @exam = Exam.find(params[:exam_id])
     @timeslot = Timeslot.new
   end
 
   def create
-    @booking = Booking.find(params[:booking_id])
+    @exam = Exam.find(params[:exam_id])
     @timeslot = Timeslot.new(timeslot_params)
-    @timeslot.booking = @booking
+    @timeslot.exam = @exam
     if @timeslot.save
-      redirect_to booking_path(@booking)
+      redirect_to exam_path(@exam)
     else
       render :new, status: :unprocessable_entity
     end
