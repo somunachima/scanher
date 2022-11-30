@@ -1,3 +1,3 @@
 class Result < ApplicationRecord
-  belongs_to :exam, dependent: :destroy
+  belongs_to :booking
 end
