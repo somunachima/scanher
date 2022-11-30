@@ -2,13 +2,13 @@ class ExamsController < ApplicationController
 
   def new
     @clinic = Clinic.find(params[:clinic_id])
-    @service = Service.find(params[:service_id])
+    @service_part = ServicePart.find(params[:service_part_id])
     @exam = Exam.new
   end
 
   def create
     @clinic = Clinic.find(params[:clinic_id])
-    @service = Service.find(params[:service_id])
+    @service_part = Service.find(params[:service_part_id])
     @exam = Exam.new(exam_params)
     @exam.save
   end
@@ -16,6 +16,6 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:price, :clinic_id, :service_id)
+    params.require(:exam).permit(:price, :clinic_id, :service_part_id)
   end
 end
