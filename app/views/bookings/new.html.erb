@@ -1,0 +1,15 @@
+ <h1>Patient details</h1>
+  <%= simple_form_for [@booking] do |f| %>
+    <%= f.text_field :reason %>
+    <%= f.label :previous_exams %>
+    <%= f.check_box :previous_exams %>
+    <%= f.text_field :gp_details %>
+    <%= f.text_field :allergies %>
+    <%= f.label :confirmed %>
+    <%= f.check_box :confirmed %>
+    <%= f.text_field :additional_information %>
+    <%= f.submit %>
+  <% end %>
+
+    <%# <%= f.input :end_at, as: :datetime, html5: true %>
+    <%# <%= link_to "Back to teacher", teacher_path(@teacher) %>
