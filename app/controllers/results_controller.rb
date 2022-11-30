@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+
   def index
     @results = Result.all
   end
@@ -28,4 +29,5 @@ class ResultsController < ApplicationController
   def result_params
     params.require(:result).permit(:details, :date)
   end
+
 end

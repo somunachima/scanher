@@ -13,7 +13,6 @@ class ClinicsController < ApplicationController
 
   def create
     @clinic = Clinic.new(clinic_params)
-    @user = User.new
     @clinic.save
   end
 

@@ -1,4 +1,5 @@
 class TimeslotsController < ApplicationController
+
   def index
     @timeslots = Timeslot.all
   end
@@ -36,6 +37,6 @@ class TimeslotsController < ApplicationController
   private
 
   def timeslot_params
-    params.require(:timeslot).permit(:date, :time)
+    params.require(:timeslot).permit(:date, :time, :exam_id)
   end
 end
