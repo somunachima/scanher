@@ -4,6 +4,9 @@ class ClinicsController < ApplicationController
   def index
     @clinics = Clinic.all
     @exams = Exam.all
+    @exam = Exam.new
+    @timeslot = Timeslot.all
+   
   end
 
   private
@@ -16,8 +19,6 @@ class ClinicsController < ApplicationController
     @clinic = Clinic.new(clinic_params)
     @clinic.save
   end
-
-  private
 
   def clinic_params
     params.require(:clinic).permit(:name, :address)
