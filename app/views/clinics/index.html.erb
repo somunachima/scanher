@@ -6,8 +6,16 @@ Clinic list
   <ul class="list-unstyled">
     <li><%= clinic.name %></li>
     <% clinic.exams.each do |exam| %>
-      <%= exam.price %>
+      Price: <%= exam.price %>
+      <%= exam.service_part.service.name %>
+      <%= exam.service_part.body_part.name %>
+      <% exam.timeslots.each do |time| %>
+      <li><%= time.date.to_formatted_s(:short) %></li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>
+
+
+
 </div>
