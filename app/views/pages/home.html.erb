@@ -1,4 +1,4 @@
-<div class="mask-group-div">
+<div class="mask-group-div" data-controller="collections">
   <div class="homepage-div">
   <%= image_tag "1background.png"%>
 
@@ -156,7 +156,15 @@
       Three appointments wrapped up into one, easy-to-use platform with
       dedicated guidance.
     </div>
+
+
     <div class="scan-type-div">Scan type</div>
+    <%= simple_form_for @exam do |f| %>
+      <%= f.input :service, collection: Exam::SERVICE %>
+      <%# <%= f.input :body_part, collection: Exam::BODY_PART %> %>
+      <%= f.association :service, input_html: { data: { action: 'change->body-part#updateInput '} } %>
+      <%= f.submit "Add Timeslot", class: "btn btn-primary" %>
+    <% end %>
     <div class="body-parts-div">Body part(s)</div>
     <div class="postcode-city-or-town">Postcode, city or town</div>
     <div class="symptoms-or-no-symptoms-book">Symptoms or no symptoms, book a scan that’s right for you and get to know you, like never before. Get the full picture and peace of mind,with direct access to our dedicated expert clinical team.
@@ -169,7 +177,6 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 <img src="app/assets/images/scanHer.png" alt="" style="width:400px;height:100px;"/>
 <%= link_to "See all Clinics", clinics_path %>
-
 
 
 
@@ -202,4 +209,3 @@
     });
   }
   </script>
-

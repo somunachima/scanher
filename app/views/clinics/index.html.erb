@@ -4,18 +4,21 @@ Clinic list
 <% @clinics.each do |clinic| %>
 <div>
   <ul class="list-unstyled">
-    <li><%= clinic.name %></li>
-    <% clinic.exams.each do |exam| %>
-      Price: <%= exam.price %>
-      <%= exam.service_part.service.name %>
-      <%= exam.service_part.body_part.name %>
-      <% exam.timeslots.each do |time| %>
-      <li><%= time.date.to_formatted_s(:short) %></li>
+   Name:<%= clinic.name %>
+   Address:<%= clinic.address %>
+   <% clinic.exams.each do |exam| %>
+   <%= exam.service %>
+   <%= exam.body_part %>
+  </ul>
+    Price:<%= exam.price %>
+  <ul>
+     Times:<% exam.timeslots.each do |timeslot| %>
+
+        <%= timeslot.date.strftime('%a %d %b %H:%M') %>
       <% end %>
     <% end %>
   </ul>
+
+  </ul>
 <% end %>
-
-
-
 </div>
