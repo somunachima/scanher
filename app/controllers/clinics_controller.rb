@@ -6,7 +6,12 @@ class ClinicsController < ApplicationController
     @exams = Exam.all
     @exam = Exam.new
     @timeslot = Timeslot.all
-   
+    @markers = @clinics.geocoded.map do |clinic|
+      {
+        lat: clinic.latitude,
+        lng: clinic.longitude
+      }
+    end
   end
 
   private
