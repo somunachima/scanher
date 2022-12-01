@@ -158,6 +158,13 @@
     </div>
 
 
+    <%# <%= simple_form_for @ do |f| %>
+    <%# <%= f.collection Service.all %>
+    <%# <%= f.collection BodyPart.all %>
+    <%# <% end %> 
+
+
+
     <div class="scan-type-div">Scan type</div>
     <%= simple_form_for @exam do |f| %>
       <%= f.input :service, collection: Exam::SERVICE %>

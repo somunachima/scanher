@@ -1,15 +1,33 @@
- <h1>Patient details</h1>
+ <h2><strong>Safety Questions</strong></h2>
   <%= simple_form_for [@booking] do |f| %>
-    <%= f.text_field :reason %>
-    <%= f.label :previous_exams %>
+    <p> What's the reason for your scan? </p>
+    <%= f.input :reason %>
+    <p>
+    Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
+    </p>
+
+  <h6><strong>Documents (optional)</strong></h6>
+    <p>These aren't required for your referral, but any previous imaging or other relevant documentation can be helpful to the clinician when discussing your referral.
+    </p>
+
+    <h6><strong>Have you had any previous surgery or imaging?</strong></h6>
+    <%# <%= f.check_box :responding, {}, 'Yes','No' %>
+    <p>
+    If yes, please provide additional details of the procedure in the additional information box below.
+    </p>
     <%= f.check_box :previous_exams %>
-    <%= f.text_field :gp_details %>
-    <%= f.text_field :allergies %>
-    <%= f.label :confirmed %>
-    <%= f.check_box :confirmed %>
-    <%= f.text_field :additional_information %>
+    <h6><strong>Please share any allergies you have?</strong></h6>
+    <%= f.input :allergies %>
+    <p>
+    If yes, please provide additional details of the procedure in the additional information box below.
+    </p>
+    <%= f.input :gp_details %>
+    <%= f.label :previous_exams %>
+    <%= f.input :additional_information %>
     <%= f.submit %>
   <% end %>
 
+    <%# <%= f.label :confirmed %>
     <%# <%= f.input :end_at, as: :datetime, html5: true %>
     <%# <%= link_to "Back to teacher", teacher_path(@teacher) %>
+    <%# <%= f.check_box :confirmed %>
