@@ -7,9 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Booking.destroy_all
-BodyPart.destroy_all
-Service.destroy_all
-ServicePart.destroy_all
 Exam.destroy_all
 Clinic.destroy_all
 Timeslot.destroy_all
@@ -23,73 +20,75 @@ securiscan = Clinic.create(name: "SecuriScan", address: "23 Haggerston Road")
 
 
 # !MRI SEED FILES
-mri = Service.create(name: "MRI")
-  head = BodyPart.create(name: "Brain/Head")
-    mri_head = ServicePart.create(service: mri, body_part: head)
-  rleg = BodyPart.create(name: "Leg - Right")
-    mri_rleg = ServicePart.create(service: mri, body_part: rleg)
-  lleg = BodyPart.create(name: "Leg - Left")
-    mri_lleg = ServicePart.create(service: mri, body_part: lleg)
-  rhip = BodyPart.create(name: "Hip - Right")
-    mri_rhip = ServicePart.create(service: mri, body_part: rhip)
-  lhip = BodyPart.create(name: "Hip - Left")
-    mri_lhip = ServicePart.create(service: mri, body_part: lhip)
-  bhip = BodyPart.create(name: "Hip - Bilateral")
-    mri_bhip = ServicePart.create(service: mri, body_part: bhip)
-  rarm = BodyPart.create(name: "Arm - Right")
-    mri_rarm = ServicePart.create(service: mri, body_part: rarm)
-  larm = BodyPart.create(name: "Arm - Left")
-    mri_larm = ServicePart.create(service: mri, body_part: larm)
-  rknee = BodyPart.create(name: "Knee - Right")
-    mri_rknee = ServicePart.create(service: mri, body_part: rknee)
-  lknee = BodyPart.create(name: "Knee - Left")
-    mri_lknee = ServicePart.create(service: mri, body_part: lknee)
-  lower_back = BodyPart.create(name: "Lower Back")
-    mri_lower_back = ServicePart.create(service: mri, body_part: lower_back)
-  upper_back = BodyPart.create(name: "Upper Back")
-    mri_upper_back = ServicePart.create(service: mri, body_part: upper_back)
+# mri = Service.create(name: "MRI")
+#   head = BodyPart.create(name: "Brain/Head")
+#     mri_head = ServicePart.create(service: mri, body_part: head)
+#   rleg = BodyPart.create(name: "Leg - Right")
+#     mri_rleg = ServicePart.create(service: mri, body_part: rleg)
+#   lleg = BodyPart.create(name: "Leg - Left")
+#     mri_lleg = ServicePart.create(service: mri, body_part: lleg)
+#   rhip = BodyPart.create(name: "Hip - Right")
+#     mri_rhip = ServicePart.create(service: mri, body_part: rhip)
+#   lhip = BodyPart.create(name: "Hip - Left")
+#     mri_lhip = ServicePart.create(service: mri, body_part: lhip)
+#   bhip = BodyPart.create(name: "Hip - Bilateral")
+#     mri_bhip = ServicePart.create(service: mri, body_part: bhip)
+#   rarm = BodyPart.create(name: "Arm - Right")
+#     mri_rarm = ServicePart.create(service: mri, body_part: rarm)
+#   larm = BodyPart.create(name: "Arm - Left")
+#     mri_larm = ServicePart.create(service: mri, body_part: larm)
+#   rknee = BodyPart.create(name: "Knee - Right")
+#     mri_rknee = ServicePart.create(service: mri, body_part: rknee)
+#   lknee = BodyPart.create(name: "Knee - Left")
+#     mri_lknee = ServicePart.create(service: mri, body_part: lknee)
+#   lower_back = BodyPart.create(name: "Lower Back")
+#     mri_lower_back = ServicePart.create(service: mri, body_part: lower_back)
+#   upper_back = BodyPart.create(name: "Upper Back")
+#     mri_upper_back = ServicePart.create(service: mri, body_part: upper_back)
 
 # !ULTRASOUND SEED FILES
-uss = Service.create(name: "Ultrasound")
-  uss_head = ServicePart.create(service: uss, body_part: head)
-  uss_rleg = ServicePart.create(service: uss, body_part: rleg)
-  uss_lleg = ServicePart.create(service: uss, body_part: lleg)
-  uss_rhip = ServicePart.create(service: uss, body_part: rhip)
-  uss_lhip = ServicePart.create(service: uss, body_part: lhip)
-  uss_bhip = ServicePart.create(service: uss, body_part: bhip)
-  uss_rarm = ServicePart.create(service: uss, body_part: rarm)
-  uss_larm = ServicePart.create(service: uss, body_part: larm)
-  uss_rknee = ServicePart.create(service: uss, body_part: rknee)
-  uss_lknee = ServicePart.create(service: uss, body_part: lknee)
+# uss = Service.create(name: "Ultrasound")
+#   uss_head = ServicePart.create(service: uss, body_part: head)
+#   uss_rleg = ServicePart.create(service: uss, body_part: rleg)
+#   uss_lleg = ServicePart.create(service: uss, body_part: lleg)
+#   uss_rhip = ServicePart.create(service: uss, body_part: rhip)
+#   uss_lhip = ServicePart.create(service: uss, body_part: lhip)
+#   uss_bhip = ServicePart.create(service: uss, body_part: bhip)
+#   uss_rarm = ServicePart.create(service: uss, body_part: rarm)
+#   uss_larm = ServicePart.create(service: uss, body_part: larm)
+#   uss_rknee = ServicePart.create(service: uss, body_part: rknee)
+#   uss_lknee = ServicePart.create(service: uss, body_part: lknee)
 
 # !PREGNANCY SEED FILES
-Service.create(name: "Pregnancy")
+# Service.create(name: "Pregnancy")
 
 # !BONE DENSITY SCANS
-Service.create(name: "Bone Density")
+# Service.create(name: "Bone Density")
 
 # !ECG
-Service.create(name: "ECG")
+# Service.create(name: "ECG")
 
 # !CT
-Service.create(name: "CT")
+# Service.create(name: "CT")
 
+service_mri = ["MRI", "Ultrasound Scan"]
+service_pregnancy = "Pregnancy"
 # !EXAM SEED FILES
-hoxton_mri_head = Exam.create(clinic: hoxton, service_part: mri_head, price: 300)
-hoxton_mri_bhip = Exam.create(clinic: hoxton, service_part: mri_bhip, price: 220)
-hoxton_uss_head = Exam.create(clinic: hoxton, service_part: uss_head, price: 200)
-lewagon_mri_head = Exam.create(clinic: lewagon, service_part: mri_head, price: 290)
-lewagon_mri_bhip = Exam.create(clinic: lewagon, service_part: mri_bhip, price: 400)
-lewagon_uss_head = Exam.create(clinic: lewagon, service_part: uss_head, price: 320)
-safe_zone_mri_head = Exam.create(clinic: safe_zone, service_part: mri_head, price: 350)
-safe_zone_mri_bhip = Exam.create(clinic: safe_zone, service_part: mri_bhip, price: 500)
-safe_zone_uss_head = Exam.create(clinic: safe_zone, service_part: uss_head, price: 300)
-jared_scans_mri_head = Exam.create(clinic: jared_scans, service_part: mri_head, price: 10)
-jared_scans_mri_bhip = Exam.create(clinic: jared_scans, service_part: mri_bhip, price: 45)
-jared_scans_uss_head = Exam.create(clinic: jared_scans, service_part: uss_head, price: 70)
-securiscan_mri_head = Exam.create(clinic: securiscan, service_part: mri_head, price: 600)
-securiscan_mri_bhip = Exam.create(clinic: securiscan, service_part: mri_bhip, price: 900)
-securiscan_uss_head = Exam.create(clinic: securiscan, service_part: uss_head, price: 450)
+hoxton_mri_head = Exam.create(clinic: hoxton, service: "MRI", body_part: "Head", price: 300)
+hoxton_mri_bhip = Exam.create(clinic: hoxton, service: "MRI", body_part: , price: 220)
+hoxton_uss_head = Exam.create(clinic: hoxton, service: uss_head, body_part: , price: 200)
+lewagon_mri_head = Exam.create(clinic: lewagon, service: "MRI", body_part: , price: 290)
+lewagon_mri_bhip = Exam.create(clinic: lewagon, service: "MRI", body_part: , price: 400)
+lewagon_uss_head = Exam.create(clinic: lewagon, service: uss_head, body_part: , price: 320)
+safe_zone_mri_head = Exam.create(clinic: safe_zone, service: "MRI", body_part: , price: 350)
+safe_zone_mri_bhip = Exam.create(clinic: safe_zone, service: "MRI", body_part: , price: 500)
+safe_zone_uss_head = Exam.create(clinic: safe_zone, service: uss_head, body_part: , price: 300)
+jared_scans_mri_head = Exam.create(clinic: jared_scans, service: "MRI", body_part: , price: 10)
+jared_scans_mri_bhip = Exam.create(clinic: jared_scans, service: "MRI", body_part: , price: 45)
+jared_scans_uss_head = Exam.create(clinic: jared_scans, service: uss_head, body_part: , price: 70)
+securiscan_mri_head = Exam.create(clinic: securiscan, service: "MRI", body_part: , price: 600)
+securiscan_mri_bhip = Exam.create(clinic: securiscan, service: "MRI", body_part: , price: 900)
+securiscan_uss_head = Exam.create(clinic: securiscan, service: uss_head, body_part: , price: 450)
 
 # !TIMESLOTS
 Timeslot.create(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 9, 0, 0))

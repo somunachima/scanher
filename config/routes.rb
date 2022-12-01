@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resources :clinics, only: [ :index, :new, :create ] do
-    resources :exams, only: [ :new, :create ]
-  end
+  resources :clinics, only: [ :index, :new, :create ]
+  
 
-  resources :exams, only: [ ] do
+  resources :exams do
     resources :timeslots, only: [ :new, :create, :edit, :update ]
   end
 
