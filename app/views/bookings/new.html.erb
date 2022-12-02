@@ -1,16 +1,11 @@
 <div class="container">
  <h2><strong>Safety Questions</strong></h2>
 
-  <%= simple_form_for [ @clinic, @exam, @timeslot, @booking] do |f| %>
-    <p> What's the reason for your scan? </p>
-    <%= f.input :reason %>
-    <p>
-    Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
-    </p>
+  <%= simple_form_for [ @timeslot, @booking] do |f| %>
 
   <div class="reason_card">
     <h6><strong> What's the reason for your scan? </strong></h6>
-    <%= f.input :reason, wrapper_html: {class: "What's the reason for your scan?"} %>
+    <%= f.input :reason %>
       <p>
       Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
       </p>
@@ -48,6 +43,7 @@
   </div>
 
     <%= f.submit "Submit" %>
+
   <% end %>
 </div>
 
