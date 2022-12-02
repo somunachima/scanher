@@ -5,6 +5,7 @@ class ExamsController < ApplicationController
     @timeslot = Timeslot.find(params[:timeslot_id])
     @service_part = ServicePart.find(params[:service_part_id])
     @exam = Exam.new
+
   end
 
   def create
@@ -13,6 +14,7 @@ class ExamsController < ApplicationController
     @service_part = Service.find(params[:service_part_id])
     @exam = Exam.new(exam_params)
     @exam.save
+    
   end
 
   private
