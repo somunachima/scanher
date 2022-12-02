@@ -3,15 +3,18 @@
   <%= image_tag "1background.png"%>
 
 
-    <div class="rectangle-div"></div>
-    <div class="rectangle-div1"></div>
-    <div class="rectangle-div2"></div>
-    <p class="rectangle-icon" alt="" src="public/rectangle-12.svg">
-      <button type="button" style="width: 542px; background-color:#ED646E; border-radius: 30px;"class="btn btn-primary btn-lg btn-block">something</button>
-    </p>
+    <div class="form-home">
+      <%= simple_form_for @exam do |f| %>
+            <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
+            <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
+
+            <%= f.submit "Book Now", class: "btn btn-primary btn-lg btn-block", style: "width: 542px; background-color:#ED646E; border-radius: 30px;" %>
+          <% end %>
+    </div>
+
             <div class="where-women-can-get-answers-in">
       <h1 id="logo-home">scan<i style="color: #515ae9";><strong>Her.</i></strong></h1>
-      <h3 class="where-women-can-get-answers-in1">Where women can get answers in days not years</h2>
+      <h3 class="subtitle-home">Where women can get answers in days not years</h2>
 
       <p class="blank-line-p">
         <span><span>&nbsp;</span></span>
@@ -139,9 +142,8 @@
 
     <div class="shine-a-light-on-your-reproduc">
       <p class="shine-a-light-on-your-reproduc1">
-        <span
-          ><span>Shine a light on your reproductive health</span
-          ><span class="span"> </span></span>
+        <span><span>Shine a light on your reproductive health</span>
+        <span class="span"> </span></span>
       </p>
       <p class="blank-line-p4">
         <span><span>&nbsp;</span></span>
@@ -157,26 +159,15 @@
       dedicated guidance.
     </div>
 
-    <div class="scan-type-div">Scan type</div>
-    <div class="body-parts-div">Body part(s)</div>
-    <div class="postcode-city-or-town">Postcode, city or town</div>
+
     <div class="symptoms-or-no-symptoms-book">Symptoms or no symptoms, book a scan that’s right for you and get to know you, like never before. Get the full picture and peace of mind,with direct access to our dedicated expert clinical team.
     </div>
   </div>
 </div>
 
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<img src="app/assets/images/scanHer.png" alt="" style="width:400px;height:100px;"/>
-<%= link_to "See all Clinics", clinics_path %>
 
-    <%= simple_form_for @exam do |f| %>
-      <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
-      <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
 
-      <%= f.submit "Add Timeslot", class: "btn btn-primary" %>
-    <% end %>
 
 
 
