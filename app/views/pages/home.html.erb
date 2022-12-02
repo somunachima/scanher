@@ -1,20 +1,20 @@
 <div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
   <div class="homepage-div">
-  <%= image_tag "1background.png"%>
+  <%= image_tag "background1.png"%>
 
 
     <div class="form-home">
       <%= simple_form_for @exam do |f| %>
-            <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
-            <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
+        <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
+        <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
 
-            <%= f.submit "Book Now", class: "btn btn-primary btn-lg btn-block", style: "width: 542px; background-color:#ED646E; border-radius: 30px;" %>
-          <% end %>
+        <%= f.submit "Book Now", class: "btn btn-primary btn-lg btn-block", style: "width: 542px; background-color:#ED646E; border-radius: 30px;" %>
+      <% end %>
     </div>
 
             <div class="where-women-can-get-answers-in">
-      <h1 id="logo-home">scan<i style="color: #515ae9";><strong>Her.</i></strong></h1>
-      <h3 class="subtitle-home">Where women can get answers in days not years</h2>
+      <h1 id="logo-home"><strong>scan</strong><i style="color: #A19DFF";><strong>Her.</i></strong></h1>
+      <h3 class="subtitle-home"><strong>Where women can get answers in days not years</strong></h2>
 
       <p class="blank-line-p">
         <span><span>&nbsp;</span></span>
@@ -41,42 +41,43 @@
       <div class="regular-card-top-centre-icon">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse.svg"/>
         <div class="personal-info-div">Step 2</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </textarea>
+        <textarea class="lorem-ipsum-dolor-sit-amet-co">Confirm your booking with your selected clinic. </textarea>
       </div>
 
 
       <div class="regular-card-top-centre-icon1">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse1.svg"/>
         <div class="personal-info-div">Step 1</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </textarea>
+        <textarea class="lorem-ipsum-dolor-sit-amet-co">Select and book your scan for referral </textarea>
       </div>
 
       <div class="regular-card-top-centre-icon2">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse2.svg"/>
         <div class="personal-info-div">Step 3</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </textarea>
+        <textarea class="lorem-ipsum-dolor-sit-amet-co">Attend the Clinic for your booked appointment. </textarea>
       </div>
 
       <div class="regular-card-top-centre-icon3">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse.svg"/>
         <div class="personal-info-div">Step 4</div>
         <div class="lorem-ipsum-dolor-sit-amet-co10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Receive your results on your dashboard!
         </div>
       </div>
 
     </div>
     <div class="clinic-card-div" id="clinicCardContainer">
       <div class="frame-div">
-        <textarea class="clinic-banner-textarea"></textarea>
-        <div class="scan-div">Scan</div>
+        <img
+          class="clinic-banner-icon"
+          alt=""
+          src="https://d4j2i6ubvolvu.cloudfront.net/sites/default/files/thumbnails/image/Photograph-of-a-MRI.png"/>
+        <div class="scan-div"><a href="https://www.nhs.uk/conditions/mri-scan/" target="_blank">MRI</a></div>
         <div class="lorem-ipsum-dolor-sit-amet-co3">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Magnetic Resonance Imaging uses strong magnetic fields and radio waves to produce detailed images of the inside of the body.
         </div>
         <div class="starting-from-price">
-          <span>Starting from</span><span class="price-span"> ${price}</span>
+          <span>Starting from</span><span class="price-span"> £300</span>
         </div>
       </div>
     </div>
@@ -85,33 +86,34 @@
         <img
           class="clinic-banner-icon"
           alt=""
-          src="public/clinic-banner.svg"/>
-        <div class="scan-div">Scan</div>
-        <div class="lorem-ipsum-dolor-sit-amet-co3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          src="https://healthshare.org.uk/wp-content/uploads/2022/04/AdobeStock_277600458-1024x683-1.jpeg"/>
+        <div class="scan-div"><a href="https://www.nhs.uk/conditions/ultrasound-scan/" target="_blank">Ultrasound Scan</a></div>
+        <div class="lorem-ipsum-dolor-sit-amet-co3">A procedure that uses high-frequency sound waves to create an image of part of the inside of the body.
         </div>
         <div class="starting-from-price">
-          <span>Starting from</span><span class="price-span"> ${price}</span>
+          <span>Starting from</span><span class="price-span"> £180 </span>
         </div>
       </div>
     </div>
     <div class="clinic-card-div2" id="clinicCardContainer2">
       <div class="frame-div">
-        <div class="scan-div">Scan</div>
-        <div class="lorem-ipsum-dolor-sit-amet-co3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <img class="clinic-banner-icon"alt="" src="https://eydtc7x2iep.exactdn.com/wp-content/uploads/MRI-Photo-4.jpg?strip=all&lossy=1&fit=1400%2C737&ssl=1"/>
+        <div class="scan-div"><a href="https://www.nhs.uk/conditions/ct-scan/" target="_blank">CT Scan</a></div>
+        <div class="lorem-ipsum-dolor-sit-amet-co3">A computerised tomography (CT) scan uses X-rays and a computer to create detailed images of the inside of the body.
         </div>
         <div class="starting-from-price">
-          <span>Starting from</span><span class="price-span"> ${price}</span>
+          <span>Starting from</span><span class="price-span"> £350</span>
         </div>
       </div>
     </div>
     <div class="clinic-card-div3" id="clinicCardContainer3">
       <div class="frame-div">
-        <img class="clinic-banner-icon"alt="" src="public/clinic-banner.svg"/>
-        <div class="scan-div">Scan</div>
-        <div class="lorem-ipsum-dolor-sit-amet-co3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <img class="clinic-banner-icon"alt="" src="https://www.babycentre.co.uk/ims/2014/05/457097703_wide.jpg"/>
+        <div class="scan-div"><a href="https://www.nhs.uk/pregnancy/your-pregnancy-care/ultrasound-scans/" target="_blank">Pregnancy Scans</a></div>
+        <div class="lorem-ipsum-dolor-sit-amet-co3">Ultrasound scans use sound waves to build a picture of the baby in the womb. The scans are painless, and can be carried out at any stage of pregnancy.
         </div>
         <div class="starting-from-price">
-          <span>Starting from</span><span class="price-span"> ${price}</span>
+          <span>Starting from</span><span class="price-span"> £120 </span>
         </div>
       </div>
     </div>
@@ -142,7 +144,7 @@
 
     <div class="shine-a-light-on-your-reproduc">
       <p class="shine-a-light-on-your-reproduc1">
-        <span><span>Shine a light on your reproductive health</span>
+        <span><span><strong>Shine a light on your reproductive health</strong></span>
         <span class="span"> </span></span>
       </p>
       <p class="blank-line-p4">

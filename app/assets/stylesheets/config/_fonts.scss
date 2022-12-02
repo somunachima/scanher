@@ -1,14 +1,14 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.google.com/specimen/Syne?query=syne');
 @font-face {
-  font-family: "Grotley";
-  src: url("public/Grotley-Regular.ttf");
+  font-family: "Syne";
+  src: url("public/Syne-VariableFont_wght.ttf");
   font-weight: 400;
 }
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Syne";
+$headers-font: "Syne";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
