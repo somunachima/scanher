@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :timeslots, only: [] do
-    resources :bookings, only: [ :new, :create ]
+    resources :bookings, only: [ :new, :create, :show ]
   end
 
   resources :bookings, only: [ :edit, :update, :destroy ] do

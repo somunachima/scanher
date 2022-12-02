@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     # @timeslot = Timeslot.new
     if @booking.save
-      redirect_to dashboard_path(current_user), notice: "Your booking has been successful!"
+      redirect_to timeslot_booking_path(current_user), notice: "Your booking has been successful!"
     else
       render template: "bookings/show", status: :unprocessable_entity
     end
