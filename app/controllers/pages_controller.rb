@@ -5,10 +5,10 @@ class PagesController < ApplicationController
     @exam = Exam.new
     @body_part_services = {}
     @body_parts = Exam.all.pluck(:body_part).uniq
-    p @body_parts
+    # p @body_parts
     @body_parts.each do |bp|
       @body_part_services[bp] = Exam.where(body_part: bp).pluck(:service)
-      p @body_part_services
+      # p @body_part_services
     end
     # !USE MAPBOX STYLE OF FINDING MARKERS TO FIND THE SERVICE TYPE PER SELECTED BODY PART
   end
