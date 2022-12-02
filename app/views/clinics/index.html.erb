@@ -10,8 +10,7 @@
                 <h3><strong><li><%= clinic.name %></li></strong></h3>
                 <% clinic.exams.each do |exam| %>
                   <div class="flex-container">
-                    <%= exam.service_part.service.name %>
-                    <%= exam.service_part.body_part.name %>
+
                   </div>
 
                   <div class="flex-container">
@@ -40,4 +39,3 @@
       </div>
     </div>
   </div>
-
