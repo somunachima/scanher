@@ -1,5 +1,5 @@
  <h2><strong>Safety Questions</strong></h2>
-  <%= simple_form_for [@booking] do |f| %>
+  <%= simple_form_for [ @clinic, @exam, @timeslot, @booking] do |f| %>
     <p> What's the reason for your scan? </p>
     <%= f.input :reason %>
     <p>

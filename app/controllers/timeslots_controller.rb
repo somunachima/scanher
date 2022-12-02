@@ -1,10 +1,12 @@
 class TimeslotsController < ApplicationController
 
   def index
+    @exams = Exam.all
     @timeslots = Timeslot.all
   end
 
   def show
+    @exam = Exam.find(params[:exam_id])
     @timeslot = Timeslot.find(params[:id])
   end
 
