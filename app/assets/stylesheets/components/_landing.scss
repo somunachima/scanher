@@ -46,12 +46,8 @@ body {
   height: 572px;
   object-fit: cover;
 }
-.rectangle-div,
-.rectangle-div1 {
-  border-radius: var(--br-md);
-  background-color: var(--color-gray-200);
-}
-.rectangle-div {
+
+.form-home {
   position: absolute;
   top: 353px;
   left: 865px;
@@ -79,7 +75,7 @@ body {
   border-radius: 30px;
 }
 .blank-line-p,
-.where-women-can-get-answers-in1 {
+.subtitle-home {
   margin-block-start: 0;
   margin-block-end: 0;
 }
@@ -559,4 +555,15 @@ body {
 }
 .regular-card-icon-top-left2 {
   left: 947px;
+}
+
+.btn-form{
+  width: 542px;
+  background-color: #ED646E;
+  border-radius: 30px;
+  color: var(--bs-btn-color);
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-font-size: 1.25rem;
+  --bs-btn-border-radius: 2px;
 }

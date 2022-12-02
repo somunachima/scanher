@@ -5,14 +5,17 @@ Rails.application.routes.draw do
 
 
   resources :clinics, only: [ :index, :new, :create ]
-  
+
 
   resources :exams do
     resources :timeslots, only: [ :new, :create, :edit, :update ]
   end
 
+  resources :timeslots, only: [] do
+    resources :bookings, only: [ :new, :create ]
+  end
 
-  resources :bookings, except: [ :edit, :update ] do
+  resources :bookings, only: [ :edit, :update, :destroy ] do
     resources :results, only: [ :create ]
   end
 
