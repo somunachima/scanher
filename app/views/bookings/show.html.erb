@@ -1,8 +1,8 @@
 <p><strong>Payment details</strong></p>
 <ul class="list-unstyled">
     <li><strong>Booking Summary:</strong></li>
-    <li><%= @timeslot.exam.clinic.name  %> </li>
-    <li><%= @timeslot.exam.clinic.address  %> </li>
+    <li>Clinic:<%= @timeslot.exam.clinic.name  %> </li>
+    <li>Location:<%= @timeslot.exam.clinic.address  %> </li>
     <li>Reason:<%= @booking.reason %></li>
     <li>Previous Exams?<%= @booking.previous_exams %></li>
     <li>GP Details: <%= @booking.gp_details %></li>
