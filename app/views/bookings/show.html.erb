@@ -1,8 +1,20 @@
 <p><strong>Payment details</strong></p>
-<ul>
-  <% @booking.each do |booking| %>
-    <li><%= link_to dashboard_path(current_user) %></li>
-    <li><%= booking.last %></li>
-  <% end %>
+<ul class="list-unstyled">
+    <li><strong>Booking Summary:</strong></li>
+    <li>Reason:<%= @booking.reason %></li>
+    <li>Previous Exams?<%= @booking.previous_exams %></li>
+    <li>GP Details: <%= @booking.gp_details %></li>
+    <li>Allergies:<%= @booking.allergies %></li>
+    <li>Addtional Information:<%= @booking.additional_information %></li>
+    <li>Date: <%= @timeslot.date.to_formatted_s(:short) %></li>
+
+    <%= link_to(
+      "Confirm Booking",
+      dashboard_path(current_user),
+      class: "btn btn-secondary"
+    ) %>
+
+
+
 </ul>
 <br>

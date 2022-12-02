@@ -9,7 +9,8 @@ class PagesController < ApplicationController
     @body_parts.each do |bp|
       @body_part_services[bp] = Exam.where(body_part: bp).pluck(:service)
       # p @body_part_services
-    end
+      end
+
     # !USE MAPBOX STYLE OF FINDING MARKERS TO FIND THE SERVICE TYPE PER SELECTED BODY PART
   end
 end

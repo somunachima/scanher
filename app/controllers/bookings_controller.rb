@@ -4,13 +4,13 @@ require 'time'
 class BookingsController < ApplicationController
   def new
     set_booking
-    # @timeslot = Timeslot.find(params[:timeslot_id])
+    @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new
   end
 
   def create
     set_booking
-    # @timeslot = Timeslot.find(params[:timeslot_id])
+    @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     # @timeslot = Timeslot.new
@@ -22,6 +22,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.find(params[:id])
   end
 
@@ -54,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :allergies, :confirmed, :additional_information)
+    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :allergies, :confirmed, :additional_information, :timeslot_id, :user_id)
   end
 end
