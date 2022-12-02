@@ -1,4 +1,6 @@
+<div class="container">
  <h2><strong>Safety Questions</strong></h2>
+
   <%= simple_form_for [ @clinic, @exam, @timeslot, @booking] do |f| %>
     <p> What's the reason for your scan? </p>
     <%= f.input :reason %>
@@ -6,27 +8,50 @@
     Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
     </p>
 
+  <div class="reason_card">
+    <h6><strong> What's the reason for your scan? </strong></h6>
+    <%= f.input :reason, wrapper_html: {class: "What's the reason for your scan?"} %>
+      <p>
+      Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
+      </p>
+  </div>
+
+  <div class="documents_card">
   <h6><strong>Documents (optional)</strong></h6>
     <p>These aren't required for your referral, but any previous imaging or other relevant documentation can be helpful to the clinician when discussing your referral.
     </p>
+  </div>
 
+  <div class="surgery_card">
     <h6><strong>Have you had any previous surgery or imaging?</strong></h6>
-    <%# <%= f.check_box :responding, {}, 'Yes','No' %>
+    <%= f.collection_radio_buttons :previous_exams, [[true, 'Yes'], [false, 'No']], :first, :last %>
     <p>
     If yes, please provide additional details of the procedure in the additional information box below.
     </p>
-    <%= f.check_box :previous_exams %>
-    <h6><strong>Please share any allergies you have?</strong></h6>
-    <%= f.input :allergies %>
-    <p>
-    If yes, please provide additional details of the procedure in the additional information box below.
-    </p>
-    <%= f.input :gp_details %>
-    <%= f.label :previous_exams %>
-    <%= f.input :additional_information %>
-    <%= f.submit %>
-  <% end %>
+  </div>
 
+  <div class="allergies_card">
+    <strong><%= f.input :allergies %></strong>
+      <p>Please share any allergies you have.</p>
+  </div>
+
+  <div class="gp_card">
+    <strong><%= f.input :gp_details %></strong>
+      <p>Please share you GP name and address.</p>
+  </div>
+
+  <div class="additional_info">
+    <strong><%= f.input :additional_information %></strong>
+    <p>
+    Please share further information about any medications you are currently taking and any medical conditions you have.
+    </p>
+  </div>
+
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>
+
+    <%# <%= f.label :previous_exams %>
     <%# <%= f.label :confirmed %>
     <%# <%= f.input :end_at, as: :datetime, html5: true %>
     <%# <%= link_to "Back to teacher", teacher_path(@teacher) %>
