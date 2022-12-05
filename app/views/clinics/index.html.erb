@@ -18,17 +18,20 @@
                     <li class="mt-2"><strong> Price: £<%= exam.price %></strong></li>
                   </ul>
 
-
-
-                  <div class="flex-container mp-1">
+                <div class="buttons">
+                  <div class="config-button">
+                  <div class="flex-container mb-2">
                     <% exam.timeslots.each do |timeslot| %>
-                      <%= link_to(
-                        timeslot.date.to_formatted_s(:short),
-                        new_timeslot_booking_path(timeslot),
-                        class: "btn effect04 mb-2"
-                      ) %>
+                      <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-2" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
 
                     <% end %>
+                  </div>
+                </div>
+                      <%# <%= link_to(
+                        timeslot.date.to_formatted_s(:short),
+                        new_timeslot_booking_path(timeslot),
+                      ) %>
+
             </div>
             <div class="col-6 p-0">
               <div class="" style="background-image: url(<%= asset_path 'clinic.jpeg' %>); height: 100%; width: 100%; object-fit: cover;"></div>
