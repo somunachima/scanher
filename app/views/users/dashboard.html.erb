@@ -4,7 +4,7 @@
   <div class="dashboard-left">
     <div class="dashboard-profile">
       <div class="profile-left">
-      <h3 id="dashboard-subs"><strong>Profile</strong></h3>
+        <h3 id="dashboard-subs"><strong>Profile</strong></h3>
         <h6><strong><%= @current_user.full_name %></strong><h6>
         <%= @current_user.address %><br>
         <%= @current_user.email %><br>
@@ -13,7 +13,7 @@
       </div>
 
       <div class="next-booking">
-        <h3 id="dashboard-subs"><strong>Next Bookings</strong></h3>
+        <h3 id="dashboard-subs"><strong>Bookings</strong></h3>
 
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -28,42 +28,31 @@
               </div>
             </div>
             <% end %>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+          </div>
         </div>
-
       </div>
     </div>
 
-    <div class="chatroom-advice">
+    <div class="video-advice">
       <div class="advice">
         <h3 id="dashboard-subs"><strong>Advice</strong></h3>
-      </div>
-
-      <div class="chatroom">
-        <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
   <div class="dashboard-right">
-    <div class="bookings-profile">
-        <h3 id="dashboard-subs"><strong>Previous Bookings</strong></h3>
-         <div class="bookings-card">
-          <% current_user.bookings.each do |booking| %>
-              <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
-              <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
-              <%= booking.timeslot.exam.clinic.address %> <br>
-              <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-              £<%= booking.timeslot.exam.price %> <br>
-          <% end %>
-        </div>
+    <div class="chatroom">
+        <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
+
 
     </div>
   </div>

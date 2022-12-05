@@ -32,22 +32,28 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 9px;
     padding: 20px;
-    margin: 0 auto;
+    margin: 15px;
     height: 320px;
-    width: 800px;
+    width: 807px;
   }
 
   .upcoming-bookings {
     display: flex;
+    flex-direction: column;
     background-color: white;
     border-radius: 9px;
     padding: 15px;
     border-left: 10px #5354F2;
     margin: 0 auto;
-    height: 100px;
+    height: 220px;
     width: 430px;
+
   }
 
+  .carousel-control-next-icon {
+
+
+  }
 }
 
 #dashboard-subs {
@@ -55,7 +61,7 @@
   text-align: center;
 }
 
-.chatroom-advice {
+.video-advice {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -66,8 +72,8 @@
     border-radius: 9px;
     padding: 20px;
     margin: 15px;
-    height: 320px;
-    width: 350px;
+    height: 400px;
+    width: 1190px;
   }
 
   .chatroom {
@@ -76,7 +82,7 @@
     border-radius: 9px;
     padding: 20px;
     margin: 15px;
-    height: 320px;
+    height: 420px;
     width: 800px;
   }
 }
@@ -90,22 +96,13 @@
   flex-wrap: wrap;
 }
 
-.bookings-profile {
+.chatroom {
   background-color: whitesmoke;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   padding: 20px;
   margin: 15px;
-  height: 670px;
+  height: 710px;
   width: 485px;
 
-  .bookings-card {
-    background-color: white;
-    border-radius: 9px;
-    padding: 15px;
-    border-left: 10px #5354F2;
-    margin: 15px;
-    height: 320px;
-    width: 430px;
-  }
 }
