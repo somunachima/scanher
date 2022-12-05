@@ -1,3 +1,25 @@
+
+<h1 id="dashboard-header"><strong><%= @user.full_name %>'s Dashboard</strong></h1>
+<div class="container-dashboard">
+  <div class="dashboard-left">
+    <div class="dashboard-profile">
+      <div class="profile-left">
+      <h3 id="dashboard-subs"><strong>Profile</strong></h3>
+        <h6><strong><%= @user.full_name %></strong><h6>
+        <%= @user.address %><br>
+        <%= @user.phone_number %><br>
+        <%= @user.birthday %><br>
+
+<%= current_user.email %>
+<% current_user.bookings.each do |booking| %>
+<ul class="list-unstyled">
+  <li> <%= booking.timeslot.exam.clinic.name %> </li>
+  <li> <%= booking.timeslot.exam.clinic.address %> </li>
+  <li> <%= booking.timeslot.exam.service%> - <%= booking.timeslot.exam.body_part %></li>
+  <li><%= booking.timeslot.date.to_formatted_s(:short) %></li>
+  <li><%= booking.timeslot.exam.price %></li>
+</ul>
+  <% end %>
 <div class="container my-3">
   <div class="row">
     <div class="col-3">
@@ -18,232 +40,37 @@
             <span>From Hoxton Hospital</span>
           </span>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards">
-      <div class="task-cards-color-indicator"></div>
-      <div class="task-cards-content">
-        <div class="task-cards-text">
-          <span class="task-cards-text1 ParagraphSmall">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH4"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
       </div>
 
-    </div>
-    <div class="col-6">
-      <div class="row">
-        <div class="col-6 mb-3">
-          <div class="card dashboard-card my-profile">
-          <h1> My profile </h1>
-          </div>
-        </div>
-        <div class="col-6 mb-3">
-          <div class="card dashboard-card">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card dashboard-card">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card dashboard-card">
-          </div>
-        </div>
+      <div class="next-booking">
+        <h3 id="dashboard-subs"><strong>Next Booking</strong></h3>
+        <% @user.bookings.each do |booking| %>
+        <%= booking.last %>
+        <%= booking.last.result %>
+
+
+        <% end %>
       </div>
     </div>
 
-    <div class="col-3">
-      <div class="card dashboard-card dc-side2">
-      <h2> Bookings </h2>
-<div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
+    <div class="chatroom-advice">
+      <div class="chatroom">
+        <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
+      </div>
+
+      <div class="advice">
+        <h3 id="dashboard-subs"><strong>Advice</strong></h3>
       </div>
     </div>
   </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
+
+  <div class="dashboard-right">
+    <div class="bookings-profile">
+        <h3 id="dashboard-subs"><strong>Previous Bookings</strong>
+        <%= @bookings %>
+        </h3>
+
     </div>
   </div>
 </div>
