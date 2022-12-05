@@ -1,75 +1,69 @@
 
-<h1 id="dashboard-header"><strong><%= @user.full_name %>'s Dashboard</strong></h1>
+<h1 id="dashboard-header"><strong><%= @current_user.full_name %>'s Dashboard</strong></h1>
 <div class="container-dashboard">
   <div class="dashboard-left">
     <div class="dashboard-profile">
       <div class="profile-left">
       <h3 id="dashboard-subs"><strong>Profile</strong></h3>
-        <h6><strong><%= @user.full_name %></strong><h6>
-        <%= @user.address %><br>
-        <%= @user.phone_number %><br>
-        <%= @user.birthday %><br>
-
-<%= current_user.email %>
-<% current_user.bookings.each do |booking| %>
-<ul class="list-unstyled">
-  <li> <%= booking.timeslot.exam.clinic.name %> </li>
-  <li> <%= booking.timeslot.exam.clinic.address %> </li>
-  <li> <%= booking.timeslot.exam.service%> - <%= booking.timeslot.exam.body_part %></li>
-  <li><%= booking.timeslot.date.to_formatted_s(:short) %></li>
-  <li><%= booking.timeslot.exam.price %></li>
-</ul>
-  <% end %>
-<div class="container my-3">
-  <div class="row">
-    <div class="col-3">
-      <div class="card dashboard-card dc-side">
-      <h1> Her space </h1>
-      <div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards">
-      <div class="task-cards-color-indicator"></div>
-      <div class="task-cards-content">
-        <div class="task-cards-text">
-          <span class="task-cards-text1 ParagraphSmall">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH4"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-
+        <h6><strong><%= @current_user.full_name %></strong><h6>
+        <%= @current_user.address %><br>
+        <%= @current_user.email %><br>
+        <%= @current_user.phone_number %><br>
+        <%= @current_user.birthday %><br>
       </div>
 
       <div class="next-booking">
-        <h3 id="dashboard-subs"><strong>Next Booking</strong></h3>
-        <% @user.bookings.each do |booking| %>
-        <%= booking.last %>
-        <%= booking.last.result %>
+        <h3 id="dashboard-subs"><strong>Next Bookings</strong></h3>
 
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <% current_user.bookings.each_with_index do |booking, index| %>
+            <div class="carousel-item <%= 'active' if index == 0 %>">
+              <div class="upcoming-bookings">
+                <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+                <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                <%= booking.timeslot.exam.clinic.address %> <br>
+                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                £<%= booking.timeslot.exam.price %> <br>
+              </div>
+            </div>
+            <% end %>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
 
-        <% end %>
       </div>
     </div>
 
     <div class="chatroom-advice">
-      <div class="chatroom">
-        <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
-      </div>
-
       <div class="advice">
         <h3 id="dashboard-subs"><strong>Advice</strong></h3>
+      </div>
+
+      <div class="chatroom">
+        <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
       </div>
     </div>
   </div>
 
   <div class="dashboard-right">
     <div class="bookings-profile">
-        <h3 id="dashboard-subs"><strong>Previous Bookings</strong>
-        <%= @bookings %>
-        </h3>
+        <h3 id="dashboard-subs"><strong>Previous Bookings</strong></h3>
+         <div class="bookings-card">
+          <% current_user.bookings.each do |booking| %>
+              <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+              <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+              <%= booking.timeslot.exam.clinic.address %> <br>
+              <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+              £<%= booking.timeslot.exam.price %> <br>
+          <% end %>
+        </div>
 
     </div>
   </div>
