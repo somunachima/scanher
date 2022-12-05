@@ -10,6 +10,8 @@
               <div class="col-6 p-4">
                 <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
                 <% clinic.exams.each do |exam| %>
+                <%# !Use the filtered_exams(params to filter the search with Service and body part%>
+                <%# <% clinic.filtered_exams(params).each do |exam| %>
                   <div class="flex-container">
                   </div>
                   <ul class="list-unstyled">
@@ -32,7 +34,7 @@
                         new_timeslot_booking_path(timeslot),
                       ) %>
 
-            </div>
+
             <div class="col-6 p-0">
               <div class="" style="background-image: url(<%= asset_path 'clinic.jpeg' %>); height: 100%; width: 100%; object-fit: cover;"></div>
               <%#=link_to image_tag "clinic.jpeg", class: "" %>

@@ -12,11 +12,17 @@ Clinic.destroy_all
 Timeslot.destroy_all
 
 # !CLINIC SEED FILES
-hoxton = Clinic.create!(name: "The Hoxton Clinic", address: "100 Hoxton Street")
-lewagon = Clinic.create!(name: "LeWagon Clinic", address: "148 Kingsland Road")
-safe_zone = Clinic.create!(name: "The Safe Zone", address: "1 Shoreditch Road")
-jared_scans = Clinic.create!(name: "Jared's Totally Safe Scans", address: "22B Alley Way")
-securiscan = Clinic.create!(name: "SecuriScan", address: "23 Haggerston Road")
+hoxton = Clinic.create!(name: "The Hoxton Clinic", address: "100 Hoxton Street, London")
+lewagon = Clinic.create!(name: "Le Wagon Clinic", address: "148 Kingsland Road, London")
+safe_zone = Clinic.create!(name: "The Safe Zone", address: "7 Sun Street, London")
+jared_scans = Clinic.create!(name: "Jared's Scans", address: "23 Macklin St, London")
+securiscan = Clinic.create!(name: "SecuriScan", address: "23 Haggerston Road, London")
+jones = Clinic.create!(name: "Jones' Clinic", address: "151 Cassiobury Dr, Watford")
+ruby = Clinic.create!(name: "Ruby Centre", address: "60 Rye Lane, Peckham")
+ortho = Clinic.create!(name: "OrthoClinic", address: "Kensington High St, London")
+elite = Clinic.create!(name: "Elite Wellness", address: "91 Harley Street, London")
+scanher = Clinic.create!(name: "ScanHer Clinic", address: "47 Melbury Rd, London")
+unachima = Clinic.create!(name: "Unachima Centre", address: "107 Great Russell St, London")
 
 
 # !MRI SEED FILES
@@ -71,24 +77,64 @@ securiscan = Clinic.create!(name: "SecuriScan", address: "23 Haggerston Road")
 # !CT
 # Service.create!(name: "CT")
 
-service_mri = ["MRI", "Ultrasound Scan"]
-service_pregnancy = "Pregnancy"
 # !EXAM SEED FILES
-hoxton_mri_head = Exam.create!(clinic: hoxton, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 300)
-hoxton_mri_bhip = Exam.create!(clinic: hoxton, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 220)
-hoxton_uss_head = Exam.create!(clinic: hoxton, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 200)
-lewagon_mri_head = Exam.create!(clinic: lewagon, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 290)
-lewagon_mri_bhip = Exam.create!(clinic: lewagon, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 400)
-lewagon_uss_head = Exam.create!(clinic: lewagon, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 320)
-safe_zone_mri_head = Exam.create!(clinic: safe_zone, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 350)
-safe_zone_mri_bhip = Exam.create!(clinic: safe_zone, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 500)
-safe_zone_uss_head = Exam.create!(clinic: safe_zone, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 300)
-jared_scans_mri_head = Exam.create!(clinic: jared_scans, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 10)
-jared_scans_mri_bhip = Exam.create!(clinic: jared_scans, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 45)
-jared_scans_uss_head = Exam.create!(clinic: jared_scans, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 70)
-securiscan_mri_head = Exam.create!(clinic: securiscan, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 600)
-securiscan_mri_bhip = Exam.create!(clinic: securiscan, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 900)
-securiscan_uss_head = Exam.create!(clinic: securiscan, service: Exam::SERVICE.sample, body_part: Exam::BODY_PART.sample, price: 450)
+# !Hoxton
+hoxton_mri_head = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Brain/Head", price: 200)
+hoxton_mri_neck = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Neck", price: 200)
+hoxton_mri_leg = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_hip = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_bhip = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_arm = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_knee = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_lspine = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_uspine = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_wspine = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_pelvis = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_fbs = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_cardiac = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_shoulder = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_chest = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_ankle = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_wrist = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_elbow = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_tissue = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+hoxton_mri_foot = Exam.create!(clinic: hoxton, service: "MRI", body_part: "Hip - Bilateral", price: 220)
+
+hoxton_uss_head = Exam.create!(clinic: hoxton, service: "Ultrasound Scan", body_part: "Head/Neck", price: 200)
+
+# !Le Wagon
+lewagon_mri_head = Exam.create!(clinic: lewagon, service: "MRI", body_part: "Brain/Head", price: 290)
+lewagon_mri_bhip = Exam.create!(clinic: lewagon, service: "MRI", body_part: "Hip - Bilateral", price: 400)
+lewagon_uss_head = Exam.create!(clinic: lewagon, service: "Ultrasound Scan", body_part: "Head/Neck", price: 320)
+
+# !Safe Zone
+safe_zone_mri_head = Exam.create!(clinic: safe_zone, service: "MRI", body_part: "Brain/Head", price: 350)
+safe_zone_mri_bhip = Exam.create!(clinic: safe_zone, service: "MRI", body_part: "Hip - Bilateral", price: 500)
+safe_zone_uss_head = Exam.create!(clinic: safe_zone, service: "Ultrasound Scan", body_part: "Head/Neck", price: 300)
+
+# !Jared Scans
+jared_scans_mri_head = Exam.create!(clinic: jared_scans, service: "MRI", body_part: "Brain/Head", price: 10)
+jared_scans_mri_bhip = Exam.create!(clinic: jared_scans, service: "MRI", body_part: "Hip - Bilateral", price: 45)
+jared_scans_uss_head = Exam.create!(clinic: jared_scans, service: "Ultrasound Scan", body_part: "Head/Neck", price: 70)
+
+# !SecuriScan
+securiscan_mri_head = Exam.create!(clinic: securiscan, service: "MRI", body_part: "Brain/Head", price: 600)
+securiscan_mri_bhip = Exam.create!(clinic: securiscan, service: "MRI", body_part: "Hip - Bilateral", price: 900)
+securiscan_uss_head = Exam.create!(clinic: securiscan, service: "Ultrasound Scan", body_part: "Head/Neck", price: 450)
+
+
+# !Jones' Clinic
+
+# !Ruby Centre
+
+# !OrthoClinic
+
+# !Elite Wellness
+
+# !ScanHer Clinic
+
+# !Unachima Centre
+
 
 # !TIMESLOTS
 Timeslot.create!(exam: hoxton_mri_head, date: Time.new(2022, 12, 14, 9, 0, 0))
