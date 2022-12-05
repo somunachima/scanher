@@ -8,7 +8,6 @@
       <%= simple_form_for @exam do |f| %>
         <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
         <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
-
         <%= f.submit "Book Now", class: "btn-7" %>
       <% end %>
     </div>
