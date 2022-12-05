@@ -13,11 +13,11 @@ class BookingsController < ApplicationController
     @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    # @timeslot = Timeslot.new
+    @booking.timeslot = @timeslot
     if @booking.save
-      redirect_to timeslot_booking_path(current_user), notice: "Your booking has been successful!"
+      redirect_to timeslot_booking_path(@timeslot.id, @booking), notice: "Your booking has been successful!"
     else
-      render template: "bookings/show", status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
