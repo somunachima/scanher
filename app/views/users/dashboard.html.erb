@@ -1,4 +1,13 @@
-<%=  %>
+<%= current_user.email %>
+<% current_user.bookings.each do |booking| %>
+<ul class="list-unstyled">
+  <li> <%= booking.timeslot.exam.clinic.name %> </li>
+  <li> <%= booking.timeslot.exam.clinic.address %> </li>
+  <li> <%= booking.timeslot.exam.service%> - <%= booking.timeslot.exam.body_part %></li>
+  <li><%= booking.timeslot.date.to_formatted_s(:short) %></li>
+  <li><%= booking.timeslot.exam.price %></li>
+</ul>
+  <% end %>
 <div class="container my-3">
   <div class="row">
     <div class="col-3">
