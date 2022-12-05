@@ -5,7 +5,7 @@
   <%= image_tag "1background.png"%>
 
     <div class="form-home">
-      <%= simple_form_for @exam do |f| %>
+      <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
         <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
 
@@ -44,20 +44,20 @@
       <div class="regular-card-top-centre-icon">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse.svg"/>
         <div class="personal-info-div">Step 2</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Confirm your booking with your selected clinic. </textarea>
+        <div class="lorem-ipsum-dolor-sit-amet-co">Confirm your booking with your selected clinic. </div>
       </div>
 
 
       <div class="regular-card-top-centre-icon1">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse1.svg"/>
         <div class="personal-info-div">Step 1</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Select and book your scan for referral </textarea>
+        <div class="lorem-ipsum-dolor-sit-amet-co">Select and book your scan for referral </div>
       </div>
 
       <div class="regular-card-top-centre-icon2">
         <img class="biheart-pulse-icon"alt=""src="public/biheartpulse2.svg"/>
         <div class="personal-info-div">Step 3</div>
-        <textarea class="lorem-ipsum-dolor-sit-amet-co">Attend the Clinic for your booked appointment. </textarea>
+        <div  class="lorem-ipsum-dolor-sit-amet-co">Attend the Clinic for your booked appointment. </div>
       </div>
 
       <div class="regular-card-top-centre-icon3">
