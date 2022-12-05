@@ -1,18 +1,19 @@
+
+
 <div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
   <div class="homepage-div">
-  <%= image_tag "background1.png"%>
-
+  <%= image_tag "1background.png"%>
 
     <div class="form-home">
       <%= simple_form_for @exam do |f| %>
         <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
         <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
 
-        <%= f.submit "Book Now", class: "btn btn-primary btn-lg btn-block", style: "width: 542px; background-color:#ED646E; border-radius: 30px;" %>
+        <%= f.submit "Book Now", class: "btn-7" %>
       <% end %>
     </div>
 
-            <div class="where-women-can-get-answers-in">
+      <div class="where-women-can-get-answers-in">
 
       <h1 id="logo-home"><strong>scan</strong><i style="color: #5454F2";><strong>Her.</i></strong></h1>
 
@@ -164,12 +165,15 @@
     </div>
 
 
-    <div class="symptoms-or-no-symptoms-book">Symptoms or no symptoms, book a scan that’s right for you and get to know you, like never before. Get the full picture and peace of mind,with direct access to our dedicated expert clinical team.
-    </div>
+    <a href="#" class="to-top scroll">Back to top</a>
+
+    <%# <div class="symptoms-or-no-symptoms-book">Symptoms or no symptoms, book a scan that’s right for you and get to know you, like never before. Get the full picture and peace of mind,with direct access to our dedicated expert clinical team.</div> %>
   </div>
 </div>
 
-
+  <section id="section10" class="demo">
+    <a href="#thanks"><span></span>Scroll Down</a>
+  </section>
 
 
 
