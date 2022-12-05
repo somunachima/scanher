@@ -1,3 +1,4 @@
+
 <h1 id="dashboard-header"><strong><%= @user.full_name %>'s Dashboard</strong></h1>
 <div class="container-dashboard">
   <div class="dashboard-left">
@@ -8,6 +9,38 @@
         <%= @user.address %><br>
         <%= @user.phone_number %><br>
         <%= @user.birthday %><br>
+
+<%= current_user.email %>
+<% current_user.bookings.each do |booking| %>
+<ul class="list-unstyled">
+  <li> <%= booking.timeslot.exam.clinic.name %> </li>
+  <li> <%= booking.timeslot.exam.clinic.address %> </li>
+  <li> <%= booking.timeslot.exam.service%> - <%= booking.timeslot.exam.body_part %></li>
+  <li><%= booking.timeslot.date.to_formatted_s(:short) %></li>
+  <li><%= booking.timeslot.exam.price %></li>
+</ul>
+  <% end %>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-3">
+      <div class="card dashboard-card dc-side">
+      <h1> Her space </h1>
+      <div>
+  <link href="./task-cards.css" rel="stylesheet" />
+  <div>
+    <div class="task-cards-task-cards">
+      <div class="task-cards-color-indicator"></div>
+      <div class="task-cards-content">
+        <div class="task-cards-text">
+          <span class="task-cards-text1 ParagraphSmall">
+            <span>Your result is avaible</span>
+          </span>
+          <span class="task-cards-text3 HeadingH4"><span>MRI</span></span>
+          <span class="task-cards-text5 ParagraphSmallBold">
+            <span>From Hoxton Hospital</span>
+          </span>
+        </div>
+
       </div>
 
       <div class="next-booking">
