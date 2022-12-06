@@ -1,0 +1,92 @@
+body {
+
+  font-family: 'Syne';
+  background: white;
+  background-image:url('1background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+ }
+.form-actions {
+  font-family: 'Syne';
+  color: #5354F2;
+  text-align: center;
+}
+.container-edit-form {
+  a {
+    font-family: 'Syne';
+    color: #5354F2;
+    text-align: center;
+  }
+
+}
+.form-edit {
+  font-family: 'Syne';
+  // max-width:400px;
+  margin: 0 auto;
+  // padding: 50px 0px;
+}
+
+.h2 {
+  font-family: 'Syne';
+  font-style: #5354F2;
+}
+
+.cancell-account {
+  h3{
+    color: #5354F2;
+    text-align: center;
+  }
+}
+
+.edit-card {
+  font-family: 'Syne';
+  align-items: center;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 500px;
+  margin-top: 0;
+
+  h2 {
+    color: #5354F2;
+    text-align: center;
+  }
+  h6, label {
+    color: #5354F2;
+  }
+  p {
+    color: black
+  }
+}
+
+[type="Update"] {
+  font-family: 'Syne';
+  width: 100%;
+  background:#EC656E;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color: white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="Update"]:hover { background:#EC656E; }
+
+
+.login-form{
+  font-family: 'Syne';
+  display: flex;
+}
+
+.say-goodbye {
+  font-size: medium;
+  margin-bottom: 8px;
+}

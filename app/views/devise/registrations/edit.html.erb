@@ -1,65 +1,87 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-edit-form">
+  <div class= "edit-card">
+    <h2><strong>Edit</strong></h2><%= resource_name.to_s.humanize %></h2>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+              <div class="form-edit">
+                <%= f.input :email, required: true, autofocus: true %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+              </div>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
 
-    <%= f.input :title,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "title" }%>
-    <%= f.input :full_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "full name" }%>
-    <%= f.input :photo,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "photo" }%>
-    <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "address" }%>
-    <%= f.input :phone_number,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "phone number" }%>
-    <%= f.input :birthday,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "birthday" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%><%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+                <div class= "form-title1">
+                    <%= f.input :title,
+                                required: true,
+                                autofocus: true,
+                                input_html: { autocomplete: "title" }%>
+                </div>
+                <div class= "form-fullname1">
+                  <%= f.input :full_name,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "full name" }%>
+                </div>
+                <div class= "form-photo1">
+                  <%= f.input :photo,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "photo" }%>
+                </div>
+                <div cass= "form-address1">
+                  <%= f.input :address,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "address" }%>
+                </div>
+                <div class= "form-phone1">
+                  <%= f.input :phone_number,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "phone number" }%>
+                </div>
+                <div class= "form-bday1">
+                  <%= f.input :birthday,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "birthday" }%>
+                </div>
+                <div class= "form-emails1">
+                  <%= f.input :email,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" }%><%= f.input :password,
+                              hint: "leave it blank if you don't want to change it",
+                              required: false,
+                              input_html: { autocomplete: "new-password" } %>
+                </div>
+                <div class= "form-password1">
+                  <%= f.input :password_confirmation,
+                              required: false,
+                              input_html: { autocomplete: "new-password" } %>
+                </div>
+                <div class= "current-password">
+                  <%= f.input :current_password,
+                              hint: "we need your current password to confirm your changes",
+                              required: true,
+                              input_html: { autocomplete: "current-password" } %>
+                </div>
+
+                <div class="form-actions">
+                  <%= f.button :submit, "Update" %>
+                </div>
+                <div class= "cancell-account">
+                </div>
+
+                  <h2 style="margin:24px 0 24px 0;font-size:medium;" >Unhappy?</h2>
+                <div class="unhappy-form">
+                  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "say-goodbye" %>
+                </div>
+              <% end %>
+            <%= link_to "Back", :back %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div class="d-flex align-items-center">
-  <div>Unhappy?</div>
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
 </div>
-
-<%= link_to "Back", :back %>
