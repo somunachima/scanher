@@ -1,4 +1,4 @@
-S# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
@@ -1255,8 +1255,6 @@ ortho
 elite
 scanher
 unachima
-
-
 # !PLACEHOLDER LIST FOR BODY PARTS
 # BodyPart.create!(name: "Brain/Head")
 # BodyPart.create!(name: "Breast - Left")
