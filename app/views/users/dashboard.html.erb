@@ -16,29 +16,32 @@
       <div class="next-booking">
         <h3 id="dashboard-subs"><strong>Bookings</strong></h3>
 
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <% current_user.bookings.each_with_index do |booking, index| %>
-            <div class="carousel-item <%= 'active' if index == 0 %>">
-              <div class="upcoming-bookings">
-                <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
-                <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
-                <%= booking.timeslot.exam.clinic.address %> <br>
-                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                £<%= booking.timeslot.exam.price %> <br>
+        <% if current_user.admin %>
+        <% else %>
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <% current_user.bookings.each_with_index do |booking, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <div class="upcoming-bookings">
+                  <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+                  <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                  <%= booking.timeslot.exam.clinic.address %> <br>
+                  <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                  £<%= booking.timeslot.exam.price %> <br>
 
-                <%# <% if booking.result.documents.attached? %>
-                  <%# <% booking.result.documents.each do |document| %>
-                    <%#= image_tag document %>
-                    <%# if document.previewable? %>
-                      <%#= image_tag(document.preview(resize: '200x200')) %>
+                  <%# <% if booking.result.documents.attached? %>
+                    <%# <% booking.result.documents.each do |document| %>
+                      <%#= image_tag document %>
+                      <%# if document.previewable? %>
+                        <%#= image_tag(document.preview(resize: '200x200')) %>
+                      <%# end %>
                     <%# end %>
                   <%# end %>
-                <%# end %>
 
+                </div>
               </div>
-            </div>
-            <% end %>
+              <% end %>
+        <% end %>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
