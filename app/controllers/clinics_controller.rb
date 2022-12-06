@@ -2,9 +2,11 @@ class ClinicsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @clinics = Clinic.all
-    @exams = Exam.all
-    @exam = Exam.new
+    @exams = []
+    if params[:exam][:body_part] != '' && params[:exam][:service] != ''
+      @exams = Exam.where(body_part: params[:exam][:body_part], service: params[:exam][:service])
+    end
+    @clinics = Clinic.where(id: @exams.pluck(:clinic_id).uniq)
     @timeslot = Timeslot.all
     @markers = @clinics.geocoded.map do |clinic|
       {

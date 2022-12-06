@@ -1,7 +1,9 @@
 class Booking < ApplicationRecord
   belongs_to :timeslot
   belongs_to :user
-  has_many :results, dependent: :destroy
+  has_one :result, dependent: :destroy
 
-  validates :reason, :allergies, presence: true
+  has_many_attached :documents
+
+  # validates :reason, :allergies, presence: true
 end

@@ -1,23 +1,28 @@
 <p><strong>Payment details</strong></p>
 <ul class="list-unstyled">
-    <li><strong>Booking Summary:</strong></li>
-    <li>Clinic:<%= @timeslot.exam.clinic.name  %> </li>
-    <li>Location:<%= @timeslot.exam.clinic.address  %> </li>
-    <li>Reason:<%= @booking.reason %></li>
-    <li>Previous Exams?<%= @booking.previous_exams %></li>
-    <li>GP Details: <%= @booking.gp_details %></li>
-    <li>Allergies:<%= @booking.allergies %></li>
-    <li>Addtional Information:<%= @booking.additional_information %></li>
-    <li>Date: <%= @timeslot.date.to_formatted_s(:short) %></li>
-    <li>Price: £<%= @timeslot.exam.price %></li>
+  <li><strong>Booking Summary:</strong></li>
+  <li>Clinic:<%= @timeslot.exam.clinic.name  %> </li>
+  <li>Location:<%= @timeslot.exam.clinic.address  %> </li>
+  <li>Reason:<%= @booking.reason %></li>
+  <li>Previous Exams?<%= @booking.previous_exams %></li>
+  <li>GP Details: <%= @booking.gp_details %></li>
+  <li>Allergies:<%= @booking.allergies %></li>
+  <li>Addtional Information:<%= @booking.additional_information %></li>
+  <li>Date: <%= @timeslot.date.to_formatted_s(:short) %></li>
+  <li>Price: £<%= @timeslot.exam.price %></li>
+</ul>
 
     <%= link_to(
-      "Confirm Booking",
+      "Go to Dashboard",
       dashboard_path(current_user),
       class: "btn btn-secondary"
     ) %>
 
+                <div class="buttons">
+                  <div class="config-button">
+                  <div class="flex-container mb-2">
+                      <a href="<%= dashboard_path(current_user) %>" class="btn effect04 mb-2" data-sm-link-text="BOOK"><span>Dashboard</span></a>
 
 
-</ul>
-<br>
+                  </div>
+                </div>

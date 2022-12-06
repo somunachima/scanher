@@ -2,10 +2,8 @@ class Exam < ApplicationRecord
   belongs_to :clinic
   has_many :timeslots, dependent: :destroy
 
-  SERVICE = ["MRI", "CT", "Ultrasound", "Pregnancy"]
+  SERVICE = ["MRI", "CT", "Ultrasound Scan", "Pregnancy"]
   # To call on - Exam::SERVICE
-  BODY_PART = ["Brain/Head", "Breast - Left", "Breast - Right", "Breast - Bilateral", "Transvaginal", "Abdominal", "Head/Neck", "Neck/Thyroid", "Leg - Right", "Leg - Left", "Hip - Right", "Hip - Left", "Hip - Bilateral", "Arm - Right", "Arm - Left", "Knee - Right", "Knee - Left", "Lower Back", "Upper Back", "Pelvis", "Whole Spine", "Cardiac", "Full Body Scan", "Shoulder - Left", "Shoulder - Right", "Chest", "Ankle - Right", "Ankle - Left", "Wrist - Left", "Wrist - Right", "Elbow - Left", "Elbow - Right", "Soft Tissue (Muscular/Ligamental)", "Foot - Left (Morton's Neuroma)", "Foot - Right (Morton's Neuroma)"]
-
-  BODY_PART_USS = ["TEST", "Brain/Head", "Wrist - Right", "Elbow - Left", "Elbow - Right", "Soft Tissue (Muscular/Ligamental)", "Foot - Left (Morton's Neuroma)", "Foot - Right (Morton's Neuroma)"]
+  BODY_PART = ["Breast", "Lumps & Bumps", "Ovarian", "Armpit/Axilla", "Hernia", "Pregnancy Scan", "Brain/Head", "Neck & Thyroid", "Transvaginal", "Leg", "Hip", "Hip - Bilateral", "Arm", "Knee", "Lower Spine", "Upper Spine", "Whole Spine", "Pelvis", "Full Body Scan", "Cardiac (Heart)", "Shoulder", "Chest", "Ankle", "Wrist", "Elbow", "Soft Tissue (Muscular/Ligamental)", "Foot (Morton's Neuroma)", "Abdominal", "Facial Bones", "Fracture Assessment", "Pelvic", "Kidney & Renal", "Musculoskeletal (MSK)", "Vascular & Arterial", "Testicular"]
   # To call on - Exam::BODY_PART
 end

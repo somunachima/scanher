@@ -1,3 +1,23 @@
+
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  position: relative;
+  display: inline-block;
+}
+
 .btn-7 {
   background: #ed646e;
  color: #fff;
@@ -7,11 +27,11 @@
  z-index: 1;
   -webkit-transition: all 0.3s linear;
  transition: all 0.3s linear;
- width: 150px;
+ width: 544px;
 }
 .btn-7:hover {
  background: transparent;
- color: #ed646e;
+ color: #fff;
 }
 .btn-7:before,
 .btn-7:after {

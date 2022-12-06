@@ -27,7 +27,7 @@ class ResultsController < ApplicationController
   private
 
   def result_params
-    params.require(:result).permit(:details, :date)
+    params.require(:result).permit(:details, :date, documents: [])
   end
 
 end

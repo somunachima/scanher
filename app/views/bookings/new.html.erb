@@ -1,8 +1,7 @@
 <div class="container safety-form">
-  <form>
     <div class= "form_card">
       <h2><strong>Safety Questions</strong></h2>
-      <%= simple_form_for [ @timeslot, @booking] do |f| %>
+      <%= simple_form_for [@timeslot, @booking] do |f| %>
 
       <div class="reason_card">
         <h6><strong> What's the reason for your scan? </strong></h6>
@@ -14,6 +13,7 @@
 
       <div class="documents_card">
         <h6><strong>Documents (optional)</strong></h6>
+        <%= f.file_field :documents, multiple: true %>
         <p>These aren't required for your referral, but any previous imaging or other relevant documentation can be helpful to the clinician when discussing your referral.
         </p>
       </div>
@@ -45,8 +45,5 @@
 
       <%= f.submit "Submit" %>
     </div>
-  <form>
   <% end %>
 </div>
-
-
