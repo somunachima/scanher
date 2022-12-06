@@ -10,7 +10,30 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
+    <%= f.input :title,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "title" }%>
+    <%= f.input :full_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "full name" }%>
+    <%= f.input :address,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "address" }%>
+    <%= f.input :phone_number,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "phone number" }%>
+    <%= f.input :birthday,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "birthday" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%><%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>

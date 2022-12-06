@@ -5,6 +5,12 @@ body {
 .frame-icon {
   width: 1512px;
 }
+
+.scanher-background {
+  min-width: 100%;
+  min-height: 100%;
+
+}
 .piece-back-icon {
   position: relative;
   width: 1512px;
@@ -79,6 +85,13 @@ body {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+
+.subtitle-home {
+  font-size: 50px;
+  width: 570px;
+  color: #5454F2;
+}
+
 .blank-line-p {
   font-size: var(--font-size-4xl);
   color: var(--color-brown-200);
