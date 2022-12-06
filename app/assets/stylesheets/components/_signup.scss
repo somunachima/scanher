@@ -13,7 +13,7 @@ body {
   color: #5354F2;
   text-align: center;
 }
-.container-login-form {
+.container-signup-form {
   a {
     font-family: 'Syne';
     color: #5354F2;
@@ -34,7 +34,7 @@ body {
 }
 
 
-.login_card {
+.signup_card {
   font-family: 'Syne';
   align-items: center;
   box-sizing: border-box;
@@ -42,11 +42,9 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   padding: 20px;
-  margin: 400px;
-  width: 700px;
-  height: 400px;
-  position: absolute;
-  top: -30%;
+  margin: 500px;
+  margin-top: 0;
+
   h2 {
     color: #5354F2;
     text-align: center;
