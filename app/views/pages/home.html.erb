@@ -5,6 +5,20 @@
     <div class="scanher-background">
     <%= image_tag "1background.png"%>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <div class="form-home">
       <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
@@ -12,9 +26,9 @@
         <%= f.fields_for :clinic do |clinic_form| %>
         <%= clinic_form.input :address,
         input_html: {data: {address_autocomplete_target: "address"}},
-        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-         %>
-        <% end %><br>
+        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%>
+        <% end %>
+        <br>
         <%= f.submit "Book Now", class: "btn-7" %>
       <% end %>
     </div>
