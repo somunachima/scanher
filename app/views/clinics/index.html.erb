@@ -3,19 +3,23 @@
   <div class="row m-0">
     <div class="col-6">
       <% @clinics.each do |clinic| %>
-          <div class="card rounded-4 border mb-3">
+          <div class="card shadow rounded-4 border mb-3">
             <div class="row m-0 mb-2">
-              <div class="col-12 p-4">
-                <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
-                <% clinic.filtered_exams(params).each do |exam| %>
-                  <div class="flex-container card-product">
+              <div class="clinic-info">
+                <div class="col-12">
+                  <h3><strong><li class="list-unstyled mb-1" style="color: #ed636e;"><%= clinic.name %></li></strong></h3>
+                  <% clinic.filtered_exams(params).each do |exam| %>
+                    <ul class="list-unstyled">
+                      <li class="mt-2"><strong>Scan Type: </strong><%= exam.service %></li>
+                      <li><strong>Body Area: </strong><%= exam.body_part %></li>
+                    </ul>
                   </div>
-                  <ul class="list-unstyled">
-                    <li class="mt-2"><%= exam.service %></li>
-                    <li><%= exam.body_part %></li>
-                    <li class="mt-2" style=""><strong> Price: £<%= exam.price %></strong></li>
-                  </ul>
+
+                <div class="clinic-pricing">
+                  <h4 class="mt-2" style=""><strong>£<%= exam.price %></strong></h4>
                 </div>
+              </div>
+
                 <div class="buttons">
                   <div class="config-button">
                     <div class="flex-container mb-2">
@@ -36,10 +40,13 @@
       <% end %>
     </div>
     <div class="col-6">
-      <div style="width: 100%; height: 100vh;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="clinic-map" style="position: sticky; top: 68px;">
+      </div>
+        <div style="width: 100%; height: 100vh;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
     </div>
   </div>

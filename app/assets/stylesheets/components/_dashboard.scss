@@ -1,11 +1,14 @@
 #dashboard-header {
   text-align: center;
-  color: #5354F2;
+  color: white;
+  font-size: 50px;
+  margin: 0 auto;
 }
 
 .container-dashboard {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
 
   .h3 {
     text-align: center;
@@ -17,6 +20,7 @@
 .dashboard-profile {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   #profile-pic {
     border-radius: 50%;
@@ -73,7 +77,7 @@
 .video-advice {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 
   .advice {
     background-color: whitesmoke;
@@ -81,15 +85,15 @@
     border-radius: 9px;
     padding: 20px;
     margin: 0 auto;
-    height: 400px;
+    height: 730px;
     width: 1190px;
     justify-items: center;
   }
 
 }
 
-.dashboard-right {
-  display: flex;
+.dashboard-left {
+  display: inline-flex;
   flex-wrap: wrap;
 }
 
