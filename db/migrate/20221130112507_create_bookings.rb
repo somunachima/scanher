@@ -5,7 +5,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.boolean :previous_exams
       t.text :gp_details
       t.text :allergies
-      t.boolean :confirmed
+      t.boolean :confirmed, default: false, null: false
       t.text :additional_information
       t.references :timeslot, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true

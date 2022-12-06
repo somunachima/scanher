@@ -27,10 +27,41 @@
                   <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
                   £<%= booking.timeslot.exam.price %> <br>
 
+
                 <div class="result-bookings">
                 <h6><strong>Results</strong></h6>
                 </div>
                 </div>
+
+        <% if current_user.admin %>
+          <% @users.each do |user| %>
+            <%= user.title %> <%= user.full_name %>
+            <%= user.address %>
+            <% user.bookings.each do |booking| %>
+            <h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+            <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+            <%= booking.timeslot.exam.clinic.address %> <br>
+            <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+            £<%= booking.timeslot.exam.price %> <br>
+              <%= simple_form_for [booking] do |f| %>
+              <%= f.check_box :confirmed %>
+              <%= f.submit "Submit" %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <% current_user.bookings.each_with_index do |booking, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <div class="upcoming-bookings">
+                  <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+                  <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                  <%= booking.timeslot.exam.clinic.address %> <br>
+                  <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                  £<%= booking.timeslot.exam.price %> <br>
+                  <%= booking.confirmed %> <br>
+
 
                   <%# <% if booking.result.documents.attached? %>
                     <%# <% booking.result.documents.each do |document| %>
@@ -41,8 +72,10 @@
                     <%# end %>
                   <%# end %>
 
+                </div>
               </div>
               <% end %>
+
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
@@ -52,6 +85,17 @@
                   <span class="visually-hidden">Next</span>
                 </button>
             </div>
+
+        <% end %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
           </div>
 
           .
