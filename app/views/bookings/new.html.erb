@@ -2,7 +2,7 @@
   <form>
     <div class= "form_card">
       <h2><strong>Safety Questions</strong></h2>
-      <%= simple_form_for [ @timeslot, @booking] do |f| %>
+      <%= simple_form_for [@timeslot, @booking] do |f| %>
 
       <div class="reason_card">
         <h6><strong> What's the reason for your scan? </strong></h6>
@@ -48,5 +48,3 @@
   <form>
   <% end %>
 </div>
-
-
