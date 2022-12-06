@@ -79,4 +79,6 @@ group :test do
 end
 
 gem "geocoder"
+gem 'image_processing', '~> 1.2'
+gem 'cloudinary'
 

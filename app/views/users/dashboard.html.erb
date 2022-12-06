@@ -5,6 +5,7 @@
     <div class="dashboard-profile">
       <div class="profile-left">
         <h3 id="dashboard-subs"><strong>Profile</strong></h3>
+        <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
         <h6><strong><%= @current_user.full_name %></strong><h6>
         <%= @current_user.address %><br>
         <%= @current_user.email %><br>
@@ -25,6 +26,16 @@
                 <%= booking.timeslot.exam.clinic.address %> <br>
                 <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
                 £<%= booking.timeslot.exam.price %> <br>
+
+                <% if booking.result.documents.attached? %>
+                  <% booking.result.documents.each do |document| %>
+                    <%= image_tag document %>
+                    <% if document.previewable? %>
+                      <%= image_tag(document.preview(resize: '200x200')) %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
               </div>
             </div>
             <% end %>
@@ -52,8 +63,20 @@
   <div class="dashboard-right">
     <div class="chatroom">
         <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
-
-
+      <div class="container chatroom">
+  <h1>#<%= @chatroom.name %></h1>
+        <div class="messages">
+          <% @chatroom.messages.each do |message| %>
+            <div id="message-<%= message.id %>">
+              <small>
+                <strong><%= message.user.nickname %></strong>
+                <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+              </small>
+              <p><%= message.content %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
