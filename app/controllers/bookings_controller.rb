@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.timeslot = @timeslot
     if @booking.save!
-      # Chatroom.create!(booking: @booking)
+      Chatroom.create!(booking: @booking)
       redirect_to timeslot_booking_path(@timeslot.id, @booking), notice: "Your booking has been successful!"
     else
       render :new, status: :unprocessable_entity

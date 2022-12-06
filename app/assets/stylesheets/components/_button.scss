@@ -36,7 +36,6 @@ body {
   justify-content: center;
   text-align: center;
   background-color: #FFF;
-  padding:  40px 0px;
   margin-right: 4px;
 }
 
@@ -76,6 +75,9 @@ p {
   position: relative;
   transition-duration: 0.4s;
   overflow: hidden;
+  height: 45px;
+  justify-content: center;
+  margin-right: 15px;
 }
 
 .effect04::before,
@@ -83,23 +85,30 @@ p {
     margin: 0 auto;
 	transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 	transition-duration: 0.4s;
+  height: 45px;
+  justify-content: center;
 }
 
 /* 文字1を上に */
 .effect04:hover{
-
   background-color: #515ae9;
+  height: 45px;
+  justify-content: center;
 }
 
 /* HOVERしたら文字1を上に */
 .effect04:hover span{
   -webkit-transform: translateY(-400%) scale(-0.1,20);
           transform: translateY(-400%) scale(-0.1,20);
+  height: 45px;
+  justify-content: center;
 }
 
 /*文字2*/
 .effect04::before{
   content: attr(data-sm-link-text);
+  height: 45px;
+  justify-content: center;
 	color: #FFF;
   position: absolute;
   left: 0;
@@ -112,6 +121,8 @@ p {
 /* HOVERしたら文字2を上に */
 .effect04:hover::before{
   letter-spacing: 0.05em;
+  height: 45px;
+  justify-content: center;
   -webkit-transform: translateY(0) scale(1,1);
           transform: translateY(0) scale(1,1);
 }
