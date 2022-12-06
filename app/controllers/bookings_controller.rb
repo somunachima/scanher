@@ -1,20 +1,18 @@
-require 'date'
-require 'time'
-
 class BookingsController < ApplicationController
   def new
-    set_booking
+    @user = current_user
     @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new
+    # raise
   end
 
   def create
-    set_booking
+    @user = current_user
     @timeslot = Timeslot.find(params[:timeslot_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.timeslot = @timeslot
-    if @booking.save
+    if @booking.save!
       redirect_to timeslot_booking_path(@timeslot.id, @booking), notice: "Your booking has been successful!"
     else
       render :new, status: :unprocessable_entity
@@ -55,6 +53,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :allergies, :confirmed, :additional_information, :timeslot_id, :user_id)
+    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :confirmed, :allergies, :additional_information, :timeslot_id, :user_id)
   end
 end
