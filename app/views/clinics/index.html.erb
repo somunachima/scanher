@@ -1,9 +1,9 @@
 <div class="clinics-container" style="background-image: url(<%= asset_url('1background.png')%>)">
-  <h1 class="mb-3 mx-3" style="font-family: 'Noto Sans JP', sans-serif;  color: #ed636e;"><strong> Clinics Nearby</h1></strong>
+  <br><h1 class="clinics-title mb-3 mx-3" style="color: #ed636e;"><strong> Clinics Nearby</h1></strong>
   <div class="row m-0">
     <div class="col-6">
       <% @clinics.each do |clinic| %>
-          <div class="card border mb-3">
+          <div class="card rounded-4 border mb-3">
             <div class="row m-0 mb-2">
               <div class="col-12 p-4">
                 <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
@@ -20,7 +20,7 @@
                   <div class="config-button">
                     <div class="flex-container mb-2">
                       <% exam.timeslots.each do |timeslot| %>
-                        <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-2" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
+                        <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-3" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
                       <% end %>
                     </div>
                   </div>

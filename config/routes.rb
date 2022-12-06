@@ -17,11 +17,14 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [ :edit, :update, :destroy ] do
     resources :results, only: [ :create ]
+    resources :chatrooms, only: :show do
+      resources :messages, only: :create
+    end
   end
 
   get "dashboard", to: "users#dashboard", as: "dashboard"
 
-  resources :chatrooms, only: :show
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Defines the root path route ("/")

@@ -13,9 +13,16 @@
   }
 }
 
+
 .dashboard-profile {
   display: flex;
   flex-wrap: wrap;
+
+  #profile-pic {
+    border-radius: 50%;
+    justify-content: center;
+    justify-items: center;
+  }
 
   .profile-left {
     background-color: whitesmoke;
@@ -25,7 +32,9 @@
     margin: 15px;
     height: 420px;
     width: 350px;
+    text-align: center;
   }
+
 
   .next-booking {
     background-color: whitesmoke;
@@ -45,8 +54,12 @@
     padding: 15px;
     border-left: 10px #5354F2;
     margin: 0 auto;
-    height: 220px;
-    width: 430px;
+    height: 330px;
+    width: 630px;
+
+  }
+
+  .result-bookings {
 
   }
 
@@ -67,9 +80,10 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 9px;
     padding: 20px;
-    margin: 15px;
+    margin: 0 auto;
     height: 400px;
     width: 1190px;
+    justify-items: center;
   }
 
 }
