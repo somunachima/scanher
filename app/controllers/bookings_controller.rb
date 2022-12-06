@@ -55,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :allergies, :confirmed, :additional_information, :timeslot_id, :user_id)
+    params.require(:booking).permit(:reason, :previous_exams, :gp_details, :allergies, :confirmed, :additional_information, :timeslot_id, :user_id, documents: [])
   end
 end
