@@ -1,0 +1,91 @@
+#dashboard-header {
+  text-align: center;
+  color: #5354F2;
+}
+
+.container-dashboard {
+  display: flex;
+  justify-content: space-around;
+
+  .h3 {
+    text-align: center;
+    color: #5354F2;
+  }
+}
+
+.dashboard-profile {
+  display: flex;
+  flex-wrap: wrap;
+
+  .profile-left {
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 9px;
+    padding: 20px;
+    margin: 15px;
+    height: 420px;
+    width: 350px;
+  }
+
+  .next-booking {
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 9px;
+    padding: 20px;
+    margin: 15px;
+    height: 420px;
+    width: 807px;
+  }
+
+  .upcoming-bookings {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 9px;
+    padding: 15px;
+    border-left: 10px #5354F2;
+    margin: 0 auto;
+    height: 220px;
+    width: 430px;
+
+  }
+
+}
+
+#dashboard-subs {
+  color: #EC656E;
+  text-align: center;
+}
+
+.video-advice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .advice {
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 9px;
+    padding: 20px;
+    margin: 15px;
+    height: 400px;
+    width: 1190px;
+  }
+
+}
+
+.dashboard-right {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chatroom {
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 15px;
+  height: 850px;
+  width: 485px;
+
+}

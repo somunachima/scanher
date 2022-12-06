@@ -3,12 +3,15 @@
   <div class="row m-0">
     <div class="col-6">
       <% @clinics.each do |clinic| %>
-        <div class="card border mb-3">
-          <div class="row m-0 mb-2">
-            <div class="col-12 p-4">
-              <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
-              <% clinic.exams.each do |exam| %>
-                <div class="flex-container card-product">
+          <div class="card border mb-3">
+            <div class="row m-0 mb-2">
+              <div class="col-12 p-4">
+                <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
+                <% clinic.exams.each do |exam| %>
+                <%# !Use the filtered_exams(params to filter the search with Service and body part%>
+                <%# <% clinic.filtered_exams(params).each do |exam| %>
+                  <div class="flex-container card-product">
+                  </div>
                   <ul class="list-unstyled">
                     <li class="mt-2"><%= exam.service %></li>
                     <li><%= exam.body_part %></li>
@@ -25,6 +28,10 @@
                   </div>
                 </div>
               <% end %>
+
+            <div class="col-6 p-0">
+              <div class="" style="background-image: url(<%= asset_path 'clinic.png' %>); height: 100%; width: 100%; object-fit: cover;"></div>
+              <%#=link_to image_tag "clinic.jpeg", class: "" %>
             </div>
           </div>
         </div>
