@@ -1,5 +1,5 @@
 <div class="clinics-container" style="background-image: url(<%= asset_url('1background.png')%>)">
-  <h1 class="m-3" style="font-family: 'Noto Sans JP', sans-serif;  color: #ed636e;"><strong> Clinics Nearby</h1></strong>
+  <h1 class="mb-3 mx-3" style="font-family: 'Noto Sans JP', sans-serif;  color: #ed636e;"><strong> Clinics Nearby</h1></strong>
   <div class="row m-0">
     <div class="col-6">
       <% @clinics.each do |clinic| %>
@@ -7,9 +7,7 @@
             <div class="row m-0 mb-2">
               <div class="col-12 p-4">
                 <h3><strong><li class="list-unstyled mb-1"><%= clinic.name %></li></strong></h3>
-                <% clinic.exams.each do |exam| %>
-                <%# !Use the filtered_exams(params to filter the search with Service and body part%>
-                <%# <% clinic.filtered_exams(params).each do |exam| %>
+                <% clinic.filtered_exams(params).each do |exam| %>
                   <div class="flex-container card-product">
                   </div>
                   <ul class="list-unstyled">

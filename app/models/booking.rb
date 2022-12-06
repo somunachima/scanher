@@ -5,5 +5,5 @@ class Booking < ApplicationRecord
 
   has_many_attached :documents
 
-  validates :reason, :allergies, presence: true
+  # validates :reason, :allergies, presence: true
 end
