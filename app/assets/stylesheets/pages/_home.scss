@@ -109,6 +109,62 @@
   left: 74%;
 }
 
+.clinic-middle-card {
+  display: flex;
+  // min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  // background: #E7F3F1;
+  // border: .75em solid white;
+  // padding: 2em;
+  font-family: 'Syne';
+  position: absolute;
+  top: 47%;
+  left: 69%;
+}
+
+.clinic-middle-card1 {
+  display: flex;
+  // min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  // background: #E7F3F1;
+  // border: .75em solid white;
+  // padding: 2em;
+  font-family: 'Syne';
+  position: absolute;
+  top: 47%;
+  left: 1%;
+}
+
+.clinic-middle-card2 {
+  display: flex;
+  // min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  // background: #E7F3F1;
+  // border: .75em solid white;
+  // padding: 2em;
+  font-family: 'Syne';
+  position: absolute;
+  top: 47%;
+  left: 24%;
+}
+
+.clinic-middle-card3 {
+  display: flex;
+  // min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  // background: #E7F3F1;
+  // border: .75em solid white;
+  // padding: 2em;
+  font-family: 'Syne';
+  position: absolute;
+  top: 47%;
+  left: 47%;
+}
+
 .data-card {
   font-family: 'Syne';
   display: flex;
@@ -145,6 +201,17 @@
     margin: 0 0 1.777777778em;
     transition: color .45s ease;
   }
+  h6 {
+    font-family: 'Syne';
+    color: #EC656E;
+    font-size: 2.5em;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: .5em;
+    margin: 0 0 0.142857143em;
+    border-bottom: 2px solid #EC656E;
+    transition: color .45s ease, border .45s ease;
+  }
   p {
     font-family: 'Syne';
     opacity: 0;
@@ -180,6 +247,9 @@
       border-bottom-color: #5354F2;
     }
     h4 {
+      color: #FFFFFF;
+    }
+    h6 {
       color: #FFFFFF;
     }
     p {
