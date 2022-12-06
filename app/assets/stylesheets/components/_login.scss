@@ -8,7 +8,11 @@ body {
   background-size: cover;
   max-width: 100%;
  }
-
+.form-actions {
+  font-family: 'Syne';
+  color: #5354F2;
+  text-align: center;
+}
 .container-login-form {
   a {
     font-family: 'Syne';
@@ -38,7 +42,7 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   padding: 20px;
-  margin: 470px;
+  margin: 400px;
   width: 700px;
   height: 400px;
   position: absolute;
