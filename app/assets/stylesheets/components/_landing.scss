@@ -5,6 +5,12 @@ body {
 .frame-icon {
   width: 1512px;
 }
+
+.scanher-background {
+  min-width: 100%;
+  min-height: 100%;
+
+}
 .piece-back-icon {
   position: relative;
   width: 1512px;
@@ -81,8 +87,9 @@ body {
 }
 
 .subtitle-home {
-  font-size: 80px;
+  font-size: 50px;
   width: 570px;
+  color: #5454F2;
 }
 
 .blank-line-p {

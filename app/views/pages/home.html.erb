@@ -2,20 +2,20 @@
 
 <div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
   <div class="homepage-div">
-  <%= image_tag "1background.png"%>
-
+    <div class="scanher-background">
+    <%= image_tag "1background.png"%>
+    </div>
     <div class="form-home">
       <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <%= f.input :body_part, collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %>
-        <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %>
-
+        <%= f.input :service, collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %><br>
         <%= f.submit "Book Now", class: "btn-7" %>
       <% end %>
     </div>
 
       <div class="where-women-can-get-answers-in">
 
-      <h1 id="logo-home"><strong>scan</strong><i style="color: #5454F2";><strong>Her.</i></strong></h1><br>
+      <h1 id="logo-home"><strong>scan</strong><i style="color: #5454F2";><strong>Her.</i></strong></h1>
 
       <h2 class="subtitle-home"><strong>Where women can get answers in days not months</strong></h2>
 
