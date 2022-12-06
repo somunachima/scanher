@@ -6,6 +6,7 @@ class User < ApplicationRecord
   # :confirmable
   #rest of the code
   has_many :bookings, dependent: :destroy
+  has_many :chatrooms, dependent: :destroy
   has_one_attached :photo
 
   validates :title, presence: true
