@@ -1,43 +1,60 @@
-.confirmed-heading {
-  text-align: center;
-  color: #EC656E;
-}
+.confirmed-cards-container {
+  display:flex;
+  justify-content: space-evenly;
 
-.confirmed-subtitle {
-  text-align: center;
-  color: #5354F2;
-}
+  .row-cards-confirmation{
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
 
-.confirmed-card {
-  font-family: 'Syne';
-  box-sizing: border-box;
-  background-color: whitesmoke;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 9px;
-  padding: 20px;
-  margin: 15px;
-  width: 700px;
-  justify-content: center;
-}
+  .confirmed-heading {
+    color: #EC656E;
+    font-weight: bold;
+    font-family: 'Syne';
+  }
 
-.confirmed-btn {
-  text-decoration: none;
-  font-family: 'Syne';
-  width: 280px;
-  height: 40px;
-  // position: relative;
-  background:#EC656E;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transition: all 0.3s;
-  margin-top: -4px;
-}
+  .confirmed-subtitle {
+    color: #06065c;
+    margin-bottom: 36px;
+  }
 
-.confirmed-btn:hover {
-  background: #5354F2;
-  color: white;
+  .confirmed-card {
+    font-family: 'Syne';
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 9px;
+    padding: 20px;
+    margin: 15px;
+    width: 700px;
+  }
+
+  .confirmed-btn {
+    text-decoration: none;
+    font-family: 'Syne';
+    width: 280px;
+    // position: relative;
+    background:#EC656E;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+  }
+
+  .confirmed-btn:hover {
+    background: #06065c;
+    color: white;
+  }
+
+  .fa-brands {
+    color: #06065c;
+  }
 }
