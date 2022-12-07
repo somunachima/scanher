@@ -48,6 +48,7 @@
                   <strong><%= booking.timeslot.exam.clinic.name %></strong>
                   <%= booking.timeslot.exam.clinic.address %> <br>
                   <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                  
                   <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
                   <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
                   <div class="result-bookings">
@@ -61,6 +62,11 @@
                         <%# end %>
                       <%# end %>
                     </div>
+
+                  £<%= booking.timeslot.exam.price %> <br>
+
+                  <%= booking.confirmed %> <br>
+
 
                     <p> <strong><%#= link_to("Reschdule Booking", edit_exam_timeslot_path(booking), class: "edit-btn") %></strong>
                     </p>
