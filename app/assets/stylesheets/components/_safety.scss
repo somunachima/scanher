@@ -25,8 +25,9 @@ form {
   padding: 20px;
   margin: 15px;
   width: 700px;
+
   h2 {
-    color: #5354F2;
+    color: #EC656E;
     text-align: center;
   }
   h6, label {
@@ -72,4 +73,5 @@ form {
 
 .safety-form{
   display: flex;
+  justify-content: center;
 }
