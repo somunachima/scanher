@@ -29,16 +29,16 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  # def edit
-  #   @booking = Booking.where(current_user.booking.id)
-  # end
+  def edit
+    @booking = Booking.where(current_user.booking.id)
+  end
 
-  # def update
-  #   set_booking
-  #   @booking = Booking.find(params[:id])
-  #   @booking.update(booking_params)
-  #   redirect_to dashboard_path(current_user)
-  # end
+  def update
+    set_booking
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to dashboard_path(current_user)
+  end
 
   def destroy
     set_booking
