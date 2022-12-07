@@ -60,7 +60,28 @@
     margin: 0 auto;
     height: 330px;
     width: 630px;
+  }
 
+  .edit-btn {
+    text-decoration: none;
+    font-family: 'Syne';
+    width: 260px;
+    height: 40px;
+    // position: relative;
+    background:#EC656E;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+  }
+
+  .edit-btn:hover {
+    background: #5354F2;
+    color: white;
   }
 
   .result-bookings {

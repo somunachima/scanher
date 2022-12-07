@@ -1,0 +1,49 @@
+<div class="container safety-form">
+    <div class= "form_card">
+      <h2><strong>Safety Questions</strong></h2>
+      <%= simple_form_for [@timeslot, @booking] do |f| %>
+      
+      <div class="reason_card">
+        <h6><strong> What's the reason for your scan? </strong></h6>
+        <strong><%= f.input :reason %></strong>
+        <p>
+        Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
+        </p>
+      </div>
+
+      <div class="documents_card">
+        <h6><strong>Documents (optional)</strong></h6>
+        <%= f.file_field :documents, multiple: true %>
+        <p>These aren't required for your referral, but any previous imaging or other relevant documentation can be helpful to the clinician when discussing your referral.
+        </p>
+      </div>
+
+      <div class="surgery_card">
+        <h6><strong>Have you had any previous surgery or imaging?</strong></h6>
+        <strong> <%= f.collection_radio_buttons :previous_exams, [[true, 'Yes'], [false, 'No']], :first, :last %></strong>
+        <p>
+        If yes, please provide additional details of the procedure in the additional information box below.
+        </p>
+      </div>
+
+      <div class="allergies_card">
+        <strong><%= f.input :allergies %></strong>
+        <p>Please share any allergies you have.</p>
+      </div>
+
+      <div class="gp_card">
+        <strong><%= f.input :gp_details %></strong>
+       <p>Please share you GP name and address.</p>
+      </div>
+
+      <div class="additional_info">
+        <strong><%= f.input :additional_information %></strong>
+        <p>
+        Please share further information about any medications you are currently taking and any medical conditions you have.
+        </p>
+      </div>
+
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+</div>

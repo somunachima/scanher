@@ -1,0 +1,64 @@
+<div class="clinics-container" style="background-image: url(<%= asset_url('1background.png')%>)">
+  <br><h1 class="clinics-title mb-3 mx-3" style="color: #ed636e;"><strong> Reschdule Booking</h1></strong>
+  <br><h2 class="clinics-title mb-3 mx-3" style="color: #000000;"><strong> Select a new timeslot</h2></strong>
+  <div class="row m-0">
+    <div class="col-6">
+      <% @clinics.each do |clinic| %>
+          <div class="card shadow rounded-4 border mb-3">
+            <div class="row m-0 mb-2">
+              <div class="clinic-info">
+                <div class="col-12">
+                  <h3><strong><li class="list-unstyled mb-1" style="color: #ed636e;"><%= clinic.name %></li></strong></h3>
+                  <% clinic.filtered_exams(params).each do |exam| %>
+                    <ul class="list-unstyled">
+                      <li class="mt-2"><strong>Scan Type: </strong><%= exam.service %></li>
+                      <li><strong>Body Area: </strong><%= exam.body_part %></li>
+                    </ul>
+                  </div>
+
+                <div class="clinic-pricing">
+                  <h4 class="mt-2" style=""><strong>£<%= exam.price %></strong></h4>
+                </div>
+              </div>
+
+                <div class="buttons">
+                  <div class="config-button">
+                    <div class="flex-container mb-2">
+                      <% exam.timeslots.each do |timeslot| %>
+                        <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-3" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+
+            <div class="col-6 p-0">
+              <div class="" style="background-image: url(<%= asset_path 'clinic.png' %>); height: 100%; width: 100%; object-fit: cover;"></div>
+              <%#=link_to image_tag "clinic.jpeg", class: "" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col">
+      <div id="map rounded-4 shadow" style="position: sticky; top: 10px;">
+        <div>
+          <div style="width: 100%; height: 97vh;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%# <div class="col-6 "> %>
+  <%# <div class="" style="background-image: url(= asset_path 'clinic.jpeg'); height: 100%; width: 100%; object-fit: cover;"></div> %>
+  <%#=link_to image_tag "clinic.jpeg", class: "" %>
+<%# </div> %>
+
+<%# <%= link_to(
+  timeslot.date.to_formatted_s(:short),
+  new_timeslot_booking_path(timeslot),
+) %>

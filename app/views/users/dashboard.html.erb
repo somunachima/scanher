@@ -22,17 +22,17 @@
                 <%= user.title %> <%= user.full_name %>
                 <%= user.address %>
                 <% user.bookings.each do |booking| %>
-                <h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
-                <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                <h6> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h6><br>
+                <strong><%= booking.timeslot.exam.clinic.name %></strong>
                 <%= booking.timeslot.exam.clinic.address %> <br>
                 <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                £<%= booking.timeslot.exam.price %> <br>
+                <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
                   <%= simple_form_for [booking] do |f| %>
                   <%= f.check_box :confirmed %>
                   <%= f.submit "Submit" %>
                   <% end %>
                 <div class="result-bookings">
-                    <div><h6><strong>Results</strong></h6>
+                    <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
                     </div>
                 </div>
                 <% end %>
@@ -44,14 +44,14 @@
               <% current_user.bookings.each_with_index do |booking, index| %>
               <div class="carousel-item <%= 'active' if index == 0 %>">
                 <div class="upcoming-bookings">
-                  <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
-                  <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                  <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5><br>
+                  <strong><%= booking.timeslot.exam.clinic.name %></strong>
                   <%= booking.timeslot.exam.clinic.address %> <br>
                   <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                  £<%= booking.timeslot.exam.price %> <br>
-                  <%= booking.confirmed %> <br>
+                  <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+                  <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
                   <div class="result-bookings">
-                    <div><h6><strong>Results</strong></h6>
+                    <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
                       <%# <% if booking.result.documents.attached? %>
                         <%# <% booking.result.documents.each do |document| %>
                           <%#= image_tag document %>
@@ -62,7 +62,15 @@
                       <%# end %>
                     </div>
                   </div>
-                </div>
+                    <p> <strong><%#= link_to("Reschdule Booking", edit_exam_timeslot_path(booking), class: "edit-btn") %></strong>
+                    </p>
+                  </div>
+                  </div>
+                    <p style="color: #000000">Cancel Booking <%= link_to "", booking_path(booking),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                      class:"fa-solid fa-trash"%>
+                    </p>
+                  </div>
               </div>
               <% end %>
 
