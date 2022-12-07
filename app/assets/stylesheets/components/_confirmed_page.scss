@@ -20,6 +20,7 @@
   .confirmed-subtitle {
     color: #06065c;
     margin-bottom: 36px;
+    text-align: center;
   }
 
   .confirmed-card {
@@ -30,7 +31,7 @@
     border-radius: 9px;
     padding: 20px;
     margin: 15px;
-    width: 700px;
+    width: 669px;
   }
 
   .confirmed-btn {
@@ -50,11 +51,20 @@
   }
 
   .confirmed-btn:hover {
-    background: #06065c;
+    background: #5354F2;
     color: white;
   }
 
   .fa-brands {
-    color: #06065c;
+    color: #5354F2;
+  }
+  .fa-solid {
+    color: #5354F2;
+  }
+  .fa-regular {
+    color: #5354F2;
+  }
+  .fa-credit-card {
+    color: #5354F2;
   }
 }
