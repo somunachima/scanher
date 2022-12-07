@@ -1,0 +1,31 @@
+.form-container {
+  background-color: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 0 auto;
+  height: 1050px;
+  width: 900px;
+  justify-items: center;
+  // color: black;
+}
+
+.form-label {
+  color: black;
+}
+
+.edit-header {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+.form-button {
+  font-family: 'Syne';
+  color: #5354F2;
+  text-align: center;
+}
+
+// .delete-button {
+//   background-color: none;
+// }

@@ -1,0 +1,43 @@
+.confirmed-heading {
+  text-align: center;
+  color: #EC656E;
+}
+
+.confirmed-subtitle {
+  text-align: center;
+  color: #5354F2;
+}
+
+.confirmed-card {
+  font-family: 'Syne';
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 15px;
+  width: 700px;
+  justify-content: center;
+}
+
+.confirmed-btn {
+  text-decoration: none;
+  font-family: 'Syne';
+  width: 280px;
+  height: 40px;
+  // position: relative;
+  background:#EC656E;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+}
+
+.confirmed-btn:hover {
+  background: #5354F2;
+  color: white;
+}

@@ -1,11 +1,14 @@
 #dashboard-header {
   text-align: center;
-  color: #5354F2;
+  color: white;
+  font-size: 50px;
+  margin: 0 auto;
 }
 
 .container-dashboard {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
 
   .h3 {
     text-align: center;
@@ -17,6 +20,7 @@
 .dashboard-profile {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 
   #profile-pic {
     border-radius: 50%;
@@ -56,7 +60,32 @@
     margin: 0 auto;
     height: 330px;
     width: 630px;
+  }
 
+  .edit-btn {
+    text-decoration: none;
+    font-family: 'Syne';
+    width: 260px;
+    height: 40px;
+    // position: relative;
+    background:#EC656E;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+  }
+
+  .edit-btn:hover {
+    background: #5354F2;
+    color: white;
+  }
+
+  .fa-solid {
+    color: black;
   }
 
   .result-bookings {
@@ -73,7 +102,7 @@
 .video-advice {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 
   .advice {
     background-color: whitesmoke;
@@ -81,15 +110,15 @@
     border-radius: 9px;
     padding: 20px;
     margin: 0 auto;
-    height: 400px;
+    height: 730px;
     width: 1190px;
     justify-items: center;
   }
 
 }
 
-.dashboard-right {
-  display: flex;
+.dashboard-left {
+  display: inline-flex;
   flex-wrap: wrap;
 }
 

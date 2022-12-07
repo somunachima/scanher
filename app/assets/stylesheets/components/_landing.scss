@@ -55,10 +55,14 @@ body {
 
 .form-home {
   position: absolute;
-  top: 353px;
+  top: 285px;
   left: 865px;
   width: 542px;
   height: 49px;
+
+  h6 {
+    color: white
+  }
 }
 .rectangle-div1 {
   top: 424px;
@@ -87,7 +91,7 @@ body {
 }
 
 .subtitle-home {
-  font-size: 40px;
+  font-size: 57px;
   width: 550px;
   color: black;
 }

@@ -30,7 +30,7 @@
  width: 544px;
 }
 .btn-7:hover {
- background: transparent;
+ background: black;
  color: #fff;
 }
 .btn-7:before,
@@ -42,7 +42,7 @@
  height: 50%;
  right: 0;
  z-index: -1;
- background: #000;
+ background-color: #000;
  transition: all 0.3s ease;
 }
 .btn-7:before {
@@ -50,6 +50,7 @@
 }
 .btn-7:after {
  bottom: 0;
+ background-color: #000;
 }
 .btn-7:hover:before,
 .btn-7:hover:after {
