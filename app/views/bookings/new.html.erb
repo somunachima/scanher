@@ -5,7 +5,7 @@
 
       <div class="reason_card">
         <h6><strong> What's the reason for your scan? </strong></h6>
-        <strong><%= f.input :reason %></strong>
+        <strong><%= f.input :reason, label: false %></strong>
         <p>
         Any details you can share will help our clinicians understand your symptoms and scanning needs. They'll discuss these points with you in your pre-scan call.
         </p>
@@ -22,18 +22,18 @@
         <h6><strong>Have you had any previous surgery or imaging?</strong></h6>
         <strong> <%= f.collection_radio_buttons :previous_exams, [[true, 'Yes'], [false, 'No']], :first, :last %></strong>
         <p>
-        If yes, please provide additional details of the procedure in the additional information box below.
+        If yes, please provide additional details of the procedure in the "additional information" box below.
         </p>
       </div>
 
       <div class="allergies_card">
-        <strong><%= f.input :allergies %></strong>
-        <p>Please share any allergies you have.</p>
+        <h6><strong>Do you have any allergies?<%= f.input :allergies, label: false %></strong></h6>
+        <p>If yes, please share further details of your allergies.</p>
       </div>
 
       <div class="gp_card">
-        <strong><%= f.input :gp_details %></strong>
-       <p>Please share you GP name and address.</p>
+        <h6><strong>GP Name and Address<%= f.input :gp_details, label: false %></strong></h6>
+
       </div>
 
       <div class="additional_info">
