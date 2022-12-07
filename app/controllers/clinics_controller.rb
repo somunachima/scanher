@@ -7,9 +7,7 @@ class ClinicsController < ApplicationController
     if params[:exam][:body_part] != '' && params[:exam][:service] != ''
       @exams = Exam.where(body_part: params[:exam][:body_part], service: params[:exam][:service])
     end
-
     @clinics = Clinic.where(id: @exams.pluck(:clinic_id).uniq)
-    @timeslot = Timeslot.all
     @markers = @clinics.geocoded.map do |clinic|
       {
         lat: clinic.latitude,
@@ -17,6 +15,7 @@ class ClinicsController < ApplicationController
       }
     end
     @clinics = @clinics.sort_by { |clinic| clinic.distance_to(@search_location.first.coordinates) }
+    @timeslots = Timeslot.where.missing(:bookings)
   end
 
   private
