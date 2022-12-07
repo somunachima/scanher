@@ -49,8 +49,14 @@
               <%= f.submit "Submit" %>
               <% end %>
 
+              <%= link_to "Add Result", new_booking_result_path(booking) %>
+              <p style="color: #000000"><%= link_to "", booking_path(booking),
+                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                  class:"fa-solid fa-trash"%>
+              </p>
+
               <div class="result-bookings">
-                  <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
+                  <div><h6 style="color: #5454F2;"><strong>Results</strong></h6>
                   </div>
               </div>
             <% end %>
@@ -67,10 +73,15 @@
                 <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
                 <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
 
-                <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
+                <strong>Booking Status:</strong><br>
+                <% if booking.confirmed == true %>
+                  <h6>Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
+                <% else %>
+                  <h6 style="color: green;">Booking Confirmed by the Clinic!</h6><br>
+                <% end %>
 
                 <div class="result-bookings">
-                  <div><h6 style="color: #EC656E"><strong>Results</strong></h6>
+                  <div><h6 style="color: #EC656E"><strong><%= link_to "Results", booking_results_path(booking) %></strong></h6>
                     <%# <% if booking.result.documents.attached? %>
                       <%# <% booking.result.documents.each do |document| %>
                         <%#= image_tag document %>
@@ -85,7 +96,7 @@
                 </h6>
 
                 <div class="reschedule-booking">
-                  <p> <strong> <#%link_to("Reschedule Booking", edit_exam_timeslot_path(booking.timeslot), class: "edit-btn") %></strong></p>
+                  <%# <p> <strong> <#%link_to("Reschedule Booking", edit_exam_timeslot_path(booking.timeslot), class: "edit-btn")</strong></p> %>
                 </div>
 
 
