@@ -4,18 +4,16 @@
   --font-roboto: Roboto;
   --font-kanit: Kanit;
   --font-grotley: Grotley;
-
   --color-white: #fff;
 /* Colors */
-  --color-gray-100: #fbfbfb;
-  --color-gray-200: #ececec;
+  --color-gray-100: #FBFBFB;
+  --color-gray-200: #ECECEC;
   --color-gray-300: #888;
-  --color-beige: #faf1e3;
+  --color-beige: #FAF1E3;
   --color-black: #000;
-  --color-brown-100: #ec656e;
-  --color-brown-200: #ff554d;
-  --color-indigo: #7339dd;
-
+  --color-brown-100: #EC656E;
+  --color-brown-200: #FF554D;
+  --color-indigo: #7339DD;
   /* font sizes */
   $font-size-base: 14px;
   $font-size-lg: 18px;
@@ -26,29 +24,23 @@
   $font-size-5xl: 64px;
   $font-size-6xl: 79px;
   $font-size-7xl: 1500px;
-
   /* Gaps */
   --gap-sm: 5px;
   --gap-md: 14px;
-
   /* Paddings */
   --padding-sm: 16px;
   --padding-md: 28px;
-
   /* border radiuses */
   --br-sm: 9px;
   --br-md: 10px;
 }
-
 #logo-home {
   font-size: 90px;
   font-family: var(--font-syne);
 }
-
 .form-label{
   color: white;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -65,7 +57,6 @@
   top: 28%;
   left: 2%;
 }
-
 .page-contain1 {
   display: flex;
   // min-height: 100vh;
@@ -79,7 +70,6 @@
   top: 28%;
   left: 26%;
 }
-
 .page-contain2 {
   display: flex;
   // min-height: 100vh;
@@ -93,7 +83,6 @@
   top: 28%;
   left: 50%;
 }
-
 .page-contain3 {
   display: flex;
   // min-height: 100vh;
@@ -107,7 +96,6 @@
   top: 28%;
   left: 74%;
 }
-
 .clinic-middle-card {
   display: flex;
   // min-height: 100vh;
@@ -119,9 +107,8 @@
   font-family: 'Syne';
   position: absolute;
   top: 47%;
-  left: 69%;
+  left: 73%;
 }
-
 .clinic-middle-card1 {
   display: flex;
   // min-height: 100vh;
@@ -135,7 +122,6 @@
   top: 47%;
   left: 1%;
 }
-
 .clinic-middle-card2 {
   display: flex;
   // min-height: 100vh;
@@ -147,9 +133,8 @@
   font-family: 'Syne';
   position: absolute;
   top: 47%;
-  left: 24%;
+  left: 25%;
 }
-
 .clinic-middle-card3 {
   display: flex;
   // min-height: 100vh;
@@ -161,9 +146,11 @@
   font-family: 'Syne';
   position: absolute;
   top: 47%;
-  left: 47%;
+  left: 49%;
 }
-
+// .card-height {
+//   height: 200px;
+// }
 .data-card {
   font-family: 'Syne';
   display: flex;

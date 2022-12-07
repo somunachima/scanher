@@ -91,13 +91,13 @@ body {
 }
 
 .subtitle-home {
-  font-size: 57px;
+  font-size: 35px;
   width: 550px;
   color: black;
 }
 
 .subtitle-home-days {
-  font-size: 40px;
+  font-size: 47px;
   width: 570px;
   color: #EC656E;
 }
@@ -126,7 +126,7 @@ body {
 }
 .where-women-can-get-answers-in {
   position: absolute;
-  top: 89px;
+  top: 70px;
   left: 113px;
   font-family: var(--font-syne);
   display: inline-block;
@@ -154,7 +154,7 @@ body {
   position: absolute;
   top: 777px;
   left: 514px;
-  font-size: var(--font-size-3xl);
+  font-size: 22px;
   font-family: var(--font-syne);
   color: var(--color-white);
   text-align: center;
@@ -232,13 +232,12 @@ body {
 }
 
 .scanning-services-b {
-  top: 1333px;
+  top: 1313px;
   left: 329px;
   font-size: 55px;
   width: 839px;
   height: 137px;
 }
-.line-icon,
 .reviews-b {
   position: absolute;
   top: 1788px;
@@ -435,6 +434,8 @@ body {
   margin-block-start: 0;
   margin-block-end: 0;
   color: var(--color-brown-100);
+  text-align: center;
+  font-size: 22px;
 }
 .blank-line-p4 {
   margin-block-start: 0;
@@ -445,8 +446,8 @@ body {
 .search-for-mri-ct-ultrasound {
   margin-block-start: 0;
   margin-block-end: 0;
-  font-size: 20px;
-
+  font-size: 18px;
+  text-align: center;
 }
 .blank-line-p5 {
   margin-block-start: 0;

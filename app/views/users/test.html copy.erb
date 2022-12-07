@@ -1,249 +1,97 @@
-<div class="container my-3">
-  <div class="row">
-    <div class="col-3">
-      <div class="card dashboard-card dc-side">
-      <h1> Her space </h1>
-      <div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards">
-      <div class="task-cards-color-indicator"></div>
-      <div class="task-cards-content">
-        <div class="task-cards-text">
-          <span class="task-cards-text1 ParagraphSmall">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH4"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards">
-      <div class="task-cards-color-indicator"></div>
-      <div class="task-cards-content">
-        <div class="task-cards-text">
-          <span class="task-cards-text1 ParagraphSmall">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH4"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Your result is avaible</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42"><span>MRI</span></span>
-          <span class="task-cards-text5 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <link href="./task-cards.css" rel="stylesheet" />
-  <div>
-    <div class="task-cards-task-cards2">
-      <div class="task-cards-color-indicator2"></div>
-      <div class="task-cards-content2">
-        <div class="task-cards-text2">
-          <span class="task-cards-text1 ParagraphSmall2">
-            <span>Payment approval</span>
-          </span>
-          <span class="task-cards-text3 HeadingH42">SCAN</span>
-          <span class="task-cards-text4 ParagraphSmallBold2">
-            <span>From Hoxton Hospital</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
+<br><h1 id="dashboard-header"><strong><%= @current_user.full_name %>'s Dashboard</strong></h1>
+<div class="container-dashboard">
+  <div class="dashboard-left">
+    <div class="dashboard-profile">
+      <div class="profile-left">
+        <h3 id="dashboard-subs"><strong>Profile</strong></h3>
+        <h6><strong><%= @current_user.full_name %></strong><h6>
+        <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill %><br> <img>
+        <br><%= @current_user.address %><br>
+        <%= @current_user.email %><br>
+        <%= @current_user.phone_number %><br>
+        <%= @current_user.birthday %><br>
       </div>
 
-    </div>
-    <div class="col-6">
-      <div class="row">
-        <div class="col-6 mb-3">
-          <div class="card dashboard-card my-profile">
-          <h1> My profile </h1>
-          </div>
-        </div>
-        <div class="col-6 mb-3">
-          <div class="card dashboard-card">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card dashboard-card">
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card dashboard-card">
-          </div>
-        </div>
-      </div>
-    </div>
+      <div class="next-booking">
+        <h3 id="dashboard-subs"><strong>Bookings</strong></h3>
+        <div class="bookings-card">
+          <% if current_user.admin %>
+          <div class="admin-card">
+              <% @users.each do |user| %>
 
-    <div class="col-3">
-      <div class="card dashboard-card dc-side2">
-      <h2> Bookings </h2>
-<div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
+                <%= user.title %> <%= user.full_name %>
+                <%= user.address %>
+
+                <% user.bookings.each do |booking| %>
+                <h6> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h6><br>
+                <strong><%= booking.timeslot.exam.clinic.name %></strong>
+                <%= booking.timeslot.exam.clinic.address %> <br>
+                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+
+                  <%= simple_form_for [booking] do |f| %>
+                  <%= f.check_box :confirmed %>
+                  <%= f.submit "Submit" %>
+                  <% end %>
+
+                  <div class="result-bookings">
+                      <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
+                      </div>
+                  </div>
+                <% end %>
+              <% end %>
+          </div>
+
+            <% else %>
+              <div class="user-card">
+                <% current_user.bookings.each do |booking| %>
+                  <div class="upcoming-bookings">
+                    <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5><br>
+                    <strong><%= booking.timeslot.exam.clinic.name %></strong>
+                    <%= booking.timeslot.exam.clinic.address %> <br>
+                    <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                    <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+
+                    <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
+
+                    <%= booking.confirmed %> <br>
+
+                    <div class="reschedule-booking">
+                      <p> <strong> <#%link_to("Reschedule Booking", edit_exam_timeslot_path(booking.timeslot), class: "edit-btn") %></strong></p>
+                    </div>
+                    <div class="result-bookings">
+                      <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
+                        <%# <% if booking.result.documents.attached? %>
+                          <%# <% booking.result.documents.each do |document| %>
+                            <%#= image_tag document %>
+                            <%# if document.previewable? %>
+                              <%#= image_tag(document.preview(resize: '200x200')) %>
+                            <%# end %>
+                          <%# end %>
+                        <%# end %>
+                      </div>
+
+
+                      <p style="color: #000000"><%= link_to "", booking_path(booking),
+                        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                        class:"fa-solid fa-trash"%>
+                      </p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+
+            <% end %>
         </div>
       </div>
     </div>
   </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div><div>
-  <link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<link href="./e-x-a-m.css" rel="stylesheet" />
-  <div>
-    <div class="e-x-a-m-e-x-a-m">
-      <div class="e-x-a-m-examcolor"></div>
-      <div class="e-x-a-m-contentcolor">
-        <div class="e-x-a-m-texttt">
-          <span class="e-x-a-m-text ParagraphSmall"><span>Exam</span></span>
-          <span class="e-x-a-m-text2 HeadingH4"><span>Finish</span></span>
-          <span class="e-x-a-m-text4 ParagraphSmallBold">
-            <span>10:00 am -12:00 am</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
+
+  <div class="video-advice">
+    <div class="advice">
+      <h3 id="dashboard-subs"><strong>Advice</strong></h3>
+      <iframe width="1000" height="630" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </div>

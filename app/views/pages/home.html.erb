@@ -1,121 +1,107 @@
 <div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
   <div class="homepage-div">
     <div class="scanher-background">
-    <%= image_tag "1background.png"%>
+      <%= image_tag "1background.png"%>
     </div>
     <div class="form-home">
       <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <h6><strong>Body Area<%= f.input :body_part, label: false, placeholder: "Body Area", collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %></strong></h6>
         <h6><strong>Scan Type<%= f.input :service, label: false, placeholder: "Scan Type", collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %></strong></h6>
         <%= f.fields_for :clinic do |clinic_form| %>
-        <h6><strong>Address<%= clinic_form.input :address, label: false, placeholder: "Enter Your Address",
-        input_html: {data: {address_autocomplete_target: "address"}},
-        wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%></strong></h6>
+          <h6><strong>Address<%= clinic_form.input :address, label: false, placeholder: "Enter Your Address",
+          input_html: {data: {address_autocomplete_target: "address"}},
+          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%></strong></h6>
         <% end %>
         <br>
-
         <%= f.submit "Book Now", class: "btn-7" %>
       <% end %>
     </div>
-
-      <div class="where-women-can-get-answers-in">
-
+    <div class="where-women-can-get-answers-in">
       <h1 id="logo-home"><strong>scan</strong><i style="color: #5454F2";><strong>Her.</i></strong></h1>
-
       <h2 class="subtitle-home"><strong>Where women can get answers in</strong><i style="color: #EC656E";><strong> days </i></strong><strong>not months</strong></h2>
-
     </div>
     <b class="how-it-works">How it works</b>
     <b class="scanning-services-b">Scanning Services</b>
 
-    <img class="line-icon1" alt="" src="public/line-4.svg" />
 
-    <div class="page-contain">
-      <a href="#" class="data-card">
-        <h3>Step 1</h3>
-        <h4><strong>Booking and Faster Referral</strong></h4>
-        <p><strong>Select a scan type in a location that is convenient for you.</strong></p>
-        <span class="link-text">
-        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
-        </svg>
-      </span>
-      </a>
+        <div class="page-contain">
+          <a href="#" class="data-card">
+            <h3>Step 1</h3>
+            <h4><strong>Booking and Faster Referral</strong></h4>
+            <p><strong>Select a scan type in a location that is convenient for you.</strong></p>
+            <span class="link-text">
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="page-contain1">
+          <a href="#" class="data-card">
+            <h3>Step 2</h3>
+            <h4><strong>Scan Confirmation</strong></h4>
+            <p><strong>Your chosen clinic will offer a choice of appointment times.</strong></p>
+            <span class="link-text">
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="page-contain2">
+          <a href="#" class="data-card">
+            <h3>Step 3</h3>
+            <h4><strong>Your Appointment</strong></h4>
+            <p><strong>The specialists at the selected clinic will answer any queries and complete the scan.</strong></p>
+            <span class="link-text">
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="page-contain3">
+          <a href="#" class="data-card">
+            <h3>Step 4</h3>
+            <h4><strong>Your Results</strong></h4>
+            <p><strong>Your clinician will receive your results within 7 days, and share your results via email.</strong></p>
+            <span class="link-text">
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      <div class="clinic-middle-card card-height">
+        <a href="#" class="data-card">
+          <h6>Ultrasound</h6>
+          <h4>Start from £180</h4>
+          <p>A procedure that uses high-frequency sound waves to create an image of part of the inside of the body.</p>
+        </a>
+      </div>
+      <div class="clinic-middle-card1 card-height">
+        <a href="https://www.nhs.uk/conditions/ct-scan/" class="data-card">
+          <h6>CT</h6>
+          <h4>Start from £350</h4>
+          <p>A computerised tomography (CT) scan uses X-rays and a computer to create detailed images of the inside of the body.</p>
+        </a>
+      </div>
+      <div class="clinic-middle-card2 card-height">
+        <a href="https://www.nhs.uk/pregnancy/your-pregnancy-care/screening-tests" class="data-card">
+          <h6>Pregnancy</h6>
+          <h4>Start from £120</h4>
+          <p>Ultrasound scans use sound waves to build a picture of the baby in the womb. The scans are painless, and can be carried out at any stage of pregnancy.</p>
+        </a>
+      </div>
+      <div class="clinic-middle-card3 card-height">
+        <a href="https://www.nhs.uk/conditions/mri-scan/" class="data-card">
+          <h6>MRI</h6>
+          <h4>Start from £300</h4>
+          <p>Magnetic Resonance Imaging uses strong magnetic fields and radio waves to produce detailed images of the inside of the body.</p>
+        </a>
+      </div>
+
     </div>
-
-    <div class="page-contain1">
-      <a href="#" class="data-card">
-        <h3>Step 2</h3>
-        <h4><strong>Scan Confirmation</strong></h4>
-        <p><strong>Your chosen clinic will offer a choice of appointment times.</strong></p>
-        <span class="link-text">
-        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
-        </svg>
-      </span>
-      </a>
-    </div>
-
-    <div class="page-contain2">
-      <a href="#" class="data-card">
-        <h3>Step 3</h3>
-        <h4><strong>Your Appointment</strong></h4>
-        <p><strong>The specialists at the selected clinic will answer any queries and complete the scan.</strong></p>
-        <span class="link-text">
-        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
-        </svg>
-      </span>
-      </a>
-    </div>
-
-    <div class="page-contain3">
-      <a href="#" class="data-card">
-        <h3>Step 4</h3>
-        <h4><strong>Your Results</strong></h4>
-        <p><strong>Your clinician will receive your results within 7 days, and share your results via email.</strong></p>
-        <span class="link-text">
-        <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/>
-        </svg>
-      </span>
-      </a>
-    </div>
-
-    </div>
-    <div class="clinic-middle-card">
-      <a href="#" class="data-card">
-        <h6>Ultrasound</h6>
-        <h4>Starting from £180</h4>
-        <p>A procedure that uses high-frequency sound waves to create an image of part of the inside of the body.</p>
-    </a>
-
-
-    </div>
-    <div class="clinic-middle-card1">
-      <a href="#" class="data-card">
-        <h6>CT</h6>
-        <h4>Starting from £350</h4>
-        <p>A computerised tomography (CT) scan uses X-rays and a computer to create detailed images of the inside of the body.</p>
-    </a>
-    </div>
-
-     <div class="clinic-middle-card2">
-      <a href="#" class="data-card">
-        <h6>Pregnancy</h6>
-        <h4>Starting from £120</h4>
-        <p>Ultrasound scans use sound waves to build a picture of the baby in the womb. The scans are painless, and can be carried out at any stage of pregnancy.</p>
-    </a>
-    </div>
-
-       <div class="clinic-middle-card3">
-      <a href="#" class="data-card">
-        <h6>MRI</h6>
-        <h4>Starting from £300</h4>
-        <p>Magnetic Resonance Imaging uses strong magnetic fields and radio waves to produce detailed images of the inside of the body.</p>
-    </a>
-    </div>
-
     <div class="shine-a-light-on-your-reproduc">
       <p class="shine-a-light-on-your-reproduc1">
         <span><span><strong>Shine a light on your reproductive health</strong></span>
@@ -125,24 +111,28 @@
         <span><span>Search for MRI, CT, ultrasound and pregnancy scans near you and book an appointment online in minutes.</span></span>
       </p>
     </div>
-
-
-
     <div class="three-appointments-wrapped-up">
       Three appointments wrapped up into one, easy-to-use platform with
       dedicated guidance.
     </div>
-
-
     <a href="#" class="to-top scroll">Back to top</a>
 
-    <%# <div class="symptoms-or-no-symptoms-book">Symptoms or no symptoms, book a scan that’s right for you and get to know you, like never before. Get the full picture and peace of mind,with direct access to our dedicated expert clinical team.</div> %>
+
+        <div class="reviews-b">
+        <b>Testimonials</b>
+              <div class="carousel-wrapper">
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="image-one"></div>
+            <div class="image-two"></div>
+            <div class="image-three"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
-
-
 
 
 <script>
@@ -152,21 +142,18 @@
       // Please sync "Info Page" to the project
     });
   }
-
   var clinicCardContainer1 = document.getElementById("clinicCardContainer1");
   if (clinicCardContainer1) {
     clinicCardContainer1.addEventListener("click", function (e) {
       // Please sync "Info Page" to the project
     });
   }
-
   var clinicCardContainer2 = document.getElementById("clinicCardContainer2");
   if (clinicCardContainer2) {
     clinicCardContainer2.addEventListener("click", function (e) {
       // Please sync "Info Page" to the project
     });
   }
-
   var clinicCardContainer3 = document.getElementById("clinicCardContainer3");
   if (clinicCardContainer3) {
     clinicCardContainer3.addEventListener("click", function (e) {

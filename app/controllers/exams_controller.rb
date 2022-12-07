@@ -10,11 +10,10 @@ class ExamsController < ApplicationController
 
   def create
     @clinic = Clinic.find(params[:clinic_id])
-
     @service_part = Service.find(params[:service_part_id])
     @exam = Exam.new(exam_params)
     @exam.save
-    
+
   end
 
   private
