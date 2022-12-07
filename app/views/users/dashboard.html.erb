@@ -61,16 +61,16 @@
                         <%# end %>
                       <%# end %>
                     </div>
-                  </div>
+
                     <p> <strong><%#= link_to("Reschdule Booking", edit_exam_timeslot_path(booking), class: "edit-btn") %></strong>
                     </p>
-                  </div>
-                  </div>
+
+
                     <p style="color: #000000">Cancel Booking <%= link_to "", booking_path(booking),
                       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
                       class:"fa-solid fa-trash"%>
                     </p>
-                  </div>
+
               </div>
               <% end %>
 
