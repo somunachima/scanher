@@ -1,3 +1,18 @@
 .clinics-container{
   background-repeat: repeat;
 }
+
+.clinics-card {
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 15px;
+  height: 850px;
+  width: 485px;
+}
+
+.clinics-title {
+  text-align: center;
+  font-size: 50px;
+}

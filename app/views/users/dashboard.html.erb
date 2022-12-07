@@ -1,13 +1,13 @@
 
-<h1 id="dashboard-header"><strong><%= @current_user.full_name %>'s Dashboard</strong></h1>
+<br><h1 id="dashboard-header"><strong><%= @current_user.full_name %>'s Dashboard</strong></h1>
 <div class="container-dashboard">
   <div class="dashboard-left">
     <div class="dashboard-profile">
       <div class="profile-left">
         <h3 id="dashboard-subs"><strong>Profile</strong></h3>
-        <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
         <h6><strong><%= @current_user.full_name %></strong><h6>
-        <%= @current_user.address %><br>
+        <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill %><br> <img>
+        <br><%= @current_user.address %><br>
         <%= @current_user.email %><br>
         <%= @current_user.phone_number %><br>
         <%= @current_user.birthday %><br>
@@ -15,6 +15,23 @@
 
       <div class="next-booking">
         <h3 id="dashboard-subs"><strong>Bookings</strong></h3>
+        <div class="booking-carousel">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <% current_user.bookings.each_with_index do |booking, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <div class="upcoming-bookings">
+                  <br><h6> <strong><%= booking.timeslot.exam.service%> scan: <%= booking.timeslot.exam.body_part %></strong> </h6>
+                  <strong><%= booking.timeslot.exam.clinic.name %></strong> <br>
+                  <%= booking.timeslot.exam.clinic.address %> <br>
+                  <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                  £<%= booking.timeslot.exam.price %> <br>
+
+
+                <div class="result-bookings">
+                <h6><strong>Results</strong></h6>
+                </div>
+                </div>
 
         <% if current_user.admin %>
           <% @users.each do |user| %>
@@ -43,7 +60,9 @@
                   <%= booking.timeslot.exam.clinic.address %> <br>
                   <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
                   £<%= booking.timeslot.exam.price %> <br>
-                    <%= booking.confirmed %> <br>
+
+                  <%= booking.confirmed %> <br>
+
 
                   <%# <% if booking.result.documents.attached? %>
                     <%# <% booking.result.documents.each do |document| %>
@@ -57,6 +76,17 @@
                 </div>
               </div>
               <% end %>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
         <% end %>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,7 +96,10 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
+
           </div>
+
+          .
         </div>
       </div>
     </div>
@@ -79,23 +112,13 @@
     </div>
   </div>
 
-  <div class="dashboard-right">
+  <%# <div class="dashboard-right">
     <div class="chatroom">
         <h3 id="dashboard-subs"><strong>Chatroom</strong></h3>
       <div class="container chatroom">
-  <%# <h1>#= @chatroom.name</h1> %>
-        <%# <div class="messages"> %>
-          <%# @chatroom.messages.each do |message| %>
-            <%# <div id="message-= message.id"> %>
-              <%# <small> %>
-                <%# <strong>= message.user.nickname</strong> %>
-                <%# <i>= message.created_at.strftime("%a %b %e at %l:%M %p")</i> %>
-              <%# </small> %>
-              <%# <p>= message.content</p> %>
-            <%# </div> %>
-          <%# end %>
+
         </div>
       </div>
     </div>
-  </div>
+  </div> %>
 </div>
