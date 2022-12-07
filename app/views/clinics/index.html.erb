@@ -39,13 +39,14 @@
         </div>
       <% end %>
     </div>
-    <div class="col-6">
-    <div id="clinic-map" style="position: sticky; top: 68px;">
-      </div>
-        <div style="width: 100%; height: 100vh;"
-          data-controller="map"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col">
+      <div id="map rounded-4 shadow" style="position: sticky; top: 10px;">
+        <div>
+          <div style="width: 100%; height: 97vh;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
     </div>
