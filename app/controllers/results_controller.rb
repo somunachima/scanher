@@ -1,5 +1,4 @@
 class ResultsController < ApplicationController
-
   def index
     @booking = Booking.find(params[:booking_id])
     @results = Result.all
@@ -31,5 +30,4 @@ class ResultsController < ApplicationController
   def result_params
     params.require(:result).permit(:details, :date, documents: [])
   end
-
 end
