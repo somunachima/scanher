@@ -2,14 +2,24 @@
   display:flex;
   justify-content: space-evenly;
 
+  .row-cards-confirmation{
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+
   .confirmed-heading {
-    text-align: center;
     color: #EC656E;
+    font-weight: bold;
+    font-family: 'Syne';
   }
 
   .confirmed-subtitle {
-    text-align: center;
-    color: #5354F2;
+    color: #06065c;
+    margin-bottom: 36px;
   }
 
   .confirmed-card {
@@ -40,7 +50,11 @@
   }
 
   .confirmed-btn:hover {
-    background: #5354F2;
+    background: #06065c;
     color: white;
+  }
+
+  .fa-brands {
+    color: #06065c;
   }
 }

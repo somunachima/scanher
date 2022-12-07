@@ -2,20 +2,21 @@
   <div class="confirmed-card">
     <div class="row">
       <h1 class="confirmed-heading"><strong>Booking Request Submitted</strong></h1>
-      <h5 class="confirmed-subtitle"><strong>Please wait to receive confirmation of your booking through Your Dashboard!</strong></h5>
-      <h6><strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6>
-      <h6><strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6>
-      <h6><strong>Reason:</strong> <%= @booking.reason %></h6>
-      <h6><strong>Previous Exams:</strong> <%= @booking.previous_exams? %></h6>
-      <h6><strong>GP Details:</strong> <%= @booking.gp_details %></h6>
-      <h6><strong>Allergies:</strong> <%= @booking.allergies %></h6>
-      <h6><strong>Addtional Information:</strong> <%= @booking.additional_information %></h6>
-      <h6><strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6>
+      <h5 class="confirmed-subtitle"><strong>Please wait to receive confirmation of your booking through Your Dashboard!</strong></h5><br>
+      <h6><strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6><br>
+      <h6><strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6><br>
+      <h6><strong>Reason:</strong> <%= @booking.reason %></h6><br>
+      <h6><strong>Previous Exams:</strong> <%= @booking.previous_exams? %></h6><br>
+      <h6><strong>GP Details:</strong> <%= @booking.gp_details %></h6><br>
+      <h6><strong>Allergies:</strong> <%= @booking.allergies %></h6><br>
+      <h6><strong>Additional Information:</strong> <%= @booking.additional_information %></h6><br>
+      <h6><strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6><br><br>
       <h6><strong>Price:</strong> £<%= @timeslot.exam.price %></h6><br>
 
-      <div>
-        <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %></strong>
-      </div>
+      <%# <div>
+        <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %>
+        <%# </strong> %>
+      <%# </div>  %>
     </div>
   </div>
 
@@ -33,12 +34,13 @@
           <div class="panel panel-default credit-card-box">
             <div class="panel-heading display-table" >
               <div class="row display-tr" >
-                <h3 class="panel-title display-td" >Payment Details</h3>
+                <h1 class="confirmed-heading" >Payment Details</h1>
                 <div class="display-td" >
-                  <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+
                   <i class="fa-brands fa-cc-visa fa-xl"></i>
                   <i class="fa-brands fa-cc-amex fa-xl"></i>
-                  <i class="fa-brands fa-cc-visa"></i>
+                  <i class="fa-brands fa-cc-paypal fa-xl"></i>
+                  <i class="fa-brands fa-cc-mastercard fa-xl"></i>
                 </div>
               </div>
             </div>
@@ -49,10 +51,10 @@
               <div class="row">
                 <div class="col-xs-12">
                   <div class="form-group"><br>
-                  <label for="cardNumber">CARD NUMBER</label>br
+                  <label for="cardNumber">CARD NUMBER</label>
                     <div class="input-group">
                       <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus/>
-                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                        <span class="input-group-addon"><i class="fa fa-credit-card fa-xl ms-1"></i></span>
                     </div>
                   </div>
               </div>
@@ -63,7 +65,7 @@
           <div class="row">
             <div class="col-xs-7 col-md-7">
               <div class="form-group">
-                <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span>
+                <label for="cardExpiry"><span class="hidden-xs"></span>
                 <span class="visible-xs-inline">EXP</span> DATE</label>
                 <input type="tel" class="form-control"name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required/>
 
@@ -73,7 +75,7 @@
 
 
           <div class="col-xs-5 col-md-5 pull-right">
-              <div class="form-group">
+              <div class="form-group"><br>
                 <label for="cardCVC">CV CODE</label>
                 <input    type="tel"class="form-control"name="cardCVC"placeholder="CVC"autocomplete="cc-csc"required/> <br>
               </div>
@@ -92,7 +94,14 @@
 
           <div class="row">
             <div class="col-xs-12">
-              <button class="confirmed-btn" type="submit">confirm payment</button>
+              <h4><strong>Price:</strong> £<%= @timeslot.exam.price %></h4><br>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="confirmed-btn" type="submit"><%= link_to("confirm payment", dashboard_path(current_user), class: "confirmed-btn") %></button>
             </div>
           </div>
 
@@ -102,6 +111,8 @@
             </div>
           </div>
           </form>
+
+
 
       </div>
     </div>
