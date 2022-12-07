@@ -1,119 +1,104 @@
-
 <br><h1 id="dashboard-header"><strong><%= @current_user.full_name %>'s Dashboard</strong></h1>
 <div class="container-dashboard">
   <div class="dashboard-left">
     <div class="dashboard-profile">
-      <div class="profile-left">
         <h3 id="dashboard-subs"><strong>Profile</strong></h3>
-        <h6><strong><%= @current_user.full_name %></strong><h6>
-        <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill %><br> <img>
-        <br><%= @current_user.address %><br>
-        <%= @current_user.email %><br>
-        <%= @current_user.phone_number %><br>
-        <%= @current_user.birthday %><br>
-      </div>
+      <div class="profile-left">
 
-      <div class="next-booking">
-      <h3 id="dashboard-subs"><strong>Bookings</strong></h3>
-        <div class="booking-carousel">
-          <div class="admin-carousel">
-            <% if current_user.admin %>
-              <% @users.each do |user| %>
-                <%= user.title %> <%= user.full_name %>
-                <%= user.address %>
-                <% user.bookings.each do |booking| %>
-                <h6> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h6><br>
-                <strong><%= booking.timeslot.exam.clinic.name %></strong>
-                <%= booking.timeslot.exam.clinic.address %> <br>
-                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
-                  <%= simple_form_for [booking] do |f| %>
-                  <%= f.check_box :confirmed %>
-                  <%= f.submit "Submit" %>
-                  <% end %>
-                <div class="result-bookings">
-                    <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
-                    </div>
-                </div>
-                <% end %>
-          </div>
-              <% end %>
-            <% else %>
-          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <% current_user.bookings.each_with_index do |booking, index| %>
-              <div class="carousel-item <%= 'active' if index == 0 %>">
-                <div class="upcoming-bookings">
-                  <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5><br>
-                  <strong><%= booking.timeslot.exam.clinic.name %></strong>
-                  <%= booking.timeslot.exam.clinic.address %> <br>
-                  <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                  
-                  <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
-                  <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
-                  <div class="result-bookings">
-                    <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
-                      <%# <% if booking.result.documents.attached? %>
-                        <%# <% booking.result.documents.each do |document| %>
-                          <%#= image_tag document %>
-                          <%# if document.previewable? %>
-                            <%#= image_tag(document.preview(resize: '200x200')) %>
-                          <%# end %>
-                        <%# end %>
-                      <%# end %>
-                    </div>
+        <div class="profile-pic-image">
+        <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill, border_radius: 50 %><br> <img>
+        </div>
 
-
-                    <%# <p> <strong>= link_to("Reschedule Booking", edit_exam_timeslot_path(booking), class: "edit-btn")</strong> %>
-                    <%# </p> %>
-
-                  £<%= booking.timeslot.exam.price %> <br>
-
-                  <%= booking.confirmed %> <br>
-
-
-  
-
-
-                    <p style="color: #000000">Cancel Booking <%= link_to "", booking_path(booking),
-                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                      class:"fa-solid fa-trash"%>
-                    </p>
-                  </div>
-              </div>
-              <% end %>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-            <% end %>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-          </div>
+        <div class="profile-info">
+          <h6><strong><%= @current_user.full_name %></strong><h6>
+          <br><%= @current_user.address %><br>
+          <%= @current_user.email %><br>
+          <%= @current_user.phone_number %><br>
+          <%= @current_user.birthday %><br>
         </div>
       </div>
     </div>
 
-  </div>
-
-</div>
-</div>
-
-  <div class="video-advice">
-    <div class="advice">
-      <h3 id="dashboard-subs"><strong>Advice</strong></h3>
-      <iframe width="1000" height="630" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-advice">
+      <div class="advice">
+        <h3 id="dashboard-subs"><strong>Advice</strong></h3>
+        <iframe width="600" height="400" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
+
+  <div class="next-booking">
+    <h3 id="dashboard-subs-booking"><strong>Bookings</strong></h3>
+    <div class="bookings-card">
+      <% if current_user.admin %>
+      <div class="admin-card">
+          <% @users.each do |user| %>
+
+            <%= user.title %> <%= user.full_name %>
+            <%= user.address %>
+
+            <% user.bookings.each do |booking| %>
+            <h6> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h6><br>
+            <strong><%= booking.timeslot.exam.clinic.name %></strong>
+            <%= booking.timeslot.exam.clinic.address %> <br>
+            <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+            <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+
+              <%= simple_form_for [booking] do |f| %>
+              <%= f.check_box :confirmed %>
+              <%= f.submit "Submit" %>
+              <% end %>
+
+              <div class="result-bookings">
+                  <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
+                  </div>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+
+        <% else %>
+          <div class="user-card">
+            <% current_user.bookings.each do |booking| %>
+              <div class="upcoming-bookings">
+                <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5><br>
+                <strong><%= booking.timeslot.exam.clinic.name %></strong>
+                <%= booking.timeslot.exam.clinic.address %> <br>
+                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+
+                <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
+
+                <div class="result-bookings">
+                  <div><h6 style="color: #EC656E"><strong>Results</strong></h6>
+                    <%# <% if booking.result.documents.attached? %>
+                      <%# <% booking.result.documents.each do |document| %>
+                        <%#= image_tag document %>
+                        <%# if document.previewable? %>
+                          <%#= image_tag(document.preview(resize: '200x200')) %>
+                        <%# end %>
+                      <%# end %>
+                    <%# end %>
+                  </div>
+
+                <h6 style="color: #5354F2"><strong>Message Clinic Here</strong> <%= link_to " ", booking_chatroom_path(booking, booking.chatroom.id),class:"fa-solid fa-envelope" %>
+                </h6>
+
+                <div class="reschedule-booking">
+                  <p> <strong> <#%link_to("Reschedule Booking", edit_exam_timeslot_path(booking.timeslot), class: "edit-btn") %></strong></p>
+                </div>
+
+
+                  <p style="color: #000000"><%= link_to "", booking_path(booking),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                    class:"fa-solid fa-trash"%>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+        <% end %>
+    </div>
+  </div>
+</div>

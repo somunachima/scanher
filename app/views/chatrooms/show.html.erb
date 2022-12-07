@@ -17,8 +17,12 @@
     <% end %>
   </div>
 
+
+</div>
+
+<div class="container-messages">
 <%= simple_form_for [@booking, @chatroom, @message],
-  html: {class: "d-flex"} do |f|
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
 %>
   <%= f.input :content,
     label: false,
@@ -28,6 +32,7 @@
   <%= f.submit "Send", class: "chatroom-btn" %>
 <% end %>
 </div>
+
 
 
 <%# <div class="messages" data-chatroom-subscription-target="messages">

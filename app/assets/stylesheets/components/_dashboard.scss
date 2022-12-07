@@ -18,85 +18,133 @@
 
 
 .dashboard-profile {
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 15px;
+  height: 280px;
+  width: 650px;
+  text-align: center;
+
+  .profile-pic-image {
+    img {
+      border-radius: 10%;
+    }
+  }
 
   #profile-pic {
     border-radius: 50%;
     justify-content: center;
     justify-items: center;
+
   }
 
   .profile-left {
-    background-color: whitesmoke;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 9px;
-    padding: 20px;
-    margin: 15px;
-    height: 420px;
-    width: 350px;
-    text-align: center;
-  }
-
-
-  .next-booking {
-    background-color: whitesmoke;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 9px;
-    padding: 20px;
-    margin: 15px;
-    height: 420px;
-    width: 807px;
-  }
-
-  .upcoming-bookings {
     display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 9px;
-    padding: 15px;
-    border-left: 10px #5354F2;
-    margin: 0 auto;
-    height: 330px;
-    width: 630px;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  .edit-btn {
-    text-decoration: none;
-    font-family: 'Syne';
-    width: 260px;
-    height: 40px;
-    // position: relative;
-    background:#EC656E;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: all 0.3s;
-    margin-top: -4px;
+  .profile-info h6 {
+    font-size: 20px;
   }
+}
 
-  .edit-btn:hover {
-    background: #5354F2;
-    color: white;
-  }
+.next-booking {
+  background-color: whitesmoke;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-bottom: 20px;
+  margin: 15px;
+  height: 775px;
+  width: 807px;
+  overflow: auto;
+}
 
-  .fa-solid {
-    color: black;
-  }
+.user-card {
+  background-color: transparent;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 9px;
+  // padding: 20px;
+  margin: 15px;
+  height: 420px;
+  width: 500px;
+}
 
-  .result-bookings {
+.admin-card {
+  background-color: whitesmoke;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 9px;
+  padding: 20px;
+  margin: 15px;
+  height: 420px;
+  width: 807px;
+}
 
-  }
+.upcoming-bookings {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 9px;
+  padding: 15px;
+  border-left: 10px #5354F2;
+  // margin: 0 auto;
+  margin-bottom: 20px;
+  height: 360px;
+  width: 740px;
+}
+
+.edit-btn {
+  text-decoration: none;
+  font-family: 'Syne';
+  width: 260px;
+  height: 40px;
+  // position: relative;
+  background:#EC656E;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+}
+
+.edit-btn:hover {
+  background: #5354F2;
+  color: white;
+}
+
+.fa-solid {
+  color: black;
+}
+
+.result-bookings {
 
 }
+
 
 #dashboard-subs {
   color: #EC656E;
   text-align: center;
+}
+
+#dashboard-subs-booking {
+  color: #EC656E;
+  text-align: center;
+  background-color: whitesmoke;
+  position: sticky;
+  margin: 10px;
+  padding: 10px;
+  top: 0;
 }
 
 .video-advice {
@@ -110,8 +158,8 @@
     border-radius: 9px;
     padding: 20px;
     margin: 0 auto;
-    height: 730px;
-    width: 1190px;
+    height: 480px;
+    width: 650px;
     justify-items: center;
   }
 
@@ -119,7 +167,8 @@
 
 .dashboard-left {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .chatroom {
