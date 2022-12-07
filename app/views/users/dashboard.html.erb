@@ -62,15 +62,15 @@
                       <%# end %>
                     </div>
 
-                    <p> <strong><%#= link_to("Reschdule Booking", edit_exam_timeslot_path(booking), class: "edit-btn") %></strong>
-                    </p>
+                    <%# <p> <strong>= link_to("Reschdule Booking", edit_exam_timeslot_path(booking), class: "edit-btn")</strong> %>
+                    <%# </p> %>
 
 
                     <p style="color: #000000">Cancel Booking <%= link_to "", booking_path(booking),
                       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
                       class:"fa-solid fa-trash"%>
                     </p>
-
+                  </div>
               </div>
               <% end %>
 
@@ -97,11 +97,13 @@
       </div>
     </div>
 
-    <div class="video-advice">
-      <div class="advice">
-        <h3 id="dashboard-subs"><strong>Advice</strong></h3>
-        <iframe width="1000" height="630" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+  </div>
+
+</div>
+
+  <div class="video-advice">
+    <div class="advice">
+      <h3 id="dashboard-subs"><strong>Advice</strong></h3>
+      <iframe width="1000" height="630" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
-</div>
