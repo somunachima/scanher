@@ -1,28 +1,16 @@
-<p><strong>Payment details</strong></p>
-<ul class="list-unstyled">
-  <li><strong>Booking Summary:</strong></li>
-  <li>Clinic:<%= @timeslot.exam.clinic.name  %> </li>
-  <li>Location:<%= @timeslot.exam.clinic.address  %> </li>
-  <li>Reason:<%= @booking.reason %></li>
-  <li>Previous Exams?<%= @booking.previous_exams %></li>
-  <li>GP Details: <%= @booking.gp_details %></li>
-  <li>Allergies:<%= @booking.allergies %></li>
-  <li>Addtional Information:<%= @booking.additional_information %></li>
-  <li>Date: <%= @timeslot.date.to_formatted_s(:short) %></li>
-  <li>Price: £<%= @timeslot.exam.price %></li>
-</ul>
+<div class="confirmed-card">
+  <h1 class="confirmed-heading"><strong>Booking Confirmed</strong></h1>
+  <h6><strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6>
+  <h6><strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6>
+  <h6><strong>Reason:</strong> <%= @booking.reason %></h6>
+  <h6><strong>Previous Exams:</strong> <%= @booking.previous_exams? %></h6>
+  <h6><strong>GP Details:</strong> <%= @booking.gp_details %></h6>
+  <h6><strong>Allergies:</strong> <%= @booking.allergies %></h6>
+  <h6><strong>Addtional Information:</strong> <%= @booking.additional_information %></h6>
+  <h6><strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6>
+  <h6><strong>Price:</strong> £<%= @timeslot.exam.price %></h6><br>
 
-    <%= link_to(
-      "Go to Dashboard",
-      dashboard_path(current_user),
-      class: "btn btn-secondary"
-    ) %>
-
-                <div class="buttons">
-                  <div class="config-button">
-                  <div class="flex-container mb-2">
-                      <a href="<%= dashboard_path(current_user) %>" class="btn effect04 mb-2" data-sm-link-text="BOOK"><span>Dashboard</span></a>
-
-
-                  </div>
-                </div>
+  <div>
+    <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %></strong>
+  </div>
+</div>
