@@ -1,0 +1,20 @@
+<div class="result-container">
+  <h1 class="result-heading"><strong>Your Results</strong></h1>
+    <% @results.each do |result| %>
+  <ul class="result-card">
+      <h6><strong>Details: <%= result.details %> </h6><br>
+      <h6><strong>Result Documents: </h6><br>
+      <% if result.documents.attached? %>
+        <% result.documents.each do |document| %>
+          <%= image_tag document %>
+          <% if document.previewable? %>
+            <li height="100" width="100"><%= image_tag(document.preview(resize: '20x20')) %></li>
+          <% end %>
+        <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  <div>
+    <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %></strong>
+  </div>
+</div>
