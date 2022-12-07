@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_105402) do
     t.boolean "previous_exams"
     t.text "gp_details"
     t.text "allergies"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false, null: false
     t.text "additional_information"
     t.bigint "timeslot_id", null: false
     t.bigint "user_id", null: false
