@@ -31,6 +31,7 @@
                   <%= f.check_box :confirmed %>
                   <%= f.submit "Submit" %>
                   <% end %>
+                  <%= link_to "Add Result", new_booking_result_path(booking) %>
                   <p style="color: #000000">Cancel Booking <%= link_to "", booking_path(booking),
                       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
                       class:"fa-solid fa-trash"%>
@@ -56,7 +57,8 @@
                   <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
                   <strong>Booking Status:</strong> <%= booking.confirmed %> <br>
                   <div class="result-bookings">
-                    <div><h6 style="color: #5454F2"><strong>Results</strong></h6>
+                    <div><h6 style="color: #5454F2"><strong></strong></h6>
+                    <%= link_to "Results", booking_results_path(booking) %>
                       <%# <% if booking.result.documents.attached? %>
                         <%# <% booking.result.documents.each do |document| %>
                           <%#= image_tag document %>

@@ -1,0 +1,24 @@
+<div class="container safety-form">
+    <div class= "form_card">
+      <h2><strong>Upload Result</strong></h2>
+
+      <h6> <strong><%= @booking.timeslot.exam.service%>: <%= @booking.timeslot.exam.body_part %></strong> </h6><br>
+      <strong><%= @booking.timeslot.exam.clinic.name %></strong>
+      <%= @booking.timeslot.exam.clinic.address %> <br>
+      <%= @booking.timeslot.date.to_formatted_s(:short) %> <br>
+
+      <%= simple_form_for [ @booking, @result ] do |f| %>
+
+      <div class="reason_card">
+        <h6><strong> Scan Details </strong></h6>
+        <strong><%= f.input :details, label: false %></strong>
+      </div>
+
+      <div class="documents_card">
+        <h6><strong> Documents </strong></h6>
+        <%= f.file_field :documents, multiple: true %>
+      </div>
+      <%= f.submit "Submit" %>
+    </div>
+  <% end %>
+</div>

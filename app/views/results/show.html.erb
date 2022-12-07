@@ -1,0 +1,19 @@
+
+<div class="confirmed-card">
+  <h1 class="confirmed-heading"><strong>Your Results</strong></h1>
+  <h6><strong>Details: <%= @result.details %> </h6><br>
+  <h6><strong>Result Documents: </h6><br>
+  <% if @booking.result.documents.attached? %>
+    <ul class="unstyled-list"><% @booking.result.documents.each do |document| %>
+      <%= image_tag document %>
+      <% if document.previewable? %>
+        <li><%= image_tag(document.preview(resize: '200x200')) %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %></strong>
+  </div>
+</div>
