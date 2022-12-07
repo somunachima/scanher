@@ -24,7 +24,9 @@
                   <div class="config-button">
                     <div class="flex-container mb-2">
                       <% exam.timeslots.each do |timeslot| %>
-                        <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-3" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
+                        <% if @timeslots.include?(timeslot) %>
+                            <a href="<%= new_timeslot_booking_path(timeslot) %>" class="btn effect04 mb-3" data-sm-link-text="BOOK"><span><%=timeslot.date.to_formatted_s(:short)%></span></a>
+                        <% end %>
                       <% end %>
                     </div>
                   </div>
