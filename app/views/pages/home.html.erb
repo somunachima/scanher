@@ -1,5 +1,5 @@
-<div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
-  <div class="homepage-img" style="background-image: url('<%= asset_path 'FINALbackground.png' %>');">
+<div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>" style="background-image: url('<%= asset_url 'FINALbackground.png' %>')">
+  <div class="homepage-img">
     <div class="form-home">
       <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <h6><strong>Body Area<%= f.input :body_part, label: false, placeholder: "Body Area", collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %></strong></h6>

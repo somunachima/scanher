@@ -531,7 +531,7 @@ body {
 
 .homepage-img {
   // background-image: url("/app/assets/images/FINALbackground.png");
-
+  background: black;
   background-size: cover;
 }
 
@@ -553,6 +553,8 @@ body {
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-syne);
+  background-size: cover;
+  background-repeat: none;
 }
 .regular-card-icon-top-left {
   left: 137px;
