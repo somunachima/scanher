@@ -2,27 +2,21 @@
 <div class="container-dashboard">
   <div class="dashboard-left">
     <div class="dashboard-profile">
-        <h3 id="dashboard-subs"><strong>Profile</strong></h3>
-      <div class="profile-left">
-
-        <div class="profile-pic-image">
-        <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill, border_radius: 50 %><br> <img>
-        </div>
-
-        <div class="profile-info">
-          <h6><strong><%= @current_user.full_name %></strong><h6>
-          <br><%= @current_user.address %><br>
-          <%= @current_user.email %><br>
-          <%= @current_user.phone_number %><br>
-          <%= @current_user.birthday %><br>
-        </div>
-      </div>
+          <img id="profile-pic"> <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, border_radius: 50 %><br> <img>
+          <div class="profile-info">
+            <h3 id="dashboard-subs-profile"><strong>Profile</strong></h3>
+            <h6><strong><%= @current_user.full_name %></strong><h6>
+            <br><%= @current_user.address %><br>
+            <%= @current_user.email %><br>
+            <%= @current_user.phone_number %><br>
+            <%= @current_user.birthday %><br>
+          </div>
     </div>
 
     <div class="video-advice">
       <div class="advice">
         <h3 id="dashboard-subs"><strong>Advice</strong></h3>
-        <iframe width="600" height="400" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="breast-video" width="600" height="400" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>

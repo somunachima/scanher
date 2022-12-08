@@ -1,6 +1,6 @@
 #dashboard-header {
   text-align: center;
-  color: white;
+  color: #515AE9;
   font-size: 50px;
   margin: 0 auto;
 }
@@ -19,27 +19,42 @@
 
 .dashboard-profile {
   // display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  // flex-wrap: wrap;
+  // justify-content: center;
   background-color: whitesmoke;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
-  padding: 20px;
+  // padding: 20px;
   margin: 15px;
-  height: 280px;
+  height: 200px;
   width: 650px;
   text-align: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 
-  .profile-pic-image {
-    img {
-      border-radius: 10%;
-    }
+}
+
+.profile-info {
+  padding-left: 25px;
+  text-align: left;
+
+  .dashboard-subs-profile {
+    text-align: left;
+  }
+}
+
+.profile-pic-image {
+  img {
+    border-radius: 10%;
+    object-fit: cover;
   }
 
   #profile-pic {
     border-radius: 50%;
     justify-content: center;
     justify-items: center;
+    object-fit: cover;
 
   }
 
@@ -63,7 +78,7 @@
   padding-bottom: 20px;
   padding-bottom: 20px;
   margin: 15px;
-  height: 775px;
+  height: 696px;
   width: 807px;
   overflow: auto;
 }
@@ -94,7 +109,7 @@
   background-color: white;
   border-radius: 9px;
   padding: 15px;
-  border-left: 10px #5354F2;
+  border-left: 10px #515AE9;
   // margin: 0 auto;
   margin-bottom: 20px;
   height: 360px;
@@ -119,7 +134,7 @@
 }
 
 .edit-btn:hover {
-  background: #5354F2;
+  background: #515AE9;
   color: white;
 }
 
@@ -134,12 +149,12 @@ text-decoration: none;
 
 
 #dashboard-subs {
-  color: #EC656E;
+  color: black;
   text-align: center;
 }
 
 #dashboard-subs-booking {
-  color: #EC656E;
+  color: black;
   text-align: center;
   background-color: whitesmoke;
   position: sticky;
@@ -162,8 +177,13 @@ text-decoration: none;
     height: 480px;
     width: 650px;
     justify-items: center;
+    overflow: hidden;
   }
 
+  .breast-video {
+    justify-content: center;
+    right: 20px;
+  }
 }
 
 .dashboard-left {
