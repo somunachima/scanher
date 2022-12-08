@@ -24,7 +24,7 @@ $size-height: 320px;
 .carousel {
   display: flex;
   width: $size-width * 3;
-  animation: sliding 20s infinite;
+  animation: sliding 7s infinite;
   div {
     width: $size-width;
     height: $size-height;
@@ -36,12 +36,15 @@ $size-height: 320px;
   }
   .image-one {
     background-image: url("https://res.cloudinary.com/dmg7m1sqg/image/upload/v1670416473/Testimonials/testimonal2_f7cysn.png");
+    border-radius: 9px;
   }
   .image-two {
     background-image: url("https://res.cloudinary.com/dmg7m1sqg/image/upload/v1670416473/Testimonials/testimonial3_j9dbir.png");
+    border-radius: 9px;
   }
   .image-three {
     background-image: url("https://res.cloudinary.com/dmg7m1sqg/image/upload/v1670416473/Testimonials/testemony1_pkgbli.png");
+    border-radius: 9px;
   }
 }
 

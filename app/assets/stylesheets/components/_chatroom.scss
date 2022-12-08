@@ -1,11 +1,13 @@
 .container-chatroom {
-  background-color: whitesmoke;
+  background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   padding: 20px;
-  margin: 0 auto;
-  height: 730px;
-  width: 1390px;
+  margin: 20px auto;
+  height: 795px;
+  width: 1450px;
+  // height: 730px;
+  // width: 1390px;
   justify-items: center;
   overflow: auto;
 }
@@ -49,6 +51,7 @@
 
 .chat-heading {
   text-align: center;
+  color:#5354F2;
 }
 
 .messages {
