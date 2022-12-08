@@ -43,6 +43,9 @@
                 <%= f.input :birthday,
                         required: true,
                         autofocus: true,
+                        as: :date, end_year: Date.today.year - 90,
+                        start_year: Date.today.year - 18,
+                        order: [:day, :month, :year],
                         input_html: { autocomplete: "birthday" }%>
               </div>
 
