@@ -1,63 +1,39 @@
-
-
-<div class="confirmed-cards-container">
+<div class="confirmed-cards-container bg-white">
   <div class="confirmed-card">
-    <div class="confirmed-top">
+    <div class="row">
       <h1 class="confirmed-heading"><strong>Booking Request Submitted</strong></h1>
       <h5 class="confirmed-subtitle"><strong>Wait to receive the confirmation on Your Dashboard!</strong></h5><br>
-    </div>
-
-    <div class="confirmed-grid d-flex">
-      <%# <div class="row"> %>
-        <div class="clinic">
-          <div class="clinic-icon">
+        <div class="confirmed-icon">
+          <div>
             <h6><i class="fa-solid fa-house fa-xl"> </i>
-          </div>
-          <div class="clinic-confirm-info">
             <strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6><br>
           </div>
-        <%# </div> %>
-      </div>
-
-      <%# <div class="row"> %>
-        <div class="location">
-          <div class="location-icon">
+          <div>
             <h6><i class="fa-sharp fa-solid fa-location-dot fa-xl"> </i>
-          </div>
-          <div class="location-info">
             <strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6><br>
           </div>
-        </div>
-      <%# </div> %>
-
-      <%# <div class="row"> %>
-        <div class="reason">
-          <div class="reason-icon">
+          <div>
             <h6><i class="fa-sharp fa-solid fa-ribbon fa-xl"> </i>
-          </div>
-          <div class="reason-info">
             <strong>Reason:</strong> <%= @booking.reason %></h6><br>
           </div>
+          <div>
+            <h6><i class="fa-regular fa-calendar-days fa-xl"></i>
+            <strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6><br><br>
+          </div>
         </div>
-      <%# </div> %>
 
-
-      <div class="date">
-        <div class="date-icon">
-          <h6><i class="fa-regular fa-calendar-days fa-xl"></i>
-        </div>
-        <div class="date-info">
-          <strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6><br><br>
-        </div>
-      </div>
-
+      <%# <div>
+        <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %>
+        <%# </strong> %>
+      <%# </div>  %>
     </div>
 
   </div>
 
-  <div class="payment-card">
-    <h1 class="payment-heading"><strong>Payment Details</strong></h1>
 
+
+
+  <div class="confirmed-card">
     <div class="row">
       <!-- You can make it whatever width you want. I'm making it full width
       on <= small devices and 4/12 page width on >= medium devices -->
@@ -65,9 +41,10 @@
 
 
           <!-- CREDIT CARD FORM STARTS HERE -->
-          <%# <div class="panel panel-default credit-card-box">
+          <div class="panel panel-default credit-card-box">
             <div class="panel-heading display-table" >
               <div class="row display-tr" >
+                <h1 class="confirmed-heading">Payment Details</h1>
                 <div class="display-td" >
 
                   <i class="fa-brands fa-cc-visa fa-xl"></i>
@@ -76,22 +53,18 @@
                   <i class="fa-brands fa-cc-mastercard fa-xl"></i>
                 </div>
               </div>
-            </div> %>
-          <%# </div> %>
-            <div class="payment-top">
-              <h4 class="price-info"><strong>Price:</strong> £<%= @timeslot.exam.price %></h4><br>
-              <h4 class="date-payment-info"><strong>Date:</strong> <%= Date.today %></h4><br>
-              <h4 class="booking-id"><strong>Booking ID:</strong> #<%= @timeslot.id %></h4><br>
             </div>
+          </div>
 
             <div class="panel-body">
               <form role="form" id="payment-form">
               <div class="row">
                 <div class="col-xs-12">
                   <div class="form-group"><br>
-                  <label for="cardNumber">CARD NUMBER * </label><span class="input-group-addon"><i class="fa fa-credit-card fa-xl ms-1"></i></span>
+                  <label for="cardNumber">CARD NUMBER</label>
                     <div class="input-group">
                       <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus/>
+                        <span class="input-group-addon"><i class="fa fa-credit-card fa-xl ms-1"></i></span>
                     </div>
                   </div>
               </div>
@@ -103,32 +76,43 @@
             <div class="col-xs-7 col-md-7">
               <div class="form-group">
                 <label for="cardExpiry"><span class="hidden-xs"></span>
-                <span class="visible-xs-inline">EXP.</span> DATE *</label>
+                <span class="visible-xs-inline">EXP</span> DATE</label>
                 <input type="tel" class="form-control"name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required/>
 
               </div>
             </div>
           </div>
 
+
           <div class="col-xs-5 col-md-5 pull-right">
               <div class="form-group"><br>
-                <label for="cardCVC">CV CODE *</label>
+                <label for="cardCVC">CV CODE</label>
                 <input    type="tel"class="form-control"name="cardCVC"placeholder="CVC"autocomplete="cc-csc"required/> <br>
               </div>
             </div>
           </div>
 
+
           <div class="row">
             <div class="col-xs-12">
               <div class="form-group">
-                <label for="couponCode">COUPON CODE *</label>
+                <label for="couponCode">COUPON CODE</label>
                 <input type="text" class="form-control" name="couponCode" /><br>
               </div>
             </div>
           </div>
 
           <div class="row">
+            <div class="col-xs-12">
+              <h4><strong>Price:</strong> £<%= @timeslot.exam.price %></h4><br>
+            </div>
+          </div>
 
+
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="confirmed-btn" type="submit"><%= link_to("Confirm Payment", dashboard_path(current_user), class: "confirmed-btn") %></button>
+            </div>
           </div>
 
           <div class="row" style="display:none;">
@@ -138,11 +122,9 @@
           </div>
           </form>
 
-      </div>
 
-      <div class="confirmed-btn">
-      <button class="confirmed-btn" type="submit"><%= link_to("Confirm Payment", dashboard_path(current_user), class: "confirmed-btn") %></button>
+
       </div>
     </div>
-  </div>
+</div>
 </div>

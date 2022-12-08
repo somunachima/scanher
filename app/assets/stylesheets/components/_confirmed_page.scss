@@ -2,24 +2,27 @@
   display:flex;
   justify-content: space-evenly;
 
-  .row-cards-confirmation{
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
-  }
+  // .row-cards-confirmation{
+  //   --bs-gutter-y: 0;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   margin-top: calc(-1 * var(--bs-gutter-y));
+  //   margin-right: calc(-.5 * var(--bs-gutter-x));
+  //   margin-left: calc(-.5 * var(--bs-gutter-x));
+  // }
 
   .confirmed-heading {
-    color: #000022;
+    color: #515AE9;
     font-weight: bold;
     font-family: 'Syne';
+    text-align: center;
+
   }
 
   .confirmed-subtitle {
-    color: #06065c;
+    color: black;
     margin-bottom: 36px;
+    text-align: center;
   }
 
   .confirmed-card {
@@ -31,39 +34,160 @@
     padding: 20px;
     margin: 15px;
     width: 669px;
+    height: 550px;
+  }
+
+  .payment-card {
+    font-family: 'Syne';
+    box-sizing: border-box;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 9px;
+    padding: 20px;
+    margin: 15px;
+    width: 669px;
+    height: 550px;
+  }
+
+  .confirmed-icon {
+    display: block;
   }
 
   .confirmed-btn {
     text-decoration: none;
     font-family: 'Syne';
-    width: 280px;
+    font-size: 20px;
+    width: 230px;
     // position: relative;
     background:#EC656E;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
     transition: all 0.3s;
     margin-top: -4px;
   }
 
   .confirmed-btn:hover {
-    background: #06065c;
+    background: #515AE9;
     color: white;
   }
 
+  .confirmed-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .clinic {
+    margin: 20px;
+    // background: antiquewhite;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+  }
+
+  .clinic-confirm-info {
+    padding-top: 20px;
+  }
+
+  .location-info {
+    padding-top: 20px;
+  }
+
+  .reason-info {
+    padding-top: 20px;
+  }
+
+  .date-info {
+    padding-top: 20px;
+  }
+
+  .location {
+    margin: 20px;
+    // background: antiquewhite;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+
+  }
+
+  .reason {
+    margin: 20px;
+    // background: antiquewhite;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+
+  }
+
+  .date {
+    margin: 20px;
+    // background: antiquewhite;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+
+  }
+
   .fa-brands {
-    color: #06065c;
+    color: black;
   }
   .fa-solid {
-    color: #06065c;
+    color: #EC656E;
+    font-size: 50px;
   }
   .fa-regular {
-    color: #06065c;
+    color: #EC656E;
+    font-size: 50px;
   }
   .fa-credit-card {
-    color: #06065c;
+    color: black;
+  }
+
+  .payment-heading {
+    color: #515AE9;
+    font-weight: bold;
+    font-family: 'Syne';
+    text-align: center;
+  }
+
+  .payment-subtitle {
+    color: #EC656E;
+    margin-bottom: 36px;
+  }
+
+  .payment-top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-size: 15px;
+    width: 650px;
+
+  }
+
+  .price-info {
+    font-size: 15px;
+  }
+
+  .date-payment-info {
+    font-size: 15px;
+  }
+
+  .booking-id {
+    font-size: 15px;
+  }
+
+  .form-group {
+    width: 600px;
+  }
+
+  .form-control {
+    margin-top: 4px;
   }
 }
