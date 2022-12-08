@@ -1,19 +1,16 @@
 <div class="mask-group-div" data-controller="collections" data-collections-hash-value="<%= @body_part_services.to_json %>">
-  <div class="homepage-div">
-    <div class="scanher-background">
-      <%= image_tag "1background.png"%>
-    </div>
+  <div class="homepage-img" style="background-image: url('<%= asset_path 'FINALbackground.png' %>');">
     <div class="form-home">
       <%= simple_form_for :exam, url: clinics_path, method: :get do |f| %>
         <h6><strong>Body Area<%= f.input :body_part, label: false, placeholder: "Body Area", collection: Exam::BODY_PART, data: { collections_target: "body-parts" }  %></strong></h6>
         <h6><strong>Scan Type<%= f.input :service, label: false, placeholder: "Scan Type", collection: Exam::SERVICE, input_html: { data: { action: 'change->collections#updateForm'} } %></strong></h6>
         <%= f.fields_for :clinic do |clinic_form| %>
-          <h6><strong>Address<%= clinic_form.input :address, label: false, placeholder: "Enter Your Address",
+          <h6><strong>Location<%= clinic_form.input :address, label: false, placeholder: "Enter Your Location",
           input_html: {data: {address_autocomplete_target: "address"}},
           wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}%></strong></h6>
         <% end %>
         <br>
-        <%= f.submit "Book Now", class: "btn-7" %>
+        <%= f.submit "Find Clinics", class: "btn-7" %>
       <% end %>
     </div>
     <div class="where-women-can-get-answers-in">
