@@ -16,6 +16,7 @@
     <div class="video-advice">
       <div class="advice">
         <h3 id="dashboard-subs"><strong>Advice</strong></h3>
+        <h6 id="breast-info"><strong> How to Do a Self Breast Exam </strong><h6>
         <iframe class="breast-video" width="600" height="400" src="https://www.youtube.com/embed/bO8nleSz8YA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
@@ -64,46 +65,54 @@
           <div class="user-card">
             <% current_user.bookings.each do |booking| %>
               <div class="upcoming-bookings">
-                <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5><br>
-                <strong><%= booking.timeslot.exam.clinic.name %></strong>
-                <%= booking.timeslot.exam.clinic.address %> <br>
-                <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
-                <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
 
-                <strong>Booking Status:</strong><br>
-                <% if booking.confirmed == true %>
-                  <h6 style="color: green;">Booking Confirmed by the Clinic!</h6><br>
-                <% else %>
-                  <h6>Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
-                <% end %>
 
-                <div class="result-bookings">
-                <% if booking.results.present? %>
-                  <div><h6 style="color: #EC656E"><strong><%= link_to "See your Result Here!", booking_results_path(booking) %></strong></h6>
-                  </div>
-                <% end %>
+                <div class="scan-header">
+                  <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5>
+                </div>
 
-                  <div class="d-flex">
-                    <div class="text-align-center">
-                      <h6 style="color: #5354F2"><strong><%= link_to "", booking_chatroom_path(booking, booking.chatroom.id),class:"fa-solid fa-envelope" %></strong></h6>
-                      <h6 class="mx-2"><%= link_to "Message Clinic Here", booking_chatroom_path(booking, booking.chatroom.id) %></h6>
+                <div class="booking-content">
+                  <div class="booking-left">
+                    <div class="clinic-info-booking">
+                      <strong><%= booking.timeslot.exam.clinic.name %></strong><br>
+                      <%= booking.timeslot.exam.clinic.address %> <br>
+                      <strong>Date:</strong> <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
+                      <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
+                    </div><br>
+
+                    <div class="booking-status">
+                    <strong>Booking Status:</strong>
+                    <% if booking.confirmed == true %>
+                      <h6 style="color: green;">Booking Confirmed by the Clinic!</h6><br>
+                    <% else %>
+                      <h6 style="color: #EA9B0F;">Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
+                    <% end %>
                     </div>
-                    <div>
-                    <h6 style="color: #5354F2"><strong><%= link_to "", booking_chatroom_path(booking, booking.chatroom.id),class:"fa-solid fa-envelope" %></strong></h6>
-                    <h6>BELOW</h6>
+
+                  </div>
+
+                  <div class="booking-right">
+                    <div class="result-bookings">
+                      <% if booking.results.present? %>
+                        <button class="result-btn" style="text-decoration-none" type="submit"><%= link_to("Your Results", booking_results_path(booking)) %></button>
+                      <% end %>
+                    </div>
+
+                    <div class="message-clinic">
+                      <button class="message-btn" style="text-decoration-none" type="submit"><%= link_to("Message Clinic", booking_chatroom_path(booking, booking.chatroom.id)) %></button>
+                    </div>
+
+                  </div>
+
+                  </div>
+                    <p class="delete-button" style="color: #000000"><%= link_to "", booking_path(booking),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                      class:"fa-solid fa-trash"%>
+                    </p>
                   </div>
                 </div>
-                <div class="reschedule-booking">
-                  <%# <p> <strong> <#%link_to("Reschedule Booking", edit_exam_timeslot_path(booking.timeslot), class: "edit-btn")</strong></p> %>
-                </div>
 
 
-                  <p style="color: #000000"><%= link_to "", booking_path(booking),
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                    class:"fa-solid fa-trash"%>
-                  </p>
-                </div>
-              </div>
             <% end %>
           </div>
 
