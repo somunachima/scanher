@@ -1,5 +1,5 @@
 class Result < ApplicationRecord
-  belongs_to :booking, dependent: :destroy
+  belongs_to :booking
 
   has_many_attached :documents
 
