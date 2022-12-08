@@ -1,6 +1,6 @@
 .result-heading {
   text-align: center;
-  color: white;
+  color: #EC656E;
 }
 
 .result-subtitle {
@@ -15,10 +15,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 9px;
   padding: 20px;
-  margin: 15px;
+  margin-top: 15px;
+  margin-left: 400px;
   width: 700px;
-  height: 500px;
   justify-content: center;
+
+  img {
+  height: 600px;
+  }
 }
 
 .result-btn {
@@ -26,7 +30,6 @@
   font-family: 'Syne';
   width: 280px;
   height: 40px;
-  // position: relative;
   background:#EC656E;
   border-radius: 5px;
   border: 0;

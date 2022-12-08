@@ -12,7 +12,7 @@
   }
 
   .confirmed-heading {
-    color: #EC656E;
+    color: #000022;
     font-weight: bold;
     font-family: 'Syne';
   }
@@ -25,12 +25,12 @@
   .confirmed-card {
     font-family: 'Syne';
     box-sizing: border-box;
-    background-color: whitesmoke;
+    background-color: #fdfdfd;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 9px;
     padding: 20px;
     margin: 15px;
-    width: 700px;
+    width: 669px;
   }
 
   .confirmed-btn {
@@ -55,6 +55,15 @@
   }
 
   .fa-brands {
+    color: #06065c;
+  }
+  .fa-solid {
+    color: #06065c;
+  }
+  .fa-regular {
+    color: #06065c;
+  }
+  .fa-credit-card {
     color: #06065c;
   }
 }

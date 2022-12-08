@@ -529,14 +529,19 @@ body {
   flex-shrink: 0;
 }
 
+.homepage-img {
+  // background-image: url("/app/assets/images/FINALbackground.png");
+  background: black;
+  background-size: cover;
+}
 
 .homepage-div {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--color-white);
+  background-image: var(--color-white);
   box-shadow: 2px 1px 1px rgba(37, 37, 37, 0.15);
-  width: 1512px;
+  width: 1837px;
   height: 3000px;
   overflow-y: auto;
 }
@@ -548,6 +553,8 @@ body {
   font-size: var(--font-size-xl);
   color: var(--color-black);
   font-family: var(--font-syne);
+  background-size: cover;
+  background-repeat: none;
 }
 .regular-card-icon-top-left {
   left: 137px;

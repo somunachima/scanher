@@ -1,17 +1,24 @@
-<div class="confirmed-cards-container">
+<div class="confirmed-cards-container bg-white">
   <div class="confirmed-card">
     <div class="row">
       <h1 class="confirmed-heading"><strong>Booking Request Submitted</strong></h1>
-      <h5 class="confirmed-subtitle"><strong>Please wait to receive confirmation of your booking through Your Dashboard!</strong></h5><br>
-      <h6><strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6><br>
-      <h6><strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6><br>
-      <h6><strong>Reason:</strong> <%= @booking.reason %></h6><br>
-      <h6><strong>Previous Exams:</strong> <%= @booking.previous_exams? %></h6><br>
-      <h6><strong>GP Details:</strong> <%= @booking.gp_details %></h6><br>
-      <h6><strong>Allergies:</strong> <%= @booking.allergies %></h6><br>
-      <h6><strong>Additional Information:</strong> <%= @booking.additional_information %></h6><br>
-      <h6><strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6><br><br>
-      <h6><strong>Price:</strong> £<%= @timeslot.exam.price %></h6><br>
+      <h5 class="confirmed-subtitle"><strong>Wait to receive the confirmation on Your Dashboard!</strong></h5><br>
+        <div>
+          <h6><i class="fa-solid fa-house fa-xl"> </i>
+          <strong>Clinic:</strong> <%= @timeslot.exam.clinic.name  %> </h6><br>
+        </div>
+        <div>
+          <h6><i class="fa-sharp fa-solid fa-location-dot fa-xl"> </i>
+          <strong>Location:</strong> <%= @timeslot.exam.clinic.address  %> </h6><br>
+        </div>
+        <div>
+          <h6><i class="fa-sharp fa-solid fa-ribbon fa-xl"> </i>
+          <strong>Reason:</strong> <%= @booking.reason %></h6><br>
+        </div>
+        <div>
+          <h6><i class="fa-regular fa-calendar-days fa-xl"></i>
+          <strong>Date:</strong> <%= @timeslot.date.to_formatted_s(:short) %></h6><br><br>
+        </div>
 
       <%# <div>
         <strong><%= link_to("Go to Dashboard", dashboard_path(current_user), class: "confirmed-btn") %>
@@ -35,7 +42,7 @@
           <div class="panel panel-default credit-card-box">
             <div class="panel-heading display-table" >
               <div class="row display-tr" >
-                <h1 class="confirmed-heading" >Payment Details</h1>
+                <h1 class="confirmed-heading">Payment Details</h1>
                 <div class="display-td" >
 
                   <i class="fa-brands fa-cc-visa fa-xl"></i>
