@@ -77,39 +77,40 @@
                       <%= booking.timeslot.exam.clinic.address %> <br>
                       <strong>Date:</strong> <%= booking.timeslot.date.to_formatted_s(:short) %> <br>
                       <strong>Paid:</strong> £<%= booking.timeslot.exam.price %> <br>
-                    </div>
+                    </div><br>
 
                     <div class="booking-status">
                     <strong>Booking Status:</strong>
                     <% if booking.confirmed == true %>
                       <h6 style="color: green;">Booking Confirmed by the Clinic!</h6><br>
                     <% else %>
-                      <h6>Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
+                      <h6 style="color: #EA9B0F;">Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
                     <% end %>
                     </div>
                   </div>
 
                   <div class="booking-right">
                     <div class="result-bookings">
-                      <% if booking.results.any? %>
-                        <div>
-                        <button class="result-btn" type="submit"><%= link_to("Your Results", booking_results_path(booking), class: "results-btn") %></button>
+                      <% if booking.results.present? %>
+                        <button class="result-btn" style="text-decoration-none" type="submit"><%= link_to("Your Results", booking_results_path(booking)) %></button>
                       <% end %>
                     </div>
 
                     <div class="message-clinic">
-                      <button class="message-btn" type="submit"><%= link_to("Message Clinic Here", booking_chatroom_path(booking, booking.chatroom.id), class: "message-btn") %></button>
+                      <button class="message-btn" style="text-decoration-none" type="submit"><%= link_to("Message Clinic", booking_chatroom_path(booking, booking.chatroom.id)) %></button>
                     </div>
+
+                  </div>
+
+                  </div>
+                    <p class="delete-button" style="color: #000000"><%= link_to "", booking_path(booking),
+                      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                      class:"fa-solid fa-trash"%>
+                    </p>
                   </div>
                 </div>
 
 
-              </div>
-                <p class="delete-button" style="color: #000000"><%= link_to "", booking_path(booking),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                  class:"fa-solid fa-trash"%>
-                </p>
-              </div>
             <% end %>
           </div>
 

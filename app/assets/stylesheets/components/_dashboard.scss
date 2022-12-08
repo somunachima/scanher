@@ -88,9 +88,6 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 9px;
   // padding: 20px;
-  margin: 15px;
-  height: 420px;
-  width: 500px;
 }
 
 .admin-card {
@@ -112,7 +109,7 @@
   border-left: 10px #515AE9;
   // margin: 0 auto;
   margin-bottom: 20px;
-  height: 360px;
+  height: 280px;
   width: 740px;
 }
 
@@ -143,6 +140,10 @@
   color: grey;
   font-size: 18px;
   font-style: Syne;
+  }
+
+  .delete-button:hover {
+  color: #515AE9;
   }
 }
 
@@ -210,8 +211,8 @@ text-decoration: none;
 
 }
 
-.delete-button {
-
+.booking-right {
+  // display: flex;
 }
 
 .result-btn {
@@ -220,8 +221,8 @@ text-decoration: none;
   font-size: 20px;
   width: 230px;
   // position: relative;
-  background:#EC656E;
   border-radius: 5px;
+  border: 1px solid #EC656E;
   border: 0;
   cursor: pointer;
   color: white;
@@ -229,6 +230,11 @@ text-decoration: none;
   // padding-bottom: 10px;
   transition: all 0.3s;
   margin-top: -4px;
+
+  a {
+    text-decoration: none;
+    color: white
+  }
 }
 
 .result-btn:hover {
@@ -241,23 +247,36 @@ text-decoration: none;
   font-family: 'Syne';
   font-size: 20px;
   width: 230px;
+  background-color: transparent;
   // position: relative;
   border-radius: 5px;
-  border: 1px solid #EC656E;
-  border: 0;
+  border: 2px solid #EC656E;
   cursor: pointer;
-  color:#EC656E;
+  color: white;
   // padding-top: 10px;
   // padding-bottom: 10px;
   transition: all 0.3s;
-  margin-top: -4px;
+  margin-top: 10px;
+
+  a {
+    text-decoration: none;
+    color: #EC656E;
+  }
 }
 
 .message-btn:hover {
-  background: #515AE9;
+  border: 2px solid #515AE9;
   color: white;
+
+  a {
+    color: white;
+  }
 }
 
 .booking-content {
   display: flex;
+}
+
+.delete-button {
+  text-align: right;
 }
