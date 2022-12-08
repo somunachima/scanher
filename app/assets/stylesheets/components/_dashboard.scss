@@ -176,8 +176,13 @@ text-decoration: none;
     height: 480px;
     width: 650px;
     justify-items: center;
+    overflow: hidden;
   }
 
+  .iframe {
+    justify-content: center;
+    right: 20px;
+  }
 }
 
 .dashboard-left {
