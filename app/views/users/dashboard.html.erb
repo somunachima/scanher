@@ -66,6 +66,7 @@
             <% current_user.bookings.each do |booking| %>
               <div class="upcoming-bookings">
 
+
                 <div class="scan-header">
                   <br><h5> <strong><%= booking.timeslot.exam.service%>: <%= booking.timeslot.exam.body_part %></strong> </h5>
                 </div>
@@ -87,6 +88,7 @@
                       <h6 style="color: #EA9B0F;">Booking Confirmation is Pending. Please wait for the clinic to confirm.</h6><br>
                     <% end %>
                     </div>
+
                   </div>
 
                   <div class="booking-right">
