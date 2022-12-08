@@ -3,7 +3,7 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
 
-  <h1>#<%= @chatroom.name %></h1>
+  <h1 class="chat-heading"><strong><%= @chatroom.booking.timeslot.exam.clinic.name %></strong></h1>
 
    <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>

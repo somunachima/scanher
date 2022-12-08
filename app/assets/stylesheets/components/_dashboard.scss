@@ -138,9 +138,12 @@
   color: white;
 }
 
-.fa-solid {
-  color: black;
+.delete-button {
+  .fa-solid {
+  color: grey;
+  font-size: 18px;
   font-style: Syne;
+  }
 }
 
 .result-bookings {
@@ -184,6 +187,10 @@ text-decoration: none;
     justify-content: center;
     right: 20px;
   }
+
+  #breast-info {
+    text-align: center;
+  }
 }
 
 .dashboard-left {
@@ -201,4 +208,56 @@ text-decoration: none;
   height: 850px;
   width: 485px;
 
+}
+
+.delete-button {
+
+}
+
+.result-btn {
+  text-decoration: none;
+  font-family: 'Syne';
+  font-size: 20px;
+  width: 230px;
+  // position: relative;
+  background:#EC656E;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+}
+
+.result-btn:hover {
+  background: #515AE9;
+  color: white;
+}
+
+.message-btn {
+  text-decoration: none;
+  font-family: 'Syne';
+  font-size: 20px;
+  width: 230px;
+  // position: relative;
+  border-radius: 5px;
+  border: 1px solid #EC656E;
+  border: 0;
+  cursor: pointer;
+  color:#EC656E;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+}
+
+.message-btn:hover {
+  background: #515AE9;
+  color: white;
+}
+
+.booking-content {
+  display: flex;
 }
