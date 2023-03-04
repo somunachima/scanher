@@ -11,4 +11,4 @@ This was the final project we created as part of the bootcamp where we learnt ho
 We used javascript for the homepage form to be able to take multiple inputs from a person and narrow down their search based on their location, scan type and body area. This was a hard task to complete and required us to change our scheme and models but we eventually figured it out as a team.
 
 ## Next Steps
-We absolutely loved the design of our homepage and would like to create a mobile version of our app in future as this is currently only available on desktop.
+We absolutely love the design of our homepage and would like to create a mobile version of our app in future as this is currently only available on desktop.
