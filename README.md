@@ -19,4 +19,3 @@ We absolutely love the design of our homepage and would like to create a mobile 
 
 <img width="1728" alt="Screenshot 2023-03-11 at 20 57 48" src="https://user-images.githubusercontent.com/114405652/224511328-2dc83dd8-d24e-4ba0-850e-a859f1d94fb8.png">
 
-<img width="1728" alt="Screenshot 2023-03-11 at 20 57 30" src="https://user-images.githubusercontent.com/114405652/224511378-fcf16fd6-363c-4ba1-b8ad-bb4961f9f6bf.png">
